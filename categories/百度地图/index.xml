@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>百度地图 on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/categories/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</link>
+    <description>Recent content in 百度地图 on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Tue, 24 Apr 2018 14:21:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/categories/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ionic 融入百度地图</title>
+      <link>https://me.lucoder.com/post/2018/04/24/ionic-%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</link>
+      <pubDate>Tue, 24 Apr 2018 14:21:50 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2018/04/24/ionic-%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</guid>
+      <description>ionic 融入百度地图 百度地图是一个非常成熟的一个地图组件，在很多项目中都会用到百度地图组件，本节就介绍如何在ionic项目中使用百度地图。 在ind</description>
+    </item>
+    
+  </channel>
+</rss>

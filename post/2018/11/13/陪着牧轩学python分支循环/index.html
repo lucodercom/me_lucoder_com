@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>【陪着牧轩学Python】分支循环 - 牧轩日志 - 记录开发中的点点滴滴</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="说明 咳咳，昨天的东西忘得差不多了吧？没事儿，文章都在这！然后来一个今天的小战利品： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 skip_row = 3 skip_flag = -1 file = open(&amp;#39;E:/read.txt&amp;#39;,&amp;#39;r&#43;&amp;#39;) read = &amp;#34;default&amp;#34; list=[] while" />
+
+  <meta name="keywords" content="牧轩, 牧轩居士, 笔记录" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50" />
+
+
+<link rel="canonical" href="https://me.lucoder.com/post/2018/11/13/%E9%99%AA%E7%9D%80%E7%89%A7%E8%BD%A9%E5%AD%A6python%E5%88%86%E6%94%AF%E5%BE%AA%E7%8E%AF/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="【陪着牧轩学Python】分支循环" />
+<meta property="og:description" content="说明 咳咳，昨天的东西忘得差不多了吧？没事儿，文章都在这！然后来一个今天的小战利品： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 skip_row = 3 skip_flag = -1 file = open(&#39;E:/read.txt&#39;,&#39;r&#43;&#39;) read = &#34;default&#34; list=[] while" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.lucoder.com/post/2018/11/13/%E9%99%AA%E7%9D%80%E7%89%A7%E8%BD%A9%E5%AD%A6python%E5%88%86%E6%94%AF%E5%BE%AA%E7%8E%AF/" /><meta property="article:published_time" content="2018-11-13T14:21:50&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-13T14:21:50&#43;08:00"/>
+
+<meta itemprop="name" content="【陪着牧轩学Python】分支循环">
+<meta itemprop="description" content="说明 咳咳，昨天的东西忘得差不多了吧？没事儿，文章都在这！然后来一个今天的小战利品： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 skip_row = 3 skip_flag = -1 file = open(&#39;E:/read.txt&#39;,&#39;r&#43;&#39;) read = &#34;default&#34; list=[] while">
+
+
+<meta itemprop="datePublished" content="2018-11-13T14:21:50&#43;08:00" />
+<meta itemprop="dateModified" content="2018-11-13T14:21:50&#43;08:00" />
+<meta itemprop="wordCount" content="1725">
+
+
+
+<meta itemprop="keywords" content="专题,Python," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="【陪着牧轩学Python】分支循环"/>
+<meta name="twitter:description" content="说明 咳咳，昨天的东西忘得差不多了吧？没事儿，文章都在这！然后来一个今天的小战利品： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 skip_row = 3 skip_flag = -1 file = open(&#39;E:/read.txt&#39;,&#39;r&#43;&#39;) read = &#34;default&#34; list=[] while"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">牧轩笔记</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/about/">关于</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/links/">友链</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              专题
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              工具
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      牧轩笔记
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/links/">友链</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">专题</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">工具</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">【陪着牧轩学Python】分支循环</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-11-13" class="post-time">
+          2018-11-13
+        </time>
+        <div class="post-category">
+            <a href="https://me.lucoder.com/categories/%E4%B8%93%E9%A2%98/"> 专题 </a>
+            <a href="https://me.lucoder.com/categories/python/"> Python </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h1 id="说明">说明</h1>
+
+<p>咳咳，昨天的东西忘得差不多了吧？没事儿，文章都在这！然后来一个今天的小战利品：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">skip_row</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">skip_flag</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;E:/read.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span>
+<span class="n">read</span> <span class="o">=</span> <span class="s2">&#34;default&#34;</span>
+<span class="nb">list</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">read</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">skip_flag</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">read</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">skip_flag</span> <span class="o">%</span> <span class="n">skip_row</span> <span class="o">==</span>  <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">read</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">skip_flag</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">read</span><span class="o">.</span><span class="n">strip</span><span class="p">()),</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">continue</span>
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">))</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>我只说一下功能：按行读取文件中数据，把每一行转换为浮点数保留两位小数，这是我的一个需求，不过对于你们来说估计没什么用，用到了昨天学的数据类型，以及今天的分支循环。</p>
+
+<h1 id="分支语句">分支语句</h1>
+
+<p>分支语句是编程逻辑的一个非常<code>重要的一块儿</code>！</p>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/11/13/20181113210233.png" alt="https://oss.lucoder.com/uploads/2018/11/13/20181113210233.png" /></p>
+
+<p>分支语句就是将自然语言的<code>如果...那么...</code>，或者是<code>如果...或者...否则...</code>转换为<code>if ... else ...</code>即可，python中典型的是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">if</span> <span class="p">[</span><span class="nb">bool</span><span class="p">]:</span>
+    <span class="n">do</span> <span class="n">work</span><span class="o">...</span>
+<span class="p">[</span>
+<span class="k">elif</span> <span class="p">[</span><span class="nb">bool</span><span class="p">]:</span>
+    <span class="n">do</span> <span class="n">work</span><span class="o">...</span>
+<span class="p">]</span>
+<span class="p">[</span><span class="k">else</span><span class="p">:]</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>案例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">score</span><span class="o">=</span><span class="mi">10</span>
+<span class="k">if</span> <span class="n">score</span> <span class="o">/</span> <span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">8</span> <span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;优秀&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">/</span> <span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">7</span> <span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;良好&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">/</span> <span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;及格&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">/</span> <span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;不及格&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;孩子回家吧&#39;</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>这个判断好多人都见过，就是输入一个分数，判断成绩类型的一个判断。</p>
+
+<p>或许有人说还有<code>switch</code>语句呀，错！Python没有<code>switch</code>！！！</p>
+
+<h1 id="循环语句">循环语句</h1>
+
+<p>啥是循环语句？举个例子：1+2+3+&hellip;+100等于几?先别管计算机是怎么计算的，先想想自己是怎么算的，em&hellip;不要耍小聪明，说什么1+100然后2+99&hellip;，因为计算机智商不足3岁孩童，所以你不要耍小聪明！那咋办，小孩子不都是掰着手指头一个一个算的么？有没有发现工作都是重复性的工作一直重复的计算加法，对，我们转换到计算机怎么干呢？<code>重复性工作交给循环</code>。</p>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/11/13/20181113213108.png" alt="https://oss.lucoder.com/uploads/2018/11/13/20181113213108.png" /></p>
+
+<h2 id="for-循环">for 循环</h2>
+
+<p>for循环是python中常用的一个循环：</p>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/11/13/20181113213410.png" alt="https://oss.lucoder.com/uploads/2018/11/13/20181113213410.png" /></p>
+
+<p>Python中的For循环结构如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">for iterating_var in sequence:
+   statements(s)</pre></td></tr></table>
+</div>
+</div>
+<p>好，现在继续分析题目，1+2+3+&hellip;+100，是否需要一个变量保存计算的结果呢？首先灌输一个需要记忆的内容<code>range(m,n)</code>生成一个<code>m-(n - 1)</code>的迭代，我靠！什么是迭代？好吧，没有基础的理解迭代或许有困难，你可以理解为一个顺序取数的一个“人”，它能够从<code>m-n</code>中，从<code>m</code>开始，取到<code>n - 1</code>，比如：<code>range(1,101)</code>，取得就是：<code>1,2,3,4,5...,99,100</code>，能理解了么?好吧，继续工作吧，先别管他了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">sum</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>怎么样，简单吧，这个就像是一只手<code>i</code>从一堆数据<code>range(1,100)</code>中，按照从<code>1-100</code>的顺序，取出来数，放到i中，然后<code>sum=sum+i</code>算出最终结果。</p>
+
+<p>其实用处更多是下面的方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="s1">&#39;me.lucoder.com&#39;</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="nb">list</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="while循环">while循环</h2>
+
+<p>while循环也是一个非常重要的循环，尤其是IO的操作以及后期的数据库的操作。</p>
+
+<p><img src="https://oss.lucoder.com/uploads/20181113/20181113215136.png" alt="https://oss.lucoder.com/uploads/20181113/20181113215136.png" /></p>
+
+<p>while循环咋跑的，看下面的这个图：</p>
+
+<p><img src="http://www.runoob.com/wp-content/uploads/2013/11/loop-over-python-list-animation.gif" alt="http://www.runoob.com/wp-content/uploads/2013/11/loop-over-python-list-animation.gif" /></p>
+
+<blockquote>
+<p>图片来自<a href="http://www.runoob.com/python/python-while-loop.html">菜鸟</a>，大家也可以去这里学一下Python，有些地方讲的非常清楚。</p>
+</blockquote>
+
+<p>在此再次分析上面的案例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">sum</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>其他用途：</p>
+
+<p>非常重要的一个用途就是开题的小案例。里面有一块儿读取文件内容的。还有就是数据库操作的，以后我们再说。</p>
+
+<h2 id="相互转换">相互转换</h2>
+
+<p>其实循环之间是可以相互转换的，比如本文的<code>1-100</code>数和的案例。</p>
+
+<h1 id="最后唠叨">最后唠叨</h1>
+
+<p>其实分支循环到此都已经结束了，但是还有一小点儿内容，不想单独开设一章了，所以在此说明吧。</p>
+
+<p>你有没有想过一个问题？比如我想寻找<code>me.lucoder.com</code>位置，比如下面的案例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span>
+<span class="n">read</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="s2">&#34;me.lucoder.com&#34;</span>
+<span class="n">rowIndex</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">read</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="n">rowIndex</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">read</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">break</span>
+    
+    <span class="k">if</span> <span class="n">read</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">rowIndex</span><span class="p">)</span>
+        <span class="k">continue</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></code></pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>注意：此处是为了表示出来三个不同的关键字而写的代码，真是业务中毫无意义！</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>pass</td>
+<td>特殊关键字，只是为了保持结构完整，啥也不工作</td>
+</tr>
+
+<tr>
+<td>continue</td>
+<td>特殊关键字，跳过当前循环，开始下一次循环</td>
+</tr>
+
+<tr>
+<td>break</td>
+<td>跳出循环，结束循环体</td>
+</tr>
+</tbody>
+</table>
+
+<p><code>break</code>和<code>continue</code>的区别就是作用的区域，如果是结束一次循环就用<code>continue</code>，如果是结束循环体就用<code>break</code>。比如上述循环，如果到第<code>11</code>行成功，那么直接就会跳转到<code>20</code>行，继续顺序执行。当运行到<code>15</code>行，则会跳转到<code>6</code>行继续工作。</p>
+
+<h1 id="结束语">结束语</h1>
+
+<p>到现在你已经掌握Python的分支循环了，为自己鼓掌，噼啦啪啦，噼啦啪啦！！！本章节主要介绍Python 的分支循环。</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-11-13</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://me.lucoder.com/tags/%E4%B8%93%E9%A2%98/">专题</a>
+          <a href="https://me.lucoder.com/tags/python/">Python</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2018/11/13/%E9%99%AA%E7%9D%80%E7%89%A7%E8%BD%A9%E5%AD%A6python%E5%87%BD%E6%95%B0%E7%BC%96%E7%A8%8B/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">【陪着牧轩学Python】函数编程</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2018/11/11/%E9%99%AA%E7%9D%80%E7%89%A7%E8%BD%A9%E5%AD%A6python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AF%87/">
+            <span class="next-text nav-default">【陪着牧轩学Python】（一） 环境搭建篇</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@lucoder.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://me.lucoder.com/pages/open/" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://me.lucoder.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    <a class="hexo-link" href="http://www.miitbeian.gov.cn/">豫ICP备16017737号-2</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    图像CDN:<a class="theme-link" href="https://www.upyun.com/">又拍云</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="theme-link" href="https://www.foreverblog.cn/">十年之约</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        牧轩居士
+        
+      </span></span>
+
+  
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

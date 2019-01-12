@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mpi on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/categories/mpi/</link>
+    <description>Recent content in Mpi on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Mon, 01 Oct 2018 14:21:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/categories/mpi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubuntu安装MPI</title>
+      <link>https://me.lucoder.com/post/2018/10/01/ubuntu%E5%AE%89%E8%A3%85mpi/</link>
+      <pubDate>Mon, 01 Oct 2018 14:21:50 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2018/10/01/ubuntu%E5%AE%89%E8%A3%85mpi/</guid>
+      <description>现正在研究ARM多机并行环境，由于学过MPI并行环境，而且MPI支持Ubuntu系统，所以就开始在Ubuntu上部署MPI开发环境。 下载源码</description>
+    </item>
+    
+    <item>
+      <title>mpi并行计算环境搭建</title>
+      <link>https://me.lucoder.com/post/2018/04/25/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Wed, 25 Apr 2018 14:21:50 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2018/04/25/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <description>&lt;h1 id=&#34;什么是mpi&#34;&gt;什么是MPI&lt;/h1&gt;
+
+&lt;p&gt;MPI是一个跨语言的通讯协议，用于编写并行计算机。支持点对点和广播。MPI是一个信息传递应用程序接口，包括协议和和语义说明，他们指明其如何在各种实现中发挥其特性。MPI的目标是高性能，大规模性，和可移植性。MPI在今天仍为高性能计算的主要模型。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

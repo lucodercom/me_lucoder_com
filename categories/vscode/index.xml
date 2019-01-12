@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vscode on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/categories/vscode/</link>
+    <description>Recent content in Vscode on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Thu, 26 Jul 2018 14:21:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/categories/vscode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vscode 调试Spring Boot程序</title>
+      <link>https://me.lucoder.com/post/2018/07/26/vscode-%E8%B0%83%E8%AF%95spring-boot%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Thu, 26 Jul 2018 14:21:50 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2018/07/26/vscode-%E8%B0%83%E8%AF%95spring-boot%E7%A8%8B%E5%BA%8F/</guid>
+      <description>摘要 Build Anything with Spring Boot：Spring Boot is the starting point for building all Spring-based applications. Spring Boot is designed to get you up and running as quickly as possible, with minimal upfront configuration of Spring. 大概意思翻译一下：Spring Boot 是所有基于 Spring 开</description>
+    </item>
+    
+  </channel>
+</rss>

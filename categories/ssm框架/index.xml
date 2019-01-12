@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssm框架 on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/categories/ssm%E6%A1%86%E6%9E%B6/</link>
+    <description>Recent content in Ssm框架 on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Sat, 24 Feb 2018 14:21:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/categories/ssm%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java中的SSM框架和配置</title>
+      <link>https://me.lucoder.com/post/2018/02/24/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sat, 24 Feb 2018 14:21:50 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2018/02/24/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/</guid>
+      <description>什么是SSM框架 SSM框架是JavaWeb中常用的框架，包括Spring、Spring MVC、Mybatis三种框架的一个整合。其中任意两个</description>
+    </item>
+    
+  </channel>
+</rss>

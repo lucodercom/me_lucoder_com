@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/pages/</link>
+    <description>Recent content in Pages on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Sat, 03 Nov 2018 16:01:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/pages/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于</title>
+      <link>https://me.lucoder.com/pages/about/</link>
+      <pubDate>Sat, 03 Nov 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/pages/about/</guid>
+      <description>研究方向 机器视觉、机器学习、视频直播 擅长语言 C#、Java、C++ 常用框架 ASP.NET MVC 5、ASP.NET Core 2.1、Spring Boot 前端 JQuery、B</description>
+    </item>
+    
+    <item>
+      <title>牧轩开源</title>
+      <link>https://me.lucoder.com/pages/open/</link>
+      <pubDate>Sat, 03 Nov 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/pages/open/</guid>
+      <description>项目 地址 说明 备注 MxLib Github Gitee 一个面向嵌入式C++的Linux类库 完全开源 Lucoder Github Gitee 常用的一些函数封装 完全开源 Fucier Github Gitee 基于OpencvSharp和GDAL</description>
+    </item>
+    
+    <item>
+      <title>友链</title>
+      <link>https://me.lucoder.com/pages/links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://me.lucoder.com/pages/links/</guid>
+      <description>招收各种机器学习、人工智能、机器视觉等友链，注意必须支持https://. 名称 地址 方向 新生命团队 https://www.newlifex.com C# 十年之约 https://www.Foreverblog.cn 其他方向 联系我 QQ : 1053024080 Email : dev@lucoder.com</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/categories/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Fri, 27 Jul 2018 14:21:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ENVI的下载和安装</title>
+      <link>https://me.lucoder.com/post/2018/07/27/envi%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 27 Jul 2018 14:21:50 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2018/07/27/envi%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85/</guid>
+      <description>关于ENVI ENVI（The Environment for Visualizing Images）是一个完整的遥感图像处理平台，应用汇集中的软件处理技术覆盖了图像数据的输入/输出、图像定标、</description>
+    </item>
+    
+    <item>
+      <title>Visual Studio Code</title>
+      <link>https://me.lucoder.com/post/2017/11/22/visual-studio-code/</link>
+      <pubDate>Wed, 22 Nov 2017 17:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2017/11/22/visual-studio-code/</guid>
+      <description>Visual Studio Code 官网：https://code.visualstudio.com/ VSCode可以认为是一个迷你版的Visual Studio，大概45</description>
+    </item>
+    
+  </channel>
+</rss>

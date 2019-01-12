@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Parallel on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/categories/parallel/</link>
+    <description>Recent content in Parallel on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Tue, 08 Jan 2019 21:01:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/categories/parallel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C#并行算法</title>
+      <link>https://me.lucoder.com/post/2019/01/08/c#%E5%B9%B6%E8%A1%8C%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 08 Jan 2019 21:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/01/08/c#%E5%B9%B6%E8%A1%8C%E7%AE%97%E6%B3%95/</guid>
+      <description>用了这么多次的C#，总在抱怨C#效率低，其实不然，C#可能是启动效率低，一旦运行起来或许性能比C++差不了多少（前提GC关掉），尤其是Spa</description>
+    </item>
+    
+  </channel>
+</rss>

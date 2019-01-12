@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ubuntu on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/tags/ubuntu/</link>
+    <description>Recent content in Ubuntu on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Tue, 14 Aug 2018 14:21:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>动态链接库和静态链接库</title>
+      <link>https://me.lucoder.com/post/2018/08/14/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E5%92%8C%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/</link>
+      <pubDate>Tue, 14 Aug 2018 14:21:50 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2018/08/14/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E5%92%8C%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/</guid>
+      <description>知识不等于技术，这句话真的是越工作的时间长越深有体会，学习到的知识只有不断的实践，才成真正在自已的心里扎下根，成为自身的一部分，所以无论如何</description>
+    </item>
+    
+    <item>
+      <title>联想拯救者电脑装Ubuntu没有WIFI</title>
+      <link>https://me.lucoder.com/post/2018/07/26/%E8%81%94%E6%83%B3%E6%8B%AF%E6%95%91%E8%80%85%E7%94%B5%E8%84%91%E8%A3%85ubuntu%E6%B2%A1%E6%9C%89wifi/</link>
+      <pubDate>Thu, 26 Jul 2018 14:21:50 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2018/07/26/%E8%81%94%E6%83%B3%E6%8B%AF%E6%95%91%E8%80%85%E7%94%B5%E8%84%91%E8%A3%85ubuntu%E6%B2%A1%E6%9C%89wifi/</guid>
+      <description>最近给联想电脑装Ubuntu系统，但是装完之后总是无法启动WIFI，而宽带上网却可以，给出一个解决办法，但是该办法应该只适合联想电脑，其他电</description>
+    </item>
+    
+  </channel>
+</rss>

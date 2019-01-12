@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Vscode 调试Spring Boot程序 - 牧轩日志 - 记录开发中的点点滴滴</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="摘要 Build Anything with Spring Boot：Spring Boot is the starting point for building all Spring-based applications. Spring Boot is designed to get you up and running as quickly as possible, with minimal upfront configuration of Spring. 大概意思翻译一下：Spring Boot 是所有基于 Spring 开" />
+
+  <meta name="keywords" content="牧轩, 牧轩居士, 笔记录" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50" />
+
+
+<link rel="canonical" href="https://me.lucoder.com/post/2018/07/26/vscode-%E8%B0%83%E8%AF%95spring-boot%E7%A8%8B%E5%BA%8F/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Vscode 调试Spring Boot程序" />
+<meta property="og:description" content="摘要 Build Anything with Spring Boot：Spring Boot is the starting point for building all Spring-based applications. Spring Boot is designed to get you up and running as quickly as possible, with minimal upfront configuration of Spring. 大概意思翻译一下：Spring Boot 是所有基于 Spring 开" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.lucoder.com/post/2018/07/26/vscode-%E8%B0%83%E8%AF%95spring-boot%E7%A8%8B%E5%BA%8F/" /><meta property="article:published_time" content="2018-07-26T14:21:50&#43;08:00"/>
+<meta property="article:modified_time" content="2018-07-26T14:21:50&#43;08:00"/>
+
+<meta itemprop="name" content="Vscode 调试Spring Boot程序">
+<meta itemprop="description" content="摘要 Build Anything with Spring Boot：Spring Boot is the starting point for building all Spring-based applications. Spring Boot is designed to get you up and running as quickly as possible, with minimal upfront configuration of Spring. 大概意思翻译一下：Spring Boot 是所有基于 Spring 开">
+
+
+<meta itemprop="datePublished" content="2018-07-26T14:21:50&#43;08:00" />
+<meta itemprop="dateModified" content="2018-07-26T14:21:50&#43;08:00" />
+<meta itemprop="wordCount" content="1633">
+
+
+
+<meta itemprop="keywords" content="环境搭建,Javaweb,Spring Boot," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vscode 调试Spring Boot程序"/>
+<meta name="twitter:description" content="摘要 Build Anything with Spring Boot：Spring Boot is the starting point for building all Spring-based applications. Spring Boot is designed to get you up and running as quickly as possible, with minimal upfront configuration of Spring. 大概意思翻译一下：Spring Boot 是所有基于 Spring 开"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">牧轩笔记</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/about/">关于</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/links/">友链</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              专题
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              工具
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      牧轩笔记
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/links/">友链</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">专题</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">工具</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Vscode 调试Spring Boot程序</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-07-26" class="post-time">
+          2018-07-26
+        </time>
+        <div class="post-category">
+            <a href="https://me.lucoder.com/categories/java/"> Java </a>
+            <a href="https://me.lucoder.com/categories/javaweb/"> Javaweb </a>
+            <a href="https://me.lucoder.com/categories/spring-boot/"> Spring Boot </a>
+            <a href="https://me.lucoder.com/categories/vscode/"> Vscode </a>
+            <a href="https://me.lucoder.com/categories/%E8%B0%83%E8%AF%95/"> 调试 </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h1 id="摘要">摘要</h1>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/7896890-9323041dd0ce883e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Spring Boot" /></p>
+
+<blockquote>
+<p>Build Anything with Spring Boot：Spring Boot is the starting point for building all Spring-based applications. Spring Boot is designed to get you up and running as quickly as possible, with minimal upfront configuration of Spring.</p>
+</blockquote>
+
+<!--more -->
+
+<p>大概意思翻译一下：Spring Boot 是所有基于 Spring 开发的项目的起点。Spring Boot 的设计是为了让你尽可能快的跑起来 Spring 应用程序并且尽可能减少你的配置文件。这些都不再多说，Java 的Spring Boot我个人来说还是比较看好的。</p>
+
+<p>Visual Studio Code (简称 VS Code / VSC) 是一款免费开源的现代化轻量级代码编辑器，支持几乎所有主流的开发语言的语法高亮、智能代码补全、自定义热键、括号匹配、代码片段、代码对比 Diff、GIT 等特性，支持插件扩展，并针对网页开发和云端应用开发做了优化。软件跨平台支持 Win、Mac 以及 Linux。他最强大的地方是微软的<code>Language Server</code>，这货可以通过插件的方法支持<code>Java</code>、<code>C#</code>、<code>Python</code>、<code>Typescript</code>、<code>PHP</code>&hellip;.</p>
+
+<p>说了这么多的废话，开始引出本文的重点：<code>Spring Boot调试</code>。</p>
+
+<h1 id="插件安装">插件安装</h1>
+
+<p>关于VSCode 参考这篇文章：<a href="/post/201711/visual-studio-code/">Visual Studio Code</a></p>
+
+<p>在使用之前确保你已经安装了Java环境、安装了Vscode，然后安装下面的几个插件，至少需要这么几个插件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Java 环境：
+Java Extension Pack
+Java Language Support
+Debuger for Java
+
+Spring boot 环境：
+Spring Boot Extension Pack
+Spring Boot Tools
+Spring Initializr Java Support
+
+Maven 环境：
+Maven for Java</pre></td></tr></table>
+</div>
+</div>
+<h1 id="生成项目">生成项目</h1>
+
+<p>开始生成项目：</p>
+
+<p><code>Ctrl</code>+<code>Shift</code>+<code>P</code>，输入<code>Spring</code>，选择<code>Maven项目</code>（我个人比较喜欢Maven），然后选择<code>Java</code>，输入项目名称假设为<code>com.mx</code>，然后输入项目名称假设为<code>spider</code>，然后我一般选择<code>2.0.3</code>，由于是测试项目，我只选择一个<code>DevTools</code>，然后选择目录生成项目，然后打开项目<code>Open it</code>。</p>
+
+<p>需要注意一点，项目生成之后请先运行一下maven指令，下载必要的数据包。</p>
+
+<p>然后下面就是激动人心的时刻了！</p>
+
+<h1 id="撸代码">撸代码</h1>
+
+<p>测试代码是一个简单爬虫程序，爬取博客园博客数据。</p>
+
+<p>首先在<code>pom.xml</code>文件中添加我们用到的包<code>jsoup</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+  <span class="c">&lt;!-- jsoup HTML parser library @ https://jsoup.org/ --&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>org.jsoup<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>jsoup<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>1.11.3<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>然后我们首先找到<code>src/main/java/com/mx/spider/DemoApplication.java</code>文件，修改Spring Boot的启动行。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">DemoApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span><span class="c1">//删除启动项
+</span><span class="c1"></span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hello world!&#34;</span><span class="o">);</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>然后点击调试<code>蜘蛛图标</code>，直接点击调试(注意直接点击，先别配置，使用Vscode默认配置足以！)，首次将会非常慢。结合我的原因，应该是<code>maven</code>下载数据包和初始化引擎所致。</p>
+
+<h1 id="代码调试">代码调试</h1>
+
+<p>点击运行，妈耶！好神奇，环境好了！</p>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/07/26/20180726165210.png" alt="Hello world" /></p>
+
+<h1 id="来点复杂的调试">来点复杂的调试</h1>
+
+<p>下面来点复杂的调试，首先我们创建一个模型Blog，一个控制器BlogSpiderController，然后开始下面的工作：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">com.mx.models</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Blog</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">_url</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">_title</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">_detail</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getUrl</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">_url</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">_title</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getDetail</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">_detail</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUrl</span><span class="o">(</span><span class="n">String</span> <span class="n">url</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">url</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">url</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="s">&#34;http://&#34;</span><span class="o">)</span> <span class="o">||</span> <span class="n">url</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="s">&#34;https://&#34;</span><span class="o">)))</span>
+            <span class="n">_url</span> <span class="o">=</span> <span class="n">url</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setTitle</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">title</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">)</span>
+            <span class="n">_title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDetail</span><span class="o">(</span><span class="n">String</span> <span class="n">detial</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">detial</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">)</span>
+            <span class="n">_detail</span> <span class="o">=</span> <span class="n">detial</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="kn">package</span> <span class="nn">com.mx.controllers</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.mx.models.Blog</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.jsoup.Jsoup</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.jsoup.nodes.Document</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.jsoup.nodes.Element</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.jsoup.select.Elements</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BlogSpiderController</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">Run</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="n">Document</span> <span class="n">doc</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">doc</span> <span class="o">=</span> <span class="n">getUrlDocument</span><span class="o">(</span><span class="s">&#34;https://www.cnblogs.com/#p&#34;</span> <span class="o">+</span> <span class="n">i</span><span class="o">);</span>
+
+            <span class="k">for</span> <span class="o">(</span><span class="n">Blog</span> <span class="n">blog</span> <span class="o">:</span> <span class="n">getBlogListByDocument</span><span class="o">(</span><span class="n">doc</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">bindBlogDetail</span><span class="o">(</span><span class="n">blog</span><span class="o">);</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">blog</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Task Finished!&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">Document</span> <span class="nf">getUrlDocument</span><span class="o">(</span><span class="n">String</span> <span class="n">url</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="n">Document</span> <span class="n">doc</span> <span class="o">=</span> <span class="n">Jsoup</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="n">url</span><span class="o">).</span><span class="na">get</span><span class="o">();</span>
+        <span class="k">return</span> <span class="n">doc</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Blog</span><span class="o">&gt;</span> <span class="nf">getBlogListByDocument</span><span class="o">(</span><span class="n">Document</span> <span class="n">doc</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span><span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Blog</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Blog</span><span class="o">&gt;();</span>
+        <span class="n">Element</span> <span class="n">pageList</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="na">getElementById</span><span class="o">(</span><span class="s">&#34;post_list&#34;</span><span class="o">);</span>
+        <span class="n">Elements</span> <span class="n">blogs</span> <span class="o">=</span> <span class="n">pageList</span><span class="o">.</span><span class="na">getElementsByClass</span><span class="o">(</span><span class="s">&#34;post_item&#34;</span><span class="o">);</span>
+
+        <span class="n">Blog</span> <span class="n">b</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">Element</span> <span class="n">blog</span> <span class="o">:</span> <span class="n">blogs</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Blog</span><span class="o">();</span>
+            <span class="n">b</span><span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="n">blog</span><span class="o">.</span><span class="na">getElementsByTag</span><span class="o">(</span><span class="s">&#34;h3&#34;</span><span class="o">).</span><span class="na">text</span><span class="o">());</span>
+            <span class="n">b</span><span class="o">.</span><span class="na">setUrl</span><span class="o">(</span><span class="n">blog</span><span class="o">.</span><span class="na">getElementsByClass</span><span class="o">(</span><span class="s">&#34;titlelnk&#34;</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">).</span><span class="na">attr</span><span class="o">(</span><span class="s">&#34;href&#34;</span><span class="o">));</span>
+            <span class="n">b</span><span class="o">.</span><span class="na">setSumary</span><span class="o">(</span><span class="n">blog</span><span class="o">.</span><span class="na">getElementsByClass</span><span class="o">(</span><span class="s">&#34;post_item_summary&#34;</span><span class="o">).</span><span class="na">text</span><span class="o">());</span>
+            <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">b</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">list</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">bindBlogDetail</span><span class="o">(</span> <span class="n">Blog</span> <span class="n">blog</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span><span class="o">{</span>
+        <span class="c1">//Do data bind
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>好了代码部分先写这么多，上文中绑定详细信息部分我不再写，因为几个步骤已经满足调试需求。</p>
+
+<h1 id="断点调试">断点调试</h1>
+
+<ol>
+<li>按照vs习惯，下设断点。</li>
+</ol>
+
+<p>同样的，在代码左侧双击下设断点，在断点监视器也可以随时修改断点。</p>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/07/26/20180726165304.png" alt="断点设置" /></p>
+
+<ol>
+<li>点击调试</li>
+</ol>
+
+<p>我的习惯是查看这几部分：
+    1). 变量属性
+    2). 堆栈调用情况
+    3). 变量变化情况</p>
+
+<p>分别从下面几块儿查看数据。</p>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/07/26/20180726165432.png" alt="变量域" /></p>
+
+<ol>
+<li>查看调试信息</li>
+</ol>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/07/26/20180726165411.png" alt="调试信息" /></p>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/07/26/20180726165503.png" alt="调试信息" /></p>
+
+<blockquote>
+<p>总结</p>
+</blockquote>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/07/26/20180726165607.png" alt="程序结果" /></p>
+
+<p>本文主要使用Spring Boot Console程序演示Spring Boot的调试过程，但是Spring Boot如果是面向于Web端或许更加合适，但是Web代码编写相对复杂，所以选用了Console来演示调试过程。</p>
+
+<p>【源代码】：<a href="http://skpan.com/fs/4lfu0c7oad5e9r2com3/">YunFile</a></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-07-26</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://me.lucoder.com/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">环境搭建</a>
+          <a href="https://me.lucoder.com/tags/javaweb/">Javaweb</a>
+          <a href="https://me.lucoder.com/tags/spring-boot/">Spring Boot</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2018/07/26/opencv%E5%B0%86rgb%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%8D%95%E9%80%9A%E9%81%93%E7%81%B0%E5%9B%BE/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">OpenCV将RGB转换为单通道灰图</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2018/07/26/%E8%81%94%E6%83%B3%E6%8B%AF%E6%95%91%E8%80%85%E7%94%B5%E8%84%91%E8%A3%85ubuntu%E6%B2%A1%E6%9C%89wifi/">
+            <span class="next-text nav-default">联想拯救者电脑装Ubuntu没有WIFI</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@lucoder.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://me.lucoder.com/pages/open/" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://me.lucoder.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    <a class="hexo-link" href="http://www.miitbeian.gov.cn/">豫ICP备16017737号-2</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    图像CDN:<a class="theme-link" href="https://www.upyun.com/">又拍云</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="theme-link" href="https://www.foreverblog.cn/">十年之约</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        牧轩居士
+        
+      </span></span>
+
+  
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

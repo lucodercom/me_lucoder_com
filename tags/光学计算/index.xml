@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>光学计算 on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/tags/%E5%85%89%E5%AD%A6%E8%AE%A1%E7%AE%97/</link>
+    <description>Recent content in 光学计算 on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Mon, 03 Dec 2018 10:01:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/tags/%E5%85%89%E5%AD%A6%E8%AE%A1%E7%AE%97/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>伏羲之光项目</title>
+      <link>https://me.lucoder.com/post/2018/12/03/fucier/</link>
+      <pubDate>Mon, 03 Dec 2018 10:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2018/12/03/fucier/</guid>
+      <description>项目介绍 伏羲之光是一个基于Opencv+GDAL的图像处理框架支持nuget下载包，采用ASP.NET Core 2.1 开发程序，可以生成跨平台可执行程序</description>
+    </item>
+    
+  </channel>
+</rss>

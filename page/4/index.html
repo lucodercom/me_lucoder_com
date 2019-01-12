@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>牧轩日志 - 记录开发中的点点滴滴</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="牧轩笔记录，记录开发的点点滴滴" />
+  <meta name="keywords" content="牧轩, 牧轩居士, 笔记录" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50" />
+
+
+<link rel="canonical" href="https://me.lucoder.com/" />
+<link href="https://me.lucoder.com/index.xml" rel="alternate" type="application/rss+xml" title="牧轩日志 - 记录开发中的点点滴滴" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="牧轩日志 - 记录开发中的点点滴滴" />
+<meta property="og:description" content="牧轩笔记录，记录开发的点点滴滴" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://me.lucoder.com/" />
+<meta property="og:updated_time" content="2018-04-23T14:21:50&#43;08:00"/>
+
+<meta itemprop="name" content="牧轩日志 - 记录开发中的点点滴滴">
+<meta itemprop="description" content="牧轩笔记录，记录开发的点点滴滴">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="牧轩日志 - 记录开发中的点点滴滴"/>
+<meta name="twitter:description" content="牧轩笔记录，记录开发的点点滴滴"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">牧轩笔记</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/about/">关于</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/links/">友链</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              专题
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              工具
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      牧轩笔记
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/links/">友链</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">专题</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">工具</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          
+  <section id="posts" class="posts">
+    
+    
+    
+      <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2018/04/23/ionic-%E4%BD%BF%E7%94%A8-webrtc/">ionic 使用 webrtc</a></h1>
+    
+    <div class="post-meta">
+      <time datetime="2018-04-23" class="post-time">
+        2018-04-23
+      </time>
+      <div class="post-category">
+          <a href="https://me.lucoder.com/categories/webrtc/"> WebRTC </a>
+          
+        </div>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      ionic 使用 webrtc WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Re
+    </div>
+    <div class="read-more">
+      <a href="/post/2018/04/23/ionic-%E4%BD%BF%E7%94%A8-webrtc/" class="read-more-link">Read more</a>
+    </div>
+    
+  </div>
+</article>
+
+    
+      <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2018/04/21/%E5%9F%BA%E4%BA%8Elocalsortage%E5%AE%9E%E7%8E%B0%E7%9A%84web%E4%B8%B4%E6%97%B6%E6%95%B0%E6%8D%AE%E5%BA%93/">基于LocalSortage实现的web临时数据库</a></h1>
+    
+    <div class="post-meta">
+      <time datetime="2018-04-21" class="post-time">
+        2018-04-21
+      </time>
+      <div class="post-category">
+          <a href="https://me.lucoder.com/categories/%E5%89%8D%E7%AB%AF/"> 前端 </a>
+          <a href="https://me.lucoder.com/categories/h5db/"> H5DB </a>
+          <a href="https://me.lucoder.com/categories/localsortage/"> LocalSortage </a>
+          <a href="https://me.lucoder.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
+          
+        </div>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      <h1 id="基于localsortage实现的web临时数据库">基于LocalSortage实现的web临时数据库</h1>
+
+<blockquote>
+<p>该数据库基于localStorage的一个封装，实现键值对的存入和键值的取出，支持跨页面数据保存。该封装是团队内部使用的封装，不保证通用性以及bug的出现。</p>
+</blockquote>
+
+<p></p>
+    </div>
+    <div class="read-more">
+      <a href="/post/2018/04/21/%E5%9F%BA%E4%BA%8Elocalsortage%E5%AE%9E%E7%8E%B0%E7%9A%84web%E4%B8%B4%E6%97%B6%E6%95%B0%E6%8D%AE%E5%BA%93/" class="read-more-link">Read more</a>
+    </div>
+    
+  </div>
+</article>
+
+    
+      <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2018/04/21/asp.net-core-ef%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/">ASP.NET CORE EF操作数据库</a></h1>
+    
+    <div class="post-meta">
+      <time datetime="2018-04-02" class="post-time">
+        2018-04-02
+      </time>
+      <div class="post-category">
+          <a href="https://me.lucoder.com/categories/asp.net-core/"> ASP.NET Core </a>
+          <a href="https://me.lucoder.com/categories/ef-core/"> EF Core </a>
+          
+        </div>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      <blockquote>
+<p>写在前面：本文主要内容大多参考的MSD官网文档，本节参考网址 <a href="https://docs.microsoft.com/zh-cn/aspnet/core/data/ef-rp/intro">https://docs.microsoft.com/zh-cn/aspnet/core/data/ef-rp/intro</a></p>
+</blockquote>
+
+<h1 id="codefirst">CodeFirst</h1>
+
+<h2 id="安装ef框架">安装EF框架</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Powershell" data-lang="Powershell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Powershell" data-lang="Powershell"><span class="n">Install-Package</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">EntityFrameworkCore</span><span class="p">.</span><span class="n">SqlServer</span>
+<span class="n">Install-Package</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">EntityFrameworkCore</span><span class="p">.</span><span class="n">Tools</span>
+<span class="n">Install-Package</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">VisualStudio</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">CodeGeneration</span><span class="p">.</span><span class="n">Design</span></code></pre></td></tr></table>
+</div>
+</div>
+<p></p>
+    </div>
+    <div class="read-more">
+      <a href="/post/2018/04/21/asp.net-core-ef%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/" class="read-more-link">Read more</a>
+    </div>
+    
+  </div>
+</article>
+
+    
+      <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2018/03/13/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85node%E7%8E%AF%E5%A2%83/">树莓派安装node环境</a></h1>
+    
+    <div class="post-meta">
+      <time datetime="2018-03-13" class="post-time">
+        2018-03-13
+      </time>
+      <div class="post-category">
+          <a href="https://me.lucoder.com/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"> 嵌入式 </a>
+          <a href="https://me.lucoder.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"> 树莓派 </a>
+          <a href="https://me.lucoder.com/categories/node/"> Node </a>
+          
+        </div>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      树莓派安装node环境 下载node包 https://npm.taobao.org/mirrors/node/ 我选择的是node-v9.5.0-linux-armv7l.tar.gz，当然可以选择其他版本，但是注
+    </div>
+    <div class="read-more">
+      <a href="/post/2018/03/13/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85node%E7%8E%AF%E5%A2%83/" class="read-more-link">Read more</a>
+    </div>
+    
+  </div>
+</article>
+
+    
+      <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2018/02/27/dynamic_web_module_3.0_require_1.6_or_newer/">动态网站模块错误</a></h1>
+    
+    <div class="post-meta">
+      <time datetime="2018-02-27" class="post-time">
+        2018-02-27
+      </time>
+      <div class="post-category">
+          <a href="https://me.lucoder.com/categories/java/"> Java </a>
+          <a href="https://me.lucoder.com/categories/javaweb/"> Javaweb </a>
+          <a href="https://me.lucoder.com/categories/%E6%A8%A1%E5%9D%97%E9%94%99%E8%AF%AF/"> 模块错误 </a>
+          
+        </div>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      动态网站模块错误 1 Dynamic Web Module 3.0 Require 1.6 Or Newer。 修改pom.xml 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt; &lt;version&gt;3.1&lt;/version&gt; &lt;configuration&gt; &lt;source&gt;1.8&lt;/source&gt; &lt;target&gt;1.8&lt;/target&gt; &lt;/configuration&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt;
+    </div>
+    <div class="read-more">
+      <a href="/post/2018/02/27/dynamic_web_module_3.0_require_1.6_or_newer/" class="read-more-link">Read more</a>
+    </div>
+    
+  </div>
+</article>
+
+    
+      <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2018/02/24/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/">Java中的SSM框架和配置</a></h1>
+    
+    <div class="post-meta">
+      <time datetime="2018-02-24" class="post-time">
+        2018-02-24
+      </time>
+      <div class="post-category">
+          <a href="https://me.lucoder.com/categories/java/"> Java </a>
+          <a href="https://me.lucoder.com/categories/javaweb/"> Javaweb </a>
+          
+        </div>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      什么是SSM框架 SSM框架是JavaWeb中常用的框架，包括Spring、Spring MVC、Mybatis三种框架的一个整合。其中任意两个
+    </div>
+    <div class="read-more">
+      <a href="/post/2018/02/24/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/" class="read-more-link">Read more</a>
+    </div>
+    
+  </div>
+</article>
+
+    
+      <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2018/02/21/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/">使用JAXB处理XML文件</a></h1>
+    
+    <div class="post-meta">
+      <time datetime="2018-02-21" class="post-time">
+        2018-02-21
+      </time>
+      <div class="post-category">
+          <a href="https://me.lucoder.com/categories/java/"> Java </a>
+          <a href="https://me.lucoder.com/categories/jaxb/"> JAXB </a>
+          <a href="https://me.lucoder.com/categories/xml/"> XML </a>
+          
+        </div>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      使用JAXB处理XML文件 JAXB（Java Architecture for XML Binding) 是一个业界的标准，是一项可以根据XML Schema产生Java类的技术。该过程中，JAX
+    </div>
+    <div class="read-more">
+      <a href="/post/2018/02/21/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/" class="read-more-link">Read more</a>
+    </div>
+    
+  </div>
+</article>
+
+    
+      <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2017/11/22/visual-studio-code/">Visual Studio Code</a></h1>
+    
+    <div class="post-meta">
+      <time datetime="2017-11-22" class="post-time">
+        2017-11-22
+      </time>
+      <div class="post-category">
+          <a href="https://me.lucoder.com/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
+          <a href="https://me.lucoder.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"> 开发工具 </a>
+          <a href="https://me.lucoder.com/categories/visual-studio-code/"> Visual Studio Code </a>
+          
+        </div>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      Visual Studio Code 官网：https://code.visualstudio.com/ VSCode可以认为是一个迷你版的Visual Studio，大概45
+    </div>
+    <div class="read-more">
+      <a href="/post/2017/11/22/visual-studio-code/" class="read-more-link">Read more</a>
+    </div>
+    
+  </div>
+</article>
+
+    
+      <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2017/11/03/ioni%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">IONIC开发环境搭建</a></h1>
+    
+    <div class="post-meta">
+      <time datetime="2017-11-03" class="post-time">
+        2017-11-03
+      </time>
+      <div class="post-category">
+          <a href="https://me.lucoder.com/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"> 移动开发 </a>
+          <a href="https://me.lucoder.com/categories/%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF/"> 混合开发技术 </a>
+          <a href="https://me.lucoder.com/categories/ionc/"> IONC </a>
+          
+        </div>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      IONI开发环境搭建 官网：https://ionicframework.com/docs/ ionic是一个用来开发混合手机应用的，开源的，免
+    </div>
+    <div class="read-more">
+      <a href="/post/2017/11/03/ioni%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="read-more-link">Read more</a>
+    </div>
+    
+  </div>
+</article>
+
+    
+  </section>
+
+  
+  
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  <nav class="pagination">
+    <ul>
+      
+      <li >
+        <a href="/">1</a>
+      </li>
+      
+      <li >
+        <a href="/page/2/">2</a>
+      </li>
+      
+      <li >
+        <a href="/page/3/">3</a>
+      </li>
+      
+      <li  class="active" >
+        <a href="/page/4/">4</a>
+      </li>
+      
+    </ul>
+  </nav>
+
+  
+  
+
+
+
+
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@lucoder.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://me.lucoder.com/pages/open/" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://me.lucoder.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    <a class="hexo-link" href="http://www.miitbeian.gov.cn/">豫ICP备16017737号-2</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    图像CDN:<a class="theme-link" href="https://www.upyun.com/">又拍云</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="theme-link" href="https://www.foreverblog.cn/">十年之约</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        牧轩居士
+        
+      </span></span>
+
+  
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

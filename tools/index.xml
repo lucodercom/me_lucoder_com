@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/tools/</link>
+    <description>Recent content in Tools on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Sat, 03 Nov 2018 16:01:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>便捷工具</title>
+      <link>https://me.lucoder.com/tools/key/</link>
+      <pubDate>Sat, 03 Nov 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/tools/key/</guid>
+      <description>全系列激活码</description>
+    </item>
+    
+    <item>
+      <title>在线工具</title>
+      <link>https://me.lucoder.com/tools/onlinetools/</link>
+      <pubDate>Sat, 03 Nov 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/tools/onlinetools/</guid>
+      <description>牧轩的产品或许需要统一验证。 牧轩网盘 牧轩API</description>
+    </item>
+    
+  </channel>
+</rss>

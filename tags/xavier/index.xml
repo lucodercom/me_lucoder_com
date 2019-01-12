@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xavier on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/tags/xavier/</link>
+    <description>Recent content in Xavier on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Sun, 06 Jan 2019 21:01:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/tags/xavier/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jetson TX2 编译安装Visual Studio Code</title>
+      <link>https://me.lucoder.com/post/2019/01/06/jetson-xavier-%E7%BC%96%E8%AF%91vscode/</link>
+      <pubDate>Sun, 06 Jan 2019 21:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/01/06/jetson-xavier-%E7%BC%96%E8%AF%91vscode/</guid>
+      <description>VSCode是微软开发的一款开源的编辑器，支持Linux、Windows、Mac等平台，鉴于笔者是在Jetson Xavier开发的，所以今天</description>
+    </item>
+    
+  </channel>
+</rss>

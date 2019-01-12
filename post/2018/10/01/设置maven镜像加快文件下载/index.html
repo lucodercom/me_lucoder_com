@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>设置Maven镜像加快文件下载 - 牧轩日志 - 记录开发中的点点滴滴</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="设置Maven镜像加快文件下载 在日常生活中，我们使用maven下载需要的jar包，但是很多的时候由于中央仓库没有，所以我们没有办法下载到需要" />
+
+  <meta name="keywords" content="牧轩, 牧轩居士, 笔记录" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50" />
+
+
+<link rel="canonical" href="https://me.lucoder.com/post/2018/10/01/%E8%AE%BE%E7%BD%AEmaven%E9%95%9C%E5%83%8F%E5%8A%A0%E5%BF%AB%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="设置Maven镜像加快文件下载" />
+<meta property="og:description" content="设置Maven镜像加快文件下载 在日常生活中，我们使用maven下载需要的jar包，但是很多的时候由于中央仓库没有，所以我们没有办法下载到需要" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.lucoder.com/post/2018/10/01/%E8%AE%BE%E7%BD%AEmaven%E9%95%9C%E5%83%8F%E5%8A%A0%E5%BF%AB%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/" /><meta property="article:published_time" content="2018-10-01T14:21:50&#43;08:00"/>
+<meta property="article:modified_time" content="2018-10-01T14:21:50&#43;08:00"/>
+
+<meta itemprop="name" content="设置Maven镜像加快文件下载">
+<meta itemprop="description" content="设置Maven镜像加快文件下载 在日常生活中，我们使用maven下载需要的jar包，但是很多的时候由于中央仓库没有，所以我们没有办法下载到需要">
+
+
+<meta itemprop="datePublished" content="2018-10-01T14:21:50&#43;08:00" />
+<meta itemprop="dateModified" content="2018-10-01T14:21:50&#43;08:00" />
+<meta itemprop="wordCount" content="442">
+
+
+
+<meta itemprop="keywords" content="Java,Maven,镜像," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="设置Maven镜像加快文件下载"/>
+<meta name="twitter:description" content="设置Maven镜像加快文件下载 在日常生活中，我们使用maven下载需要的jar包，但是很多的时候由于中央仓库没有，所以我们没有办法下载到需要"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">牧轩笔记</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/about/">关于</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/links/">友链</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              专题
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              工具
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      牧轩笔记
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/links/">友链</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">专题</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">工具</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">设置Maven镜像加快文件下载</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-10-01" class="post-time">
+          2018-10-01
+        </time>
+        <div class="post-category">
+            <a href="https://me.lucoder.com/categories/java/"> Java </a>
+            <a href="https://me.lucoder.com/categories/maven/"> Maven </a>
+            <a href="https://me.lucoder.com/categories/%E9%95%9C%E5%83%8F/"> 镜像 </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h1 id="设置maven镜像加快文件下载">设置Maven镜像加快文件下载</h1>
+
+<blockquote>
+<p>在日常生活中，我们使用maven下载需要的jar包，但是很多的时候由于中央仓库没有，所以我们没有办法下载到需要的jar包，手动去下载上，然后放入到lib下，然后build path有的时候会感到很不舒服，不是很是不实用。所以此处可以在maven的设置中心添加多个下载仓库，当中央仓库没有的话，继续到下一个仓库去下载。这样丰富了中央仓库的下载地址。</p>
+</blockquote>
+
+<p>首先找到你的Maven的配置文件的位置，然后将下面的代码复制到你的配置文件中：</p>
+
+<blockquote>
+<p>注意将速度比较慢的网址放到后面</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;mirrors&gt;</span>  
+    <span class="c">&lt;!-- mirror  
+</span><span class="c">     | Specifies a repository mirror site to use instead of a given repository. The repository that  
+</span><span class="c">     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used  
+</span><span class="c">     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.  
+</span><span class="c">     |  
+</span><span class="c">    &lt;mirror&gt;  
+</span><span class="c">      &lt;id&gt;mirrorId&lt;/id&gt;  
+</span><span class="c">      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;  
+</span><span class="c">      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;  
+</span><span class="c">      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;  
+</span><span class="c">    &lt;/mirror&gt;  
+</span><span class="c">     --&gt;</span>  
+
+     <span class="nt">&lt;mirror&gt;</span>
+        <span class="nt">&lt;id&gt;</span>nexus-163<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;mirrorOf&gt;</span>*<span class="nt">&lt;/mirrorOf&gt;</span>
+        <span class="nt">&lt;name&gt;</span>Nexus 163<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;url&gt;</span>http://mirrors.163.com/maven/repository/maven-public/<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;/mirror&gt;</span>
+	<span class="nt">&lt;mirror&gt;</span>
+        <span class="nt">&lt;id&gt;</span>alimaven<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;name&gt;</span>aliyun maven<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;url&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="nt">&lt;/url&gt;</span>
+        <span class="nt">&lt;mirrorOf&gt;</span>central<span class="nt">&lt;/mirrorOf&gt;</span>
+    <span class="nt">&lt;/mirror&gt;</span>
+    <span class="nt">&lt;mirror&gt;</span>
+        <span class="nt">&lt;id&gt;</span>central<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;name&gt;</span>Maven Repository Switchboard<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;url&gt;</span>http://repo1.maven.org/maven2/<span class="nt">&lt;/url&gt;</span>
+        <span class="nt">&lt;mirrorOf&gt;</span>central<span class="nt">&lt;/mirrorOf&gt;</span>
+    <span class="nt">&lt;/mirror&gt;</span>
+    <span class="nt">&lt;mirror&gt;</span>
+        <span class="nt">&lt;id&gt;</span>repo2<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;mirrorOf&gt;</span>central<span class="nt">&lt;/mirrorOf&gt;</span>
+        <span class="nt">&lt;name&gt;</span>Human Readable Name for this Mirror.<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;url&gt;</span>http://repo2.maven.org/maven2/<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;/mirror&gt;</span>
+    <span class="nt">&lt;mirror&gt;</span>
+        <span class="nt">&lt;id&gt;</span>ibiblio<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;mirrorOf&gt;</span>central<span class="nt">&lt;/mirrorOf&gt;</span>
+        <span class="nt">&lt;name&gt;</span>Human Readable Name for this Mirror.<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;url&gt;</span>http://mirrors.ibiblio.org/pub/mirrors/maven2/<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;/mirror&gt;</span>
+    <span class="nt">&lt;mirror&gt;</span>
+        <span class="nt">&lt;id&gt;</span>jboss-public-repository-group<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;mirrorOf&gt;</span>central<span class="nt">&lt;/mirrorOf&gt;</span>
+        <span class="nt">&lt;name&gt;</span>JBoss Public Repository Group<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;url&gt;</span>http://repository.jboss.org/nexus/content/groups/public<span class="nt">&lt;/url&gt;</span>
+    <span class="nt">&lt;/mirror&gt;</span>
+    <span class="c">&lt;!-- 中央仓库在中国的镜像 --&gt;</span>
+    <span class="nt">&lt;mirror&gt;</span>
+        <span class="nt">&lt;id&gt;</span>maven.net.cn<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;name&gt;</span>oneof the central mirrors in china<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;url&gt;</span>http://maven.net.cn/content/groups/public/<span class="nt">&lt;/url&gt;</span>
+        <span class="nt">&lt;mirrorOf&gt;</span>central<span class="nt">&lt;/mirrorOf&gt;</span>
+    <span class="nt">&lt;/mirror&gt;</span>
+  <span class="nt">&lt;/mirrors&gt;</span>  </code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-10-01</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://me.lucoder.com/tags/java/">Java</a>
+          <a href="https://me.lucoder.com/tags/maven/">Maven</a>
+          <a href="https://me.lucoder.com/tags/%E9%95%9C%E5%83%8F/">镜像</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2018/10/01/ubuntu%E5%AE%89%E8%A3%85mpi/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Ubuntu安装MPI</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2018/08/14/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E5%92%8C%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/">
+            <span class="next-text nav-default">动态链接库和静态链接库</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@lucoder.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://me.lucoder.com/pages/open/" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://me.lucoder.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    <a class="hexo-link" href="http://www.miitbeian.gov.cn/">豫ICP备16017737号-2</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    图像CDN:<a class="theme-link" href="https://www.upyun.com/">又拍云</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="theme-link" href="https://www.foreverblog.cn/">十年之约</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        牧轩居士
+        
+      </span></span>
+
+  
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

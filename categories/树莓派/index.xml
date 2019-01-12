@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>树莓派 on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
+    <description>Recent content in 树莓派 on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Tue, 13 Mar 2018 14:21:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>树莓派安装node环境</title>
+      <link>https://me.lucoder.com/post/2018/03/13/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85node%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Tue, 13 Mar 2018 14:21:50 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2018/03/13/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85node%E7%8E%AF%E5%A2%83/</guid>
+      <description>树莓派安装node环境 下载node包 https://npm.taobao.org/mirrors/node/ 我选择的是node-v9.5.0-linux-armv7l.tar.gz，当然可以选择其他版本，但是注</description>
+    </item>
+    
+  </channel>
+</rss>

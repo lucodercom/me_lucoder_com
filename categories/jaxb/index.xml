@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jaxb on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/categories/jaxb/</link>
+    <description>Recent content in Jaxb on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Wed, 21 Feb 2018 14:21:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/categories/jaxb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用JAXB处理XML文件</title>
+      <link>https://me.lucoder.com/post/2018/02/21/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Wed, 21 Feb 2018 14:21:50 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2018/02/21/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/</guid>
+      <description>使用JAXB处理XML文件 JAXB（Java Architecture for XML Binding) 是一个业界的标准，是一项可以根据XML Schema产生Java类的技术。该过程中，JAX</description>
+    </item>
+    
+  </channel>
+</rss>

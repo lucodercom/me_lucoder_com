@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>移动开发 on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in 移动开发 on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Sun, 22 Jul 2018 14:21:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IONIC跨域问题</title>
+      <link>https://me.lucoder.com/post/2018/07/22/ionic%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 22 Jul 2018 14:21:50 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2018/07/22/ionic%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</guid>
+      <description>Ionic跨域问题是一个重要的问题，但是一定要注意一点真机里网页的访问走的是file://协议，而非http://或https://，因此不</description>
+    </item>
+    
+    <item>
+      <title>Ionic错误集合</title>
+      <link>https://me.lucoder.com/post/2018/07/02/ionic%E9%94%99%E8%AF%AF%E9%9B%86%E5%90%88/</link>
+      <pubDate>Mon, 02 Jul 2018 14:21:50 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2018/07/02/ionic%E9%94%99%E8%AF%AF%E9%9B%86%E5%90%88/</guid>
+      <description>IONIC是一个非常强大的开源混合开发框架，但是部署项目总会遇到或多或少的错误，对于新手就会非常棘手。 安装错误 开发错误 缺少IONIC脚本 ionic serve</description>
+    </item>
+    
+    <item>
+      <title>IONIC开发环境搭建</title>
+      <link>https://me.lucoder.com/post/2017/11/03/ioni%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Fri, 03 Nov 2017 16:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2017/11/03/ioni%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <description>IONI开发环境搭建 官网：https://ionicframework.com/docs/ ionic是一个用来开发混合手机应用的，开源的，免</description>
+    </item>
+    
+  </channel>
+</rss>

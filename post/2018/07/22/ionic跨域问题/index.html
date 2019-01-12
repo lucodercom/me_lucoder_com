@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>IONIC跨域问题 - 牧轩日志 - 记录开发中的点点滴滴</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="Ionic跨域问题是一个重要的问题，但是一定要注意一点真机里网页的访问走的是file://协议，而非http://或https://，因此不" />
+
+  <meta name="keywords" content="牧轩, 牧轩居士, 笔记录" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50" />
+
+
+<link rel="canonical" href="https://me.lucoder.com/post/2018/07/22/ionic%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="IONIC跨域问题" />
+<meta property="og:description" content="Ionic跨域问题是一个重要的问题，但是一定要注意一点真机里网页的访问走的是file://协议，而非http://或https://，因此不" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.lucoder.com/post/2018/07/22/ionic%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" /><meta property="article:published_time" content="2018-07-22T14:21:50&#43;08:00"/>
+<meta property="article:modified_time" content="2018-07-22T14:21:50&#43;08:00"/>
+
+<meta itemprop="name" content="IONIC跨域问题">
+<meta itemprop="description" content="Ionic跨域问题是一个重要的问题，但是一定要注意一点真机里网页的访问走的是file://协议，而非http://或https://，因此不">
+
+
+<meta itemprop="datePublished" content="2018-07-22T14:21:50&#43;08:00" />
+<meta itemprop="dateModified" content="2018-07-22T14:21:50&#43;08:00" />
+<meta itemprop="wordCount" content="2580">
+
+
+
+<meta itemprop="keywords" content="移动开发,IONIC,跨域," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="IONIC跨域问题"/>
+<meta name="twitter:description" content="Ionic跨域问题是一个重要的问题，但是一定要注意一点真机里网页的访问走的是file://协议，而非http://或https://，因此不"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">牧轩笔记</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/about/">关于</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/links/">友链</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              专题
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              工具
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      牧轩笔记
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/links/">友链</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">专题</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">工具</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">IONIC跨域问题</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-07-22" class="post-time">
+          2018-07-22
+        </time>
+        <div class="post-category">
+            <a href="https://me.lucoder.com/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"> 移动开发 </a>
+            <a href="https://me.lucoder.com/categories/ionic/"> IONIC </a>
+            <a href="https://me.lucoder.com/categories/%E8%B7%A8%E5%9F%9F/"> 跨域 </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p><img src="https://oss.lucoder.com/uploads/2018/07/22/20180726191011.png" alt="https://oss.lucoder.com/uploads/2018/07/22/20180726191011.png" /></p>
+
+<p>Ionic跨域问题是一个重要的问题，但是一定要注意一点真机里网页的访问走的是file://协议，而非http://或https://，因此不会出现跨域问题：<code>ionic跨域问题只存在于调试</code>（包括浏览器调试和&ndash;livereload，真机的livereload仍然是基于浏览器，还会报错），如果真机发布不会出现任何问题，下面给出几个解决方法：</p>
+
+<h2 id="设置代理模式">设置代理模式</h2>
+
+<p>现在假设有一个服务器：<code>https://api.lucoder.com/services/jpush/</code>，解决这个其实很简单，后端服务器不需要做任何处理，只需要在ionic的配置文件（ionic.config.json）里加上proxy这个字段，
+设置ionic代理，如下所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;proxy-example&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;app_id&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;proxies&#34;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;/services/&#34;</span><span class="p">,</span><span class="err">//这相当于https://api.lucoder.com/services/</span>
+      <span class="nt">&#34;proxyUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;https://api.lucoder.com/services/&#34;</span> <span class="err">//这部分蓝色就是之前的原api请求地址</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>然后调用的时候可以直接使用下面代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-typescript" data-lang="typescript"><span class="nx">url</span>:<span class="kt">string</span> <span class="o">=</span> <span class="s2">&#34;jpush/&#34;</span><span class="p">;</span>
+<span class="nx">push</span><span class="p">()</span><span class="o">:</span><span class="k">void</span><span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">url</span> <span class="o">+</span> <span class="s2">&#34;push&#34;</span><span class="p">).</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">resolve</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">)</span>
+    <span class="p">},</span> <span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">reject</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>浏览器调试完全没问题，使用<code>livereload</code>也没有问题，但是<code>真题运行需要修改掉</code>，复原即可，否则就会出现错误，另外的这个<code>proxies</code>是一个数组，可以有多个代理！</p>
+
+<h2 id="设置浏览器安全项目">设置浏览器安全项目</h2>
+
+<p>这个方法是最简单的，最适合chrome浏览器调试的，只需要将<code>--disable-web-security</code>放到快捷方式里面即可。</p>
+
+<h2 id="不成熟的设置后台代码">不成熟的设置后台代码</h2>
+
+<p>为什么说这个是不成熟的，一是好多时候我们需要使用的是真机调试，二是很多时候我们会参考三方的api，我们不可能去修改别人的主机，和后台代码。下面介绍两种方法：</p>
+
+<h4 id="nginx">nginx</h4>
+
+<p>【转载】:<a href="https://www.cnblogs.com/gabrielchen/p/5066120.html">https://www.cnblogs.com/gabrielchen/p/5066120.html</a></p>
+
+<p>上面已经说到，禁止跨域问题其实是浏览器的一种安全行为，而现在的大多数解决方案都是用标签可以跨域访问的这个漏洞或者是技巧去完成，但都少不了目标服务器做相应的改变，而我最近遇到了一个需求是，目标服务器不能给予我一个header，更不可以改变代码返回个script，所以前5种方案都被我否决掉。最后因为我的网站是我自己的主机，所以我决定搭建一个nginx并把相应代码部署在它的下面，由页面请求本域名的一个地址，转由nginx代理处理后返回结果给页面，而且这一切都是同步的。
+　　关于nginx的一些基本配置和安装请看我的另一篇博客，下面直接讲解如何配置一个反向代理。
+　　首先找到nginx.conf或者nginx.conf.default 或者是default里面的这部份<br />
+ 　其中server代表启动的一个服务，location 是一个定位规则。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-config" data-lang="config"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-config" data-lang="config">location /｛   #所有以/开头的地址，实际上是所有请求
+root  html     ＃去请求../html文件夹里的文件,其中..的路径在nginx里面有定义，安装的时候会有默认路径，详见另一篇博客
+index  index.html index.htm  ＃首页响应地址
+｝</code></pre></td></tr></table>
+</div>
+</div>
+<p>　　从上面可以看出location是nginx用来路由的入口，所以我们接下来要在location里面完成我们的反向代理。</p>
+
+<p>　　假如我们我们是www.a.com/html/msg.html 想请求www.b.com/api/?method=1&amp;para=2；</p>
+
+<p>　　我们的ajax：</p>
+
+<p>var url = &lsquo;<a href="http://www.b.com/api/msg?method=1&amp;para=2'；">http://www.b.com/api/msg?method=1&amp;para=2'；</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+<span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;GET&#34;</span><span class="p">,</span>
+<span class="nx">url</span><span class="o">:</span><span class="nx">url</span><span class="p">,</span>
+<span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){..},</span>
+<span class="p">....</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>　　上面的请求必然会遇到跨域问题，这时我们需要修改一下我们的请求url，让请求发在nginx的一个url下。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;http://www.b.com/api/msg?method=1&amp;para=2&#39;</span><span class="err">；</span> 
+<span class="kd">var</span> <span class="nx">proxyurl</span> <span class="err">＝</span> <span class="s1">&#39;msg?method=1&amp;para=2&#39;</span><span class="err">；</span>
+<span class="c1">//假如实际地址是 www.c.com/proxy/html/api/msg?method=1&amp;para=2; www.c.com是nginx主机地址
+</span><span class="c1"></span> <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span> 
+<span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;GET&#34;</span><span class="p">,</span> 
+<span class="nx">url</span><span class="o">:</span><span class="nx">proxyurl</span><span class="p">,</span> 
+<span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){..},</span> 
+<span class="p">....</span> 
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>　　再在刚才的路径中匹配到这个请求，我们在location下面再添加一个location。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-conf" data-lang="conf"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-conf" data-lang="conf">location ^~/proxy/html/{
+rewrite ^/proxy/html/(.*)$ /$1 break;
+proxy_pass http://www.b.com/;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<p>以下做一个解释：
+1. &lsquo;^~ /proxy/html/ &lsquo;</p>
+
+<p>　　就像上面说的一样是一个匹配规则，用于拦截请求，匹配任何以 /proxy/html/开头的地址，匹配符合以后，停止往下搜索正则。</p>
+
+<ol>
+<li>rewrite ^/proxy/html/(.*)$ /$1 break;</li>
+</ol>
+
+<p>　　代表重写拦截进来的请求，并且只能对域名后边的除去传递的参数外的字符串起作用，例如www.c.com/proxy/html/api/msg?method=1&amp;para=2重写。只对/proxy/html/api/msg重写。</p>
+
+<p>　　rewrite后面的参数是一个简单的正则 ^/proxy/html/(.*)$ ,$1代表正则中的第一个(),$2代表第二个()的值,以此类推。
+　　break代表匹配一个之后停止匹配。</p>
+
+<ol>
+<li>proxy_pass</li>
+</ol>
+
+<p>　　既是把请求代理到其他主机，其中 <a href="http://www.b.com/">http://www.b.com/</a> 写法和 <a href="http://www.b.com写法的区别如下:">http://www.b.com写法的区别如下:</a>
+不带/</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-config" data-lang="config"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-config" data-lang="config"> location /html/
+{
+　　proxy_pass http://b.com:8300;  
+}</code></pre></td></tr></table>
+</div>
+</div>
+<p>带/</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-config" data-lang="config"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-config" data-lang="config">location /html/  
+{  
+    proxy_pass http://b.com:8300/;  
+} </code></pre></td></tr></table>
+</div>
+</div>
+<p>上面两种配置，区别只在于proxy_pass转发的路径后是否带 “/”。
+　　
+针对情况1，如果访问url = <a href="http://server/html/test.jsp，则被nginx代理后，请求路径会便问http://proxy_pass/html/test.jsp，将test/">http://server/html/test.jsp，则被nginx代理后，请求路径会便问http://proxy_pass/html/test.jsp，将test/</a> 作为根路径，请求test/路径下的资源。
+　　
+针对情况2，如果访问url = <a href="http://server/html/test.jsp，则被nginx代理后，请求路径会变为">http://server/html/test.jsp，则被nginx代理后，请求路径会变为</a> <a href="http://proxy_pass/test.jsp，直接访问server的根资源。">http://proxy_pass/test.jsp，直接访问server的根资源。</a></p>
+
+<p>修改配置后重启nginx代理就成功了。</p>
+
+<h4 id="后代代码">后代代码</h4>
+
+<p>【转载】:<a href="https://blog.csdn.net/qq_22172905/article/details/52934055">https://blog.csdn.net/qq_22172905/article/details/52934055</a></p>
+
+<p>修改<code>web.config</code>文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;system.webServer&gt;</span>  
+     <span class="nt">&lt;httpProtocol&gt;</span> 
+       <span class="nt">&lt;customHeaders&gt;</span> 
+      <span class="nt">&lt;add</span> <span class="na">name=</span><span class="s">&#34;Access-Control-Allow-Methods&#34;</span> <span class="na">value=</span><span class="s">&#34;OPTIONS,POST,GET&#34;</span><span class="nt">/&gt;</span> 
+      <span class="nt">&lt;add</span> <span class="na">name=</span><span class="s">&#34;Access-Control-Allow-Headers&#34;</span> <span class="na">value=</span><span class="s">&#34;x-requested-with&#34;</span><span class="nt">/&gt;</span> 
+      <span class="nt">&lt;add</span> <span class="na">name=</span><span class="s">&#34;Access-Control-Allow-Origin&#34;</span> <span class="na">value=</span><span class="s">&#34;*&#34;</span> <span class="nt">/&gt;</span> 
+    <span class="nt">&lt;/customHeaders&gt;</span> 
+     <span class="nt">&lt;/httpProtocol&gt;</span> 
+     <span class="nt">&lt;/system.webServer&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>注：在web.config里添加上面是代码，那你的这个web项目都被允许为跨域访问了。如果你不想全部都设置为允许跨域访问，只想允许某一个一般处理文件，那你可以采用下面的代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cs" data-lang="cs"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cs" data-lang="cs"><span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">ClearHeaders</span><span class="p">();</span> 
+<span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">AppendHeader</span><span class="p">(</span><span class="s">&#34;Access-Control-Allow-Origin&#34;</span><span class="p">,</span><span class="s">&#34;*&#34;</span><span class="p">);</span> 
+<span class="kt">string</span> <span class="n">requestHeaders</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">Headers</span><span class="na">[&#34;Access-Control-Request-Headers&#34;]</span><span class="p">;</span> 
+<span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">AppendHeader</span><span class="p">(</span><span class="s">&#34;Access-Control-Allow-Headers&#34;</span><span class="p">,</span> 
+<span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">requestHeaders</span><span class="p">)</span> <span class="p">?</span> <span class="s">&#34;*&#34;</span> <span class="p">:</span> <span class="n">requestHeaders</span><span class="p">);</span> 
+<span class="n">context</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">AppendHeader</span><span class="p">(</span><span class="s">&#34;Access-Control-Allow-Methods&#34;</span><span class="p">,</span> <span class="s">&#34;POST, OPTIONS&#34;</span><span class="p">)</span><span class="err">；</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>【参考】:<a href="https://blog.ionicframework.com/handling-cors-issues-in-ionic/">https://blog.ionicframework.com/handling-cors-issues-in-ionic/</a></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-07-22</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://me.lucoder.com/tags/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/">移动开发</a>
+          <a href="https://me.lucoder.com/tags/ionic/">IONIC</a>
+          <a href="https://me.lucoder.com/tags/%E8%B7%A8%E5%9F%9F/">跨域</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2018/07/24/windows10%E7%B3%BB%E7%BB%9F%E5%92%8Cubuntu%E4%BD%BF%E7%94%A8%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Windows10系统和Ubuntu使用共享文件夹</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2018/07/26/visual-studio-2017-%E9%85%8D%E7%BD%AEopencv%E7%8E%AF%E5%A2%83.md/">
+            <span class="next-text nav-default">Visual Studio 2017 配置OpenCV环境</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@lucoder.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://me.lucoder.com/pages/open/" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://me.lucoder.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    <a class="hexo-link" href="http://www.miitbeian.gov.cn/">豫ICP备16017737号-2</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    图像CDN:<a class="theme-link" href="https://www.upyun.com/">又拍云</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="theme-link" href="https://www.foreverblog.cn/">十年之约</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        牧轩居士
+        
+      </span></span>
+
+  
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

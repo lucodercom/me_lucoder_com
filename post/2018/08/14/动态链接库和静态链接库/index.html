@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>动态链接库和静态链接库 - 牧轩日志 - 记录开发中的点点滴滴</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="知识不等于技术，这句话真的是越工作的时间长越深有体会，学习到的知识只有不断的实践，才成真正在自已的心里扎下根，成为自身的一部分，所以无论如何" />
+
+  <meta name="keywords" content="牧轩, 牧轩居士, 笔记录" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50" />
+
+
+<link rel="canonical" href="https://me.lucoder.com/post/2018/08/14/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E5%92%8C%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="动态链接库和静态链接库" />
+<meta property="og:description" content="知识不等于技术，这句话真的是越工作的时间长越深有体会，学习到的知识只有不断的实践，才成真正在自已的心里扎下根，成为自身的一部分，所以无论如何" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.lucoder.com/post/2018/08/14/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E5%92%8C%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/" /><meta property="article:published_time" content="2018-08-14T14:21:50&#43;08:00"/>
+<meta property="article:modified_time" content="2018-08-14T14:21:50&#43;08:00"/>
+
+<meta itemprop="name" content="动态链接库和静态链接库">
+<meta itemprop="description" content="知识不等于技术，这句话真的是越工作的时间长越深有体会，学习到的知识只有不断的实践，才成真正在自已的心里扎下根，成为自身的一部分，所以无论如何">
+
+
+<meta itemprop="datePublished" content="2018-08-14T14:21:50&#43;08:00" />
+<meta itemprop="dateModified" content="2018-08-14T14:21:50&#43;08:00" />
+<meta itemprop="wordCount" content="2910">
+
+
+
+<meta itemprop="keywords" content="Ubuntu,链接库," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="动态链接库和静态链接库"/>
+<meta name="twitter:description" content="知识不等于技术，这句话真的是越工作的时间长越深有体会，学习到的知识只有不断的实践，才成真正在自已的心里扎下根，成为自身的一部分，所以无论如何"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">牧轩笔记</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/about/">关于</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/links/">友链</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              专题
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              工具
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      牧轩笔记
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/about/">关于</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/links/">友链</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">专题</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">工具</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">动态链接库和静态链接库</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-08-14" class="post-time">
+          2018-08-14
+        </time>
+        <div class="post-category">
+            <a href="https://me.lucoder.com/categories/ubuntu/"> Ubuntu </a>
+            <a href="https://me.lucoder.com/categories/%E9%93%BE%E6%8E%A5%E5%BA%93/"> 链接库 </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>知识不等于技术，这句话真的是越工作的时间长越深有体会，学习到的知识只有不断的实践，才成真正在自已的心里扎下根，成为自身的一部分，所以无论如何，我希望我的博客可以一直写下去，慢慢的沉淀，终会有回报，无聊的时候想想，的确，写代码也是一种自娱自乐！</p>
+
+<p>前几天在做项目时出了一个问题，大体就是：makefile里在编译可执行文件testappd的时候在有用-l去引用一个libtest.so，能编译通过，但是在加载运行的时候系统提示找不到这个lib而导致进程启动失败。后来知道在产品版本编译打包的时候这个lib并未被打包进去，这个问题后来解决了。但是出于好奇，我想搞清楚动态库和静态库的概念，以及之前做过另一个项目时以dlopen方式去引用动态库和makefile 去引用动态库这几种方式的不同。查找了网上的一些资料，看明白了，还需手动验证一下才放心。</p>
+
+<p>首先说说静态链接库，说实话，有时候真心感觉计算机这些相关的各种高大上的词汇都是纸老虎，看上去高深的不行，其实当你捅开那层纸，就那么回事儿。</p>
+
+<p>所谓静态链接库，说白了就是在你把写好的代码编译的时候，就把你引用的库一起给编进去了，从此后你编出来的执行程序跟外面都不再有任何关系，即使这个库更新了，你也搭不上边儿，其次，如果系统中许多类似的程序都需要用到这个库，那么各自在编译的时候都需要把这个库给编进去，浪费存储空间（加载到内存里应该也是浪费内存空间的）。linux系统中静态库的名字一般叫</p>
+
+<p>xxx.a, 所以如果你看到一个以 .a结束的文件那么它多半就是一个静态链接库文件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">废话少说，我们直接上干货，看看静态库是如何被编译出来以及如何被使用的
+
+首先我们写了一个sum.c，如下，很简单，里面只有一个Sum函数，把两个数相加的和返回</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">Sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">Number1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">Number2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">Number1</span> <span class="o">+</span> <span class="n">Number2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>当然还要写一个声明它的sum.h</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">Sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">Number1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">Number2</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>最后来一个调用这个sum函数的主函数, 打印返回的结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">#include&lt;stdio.h&gt;
+#include&lt;sum.h&gt;
+
+void main()
+{
+    int Num1 = 1;
+    int Num2 = 2;
+    int iRet = 0;
+
+    iRet = Sum(Num1, Num2);
+    printf(&#34;Num1 + Num2 = %d.&#34;, iRet);
+    return;
+}</pre></td></tr></table>
+</div>
+</div>
+<p>接下来我们编译静态库，我的笔记本是mac os环境，打开终端后用vim写代码， gcc等相关工具直接就能用，版本没注意，反正能用就行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="m">192</span>:zch kane$ ls
+main.c    sum.c    sum.h
+<span class="m">192</span>:zch kane$ gcc -c sum.c
+<span class="m">192</span>:zch kane$ ls
+main.c    sum.c    sum.h    sum.o
+<span class="m">192</span>:zch kane$ 
+<span class="m">192</span>:zch kane$ 
+<span class="m">192</span>:zch kane$ ar cr libsum.a sum.o
+<span class="m">192</span>:zch kane$ ls
+libsum.a    main.c        sum.c        sum.h        sum.o
+<span class="m">192</span>:zch kane$</code></pre></td></tr></table>
+</div>
+</div>
+<p>如上，我们用ar这个工具来编译静态库，cr标志告诉ar将object文件封装</p>
+
+<p>然后我们编译主程序并运行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="m">192</span>:zch kane$ gcc -o sumappd main.c -L . -lsum
+<span class="m">192</span>:zch kane$ ls
+libsum.a    main.o        sum.h        sumappd
+main.c        sum.c        sum.o
+<span class="m">192</span>:zch kane$ ./sumappd 
+Num1 + <span class="nv">Num2</span> <span class="o">=</span> <span class="m">3</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>“-L .”指明了当前lib所在的路径是在本目录，-l表示链接libsum.a这个lib库，很好理解。</p>
+
+<p>所谓动态链接库，也就是说编译的时候不会真的把你引用到的库给编到你的执行程序里，而是在执行时候才会去加载相关的库，所有用到此库的程序可以共享一份代码，这样带来的好处是可执行程序所占的空间变小了，同时，如果库需要升级，你并不需要重新编译你的程序，只要把相关的库升级即可。</p>
+
+<p>接下来我们来看看动态链接库的编译与使用方法，代码还是和上文中的一样，分别为​sum.c, sum.h, 和main.c, 在linux下动态链接库文件一般叫做libxxx.so。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="m">192</span>:zch kane$ ls
+main.c    sum.c    sum.h
+<span class="m">192</span>:zch kane$ 
+<span class="m">192</span>:zch kane$ gcc -c -fPIC sum.c                            ------  -fIPC告诉编译器将源代码编译成共享的object文件,PIC<span class="o">(</span>Position-Independent Code<span class="o">)</span>意思是非位置依赖性代码
+<span class="m">192</span>:zch kane$ ls
+main.c    sum.c    sum.h    sum.o
+<span class="m">192</span>:zch kane$ gcc -shared -fPIC -o libsum.so sum.o           --------  生成动态链接库文件libsum.so
+<span class="m">192</span>:zch kane$ ls
+libsum.so    main.c        sum.c        sum.h        sum.o
+<span class="m">192</span>:zch kane$ 
+<span class="m">192</span>:zch kane$ gcc -o sumappd main.c -L . -lsum               --------- 生成可执行程序
+<span class="m">192</span>:zch kane$ ls
+libsum.so    sum.c        sum.o
+main.c        sum.h        sumappd
+<span class="m">192</span>:zch kane$ ./sumappd                                      ---------运行生成结果
+Num1 + <span class="nv">Num2</span> <span class="o">=</span> <span class="m">3</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>ps:所以大家看到了，编译时”-lsum“的方式，是不能够区分当前是静态链接还是动态链接的。如果在同一个目录下同时有静态链接库和动态链接库，则系统默认会引用动态链接库，如果想使用静态链接库则需要在编译时加上”-static“参数（具体方法可自行百度）。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">共享库，有两种形式，第一种就是在上一篇文章中说到的“动态链接库”，而共享库的另一种形式，则被称之为“动态加载库”，也就是我刚才提到的用“dlopen”方式来玩的。动态加载库在编译的时候，应该是不需要去-l引用lib，而是在可执行程序中，可以自已决定加载库的时机。比如程序跑着跑着，突然想用libabc.so库里的一个叫abc的函数了，这时就可以用dlopen去打开这个库，然后使用dlsym去找到abc的函数指针并调用即可。</pre></td></tr></table>
+</div>
+</div>
+<p>这几个以“dl”开头的函数，叫动态加载API，提供了以下这么几个接口来支持动态加载操作：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="o">*</span><span class="nf">dlopen</span><span class="p">(</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">file</span><span class="p">,</span> <span class="kt">int</span> <span class="n">mode</span> <span class="p">);</span> 
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">dlopen的函数功能是打开库文件并返回文件句柄，mode参数表示重定位的时机，有RTLD_NOW和RTLD_LAZY两个值 ，这个我们后面再分析是啥意思。</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">void</span> <span class="o">*</span><span class="nf">dlsym</span><span class="p">(</span> <span class="kt">void</span> <span class="o">*</span><span class="k">restrict</span> <span class="n">handle</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="k">restrict</span> <span class="n">name</span> <span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">dlsym函数的功能是从这个新加载的库里根据传入的函数名，找到该函数的地址</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">char</span> <span class="o">*</span><span class="nf">dlerror</span><span class="p">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">dlerror没有入参，它会返回发生的上一个错误的字符串</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">char</span> <span class="o">*</span><span class="nf">dlclose</span><span class="p">(</span> <span class="kt">void</span> <span class="o">*</span><span class="n">handle</span> <span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">dlclose关闭打开的库文件，实际上如果当前还有其他的程序引用这个库，它是不会被关闭的，多个程序共享时采用引用计数机制，当最后一个引用它的程序关闭它时才会真正的关闭。这几个函数在使用时，需要包含&lt;dlfcn.h&gt;头文件。</pre></td></tr></table>
+</div>
+</div>
+<p>下面我依然用之前sumapp这个简单的demo程序来演示一下动态加载库的用法。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">首先libsum.so生成方式不变，具体可参考上一篇文章。main.c的代码我们需要变一下，重新以dlopen的方式去引用libsum.so,  代码如下：</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="mi">192</span><span class="o">:</span><span class="n">zch</span> <span class="n">kane</span><span class="err">$</span> <span class="n">ls</span>
+<span class="n">demodlopen</span><span class="p">.</span><span class="n">c</span>    <span class="n">main</span><span class="p">.</span><span class="n">c</span>        <span class="n">sum</span><span class="p">.</span><span class="n">h</span>        <span class="n">sumappd</span>
+<span class="n">libsum</span><span class="p">.</span><span class="n">so</span>    <span class="n">sum</span><span class="p">.</span><span class="n">c</span>        <span class="n">sum</span><span class="p">.</span><span class="n">o</span>
+<span class="mi">192</span><span class="o">:</span><span class="n">zch</span> <span class="n">kane</span><span class="err">$</span> 
+<span class="mi">192</span><span class="o">:</span><span class="n">zch</span> <span class="n">kane</span><span class="err">$</span> 
+<span class="mi">192</span><span class="o">:</span><span class="n">zch</span> <span class="n">kane</span><span class="err">$</span> 
+<span class="mi">192</span><span class="o">:</span><span class="n">zch</span> <span class="n">kane</span><span class="err">$</span> <span class="n">more</span> <span class="n">demodlopen</span><span class="p">.</span><span class="n">c</span> 
+<span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span><span class="cpf">&lt;dlfcn.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span>  <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">iNum1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">iNum2</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="o">*</span> <span class="n">pHandle</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">pFunc</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span> <span class="n">pcError</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">iRet</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">pHandle</span> <span class="o">=</span> <span class="n">dlopen</span><span class="p">(</span><span class="s">&#34;libsum.so&#34;</span><span class="p">,</span> <span class="n">RTLD_LAZY</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">pHandle</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Open libsum.so failed!, error message is %s</span><span class="se">\r\n</span><span class="s">.&#34;</span><span class="p">,</span> <span class="n">dlerror</span><span class="p">());</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="n">pFunc</span> <span class="o">=</span> <span class="n">dlsym</span><span class="p">(</span><span class="n">pHandle</span><span class="p">,</span> <span class="s">&#34;Sum&#34;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">pFunc</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Find function Sum failed!, error message is %s</span><span class="se">\r\n</span><span class="s">.&#34;</span><span class="p">,</span> <span class="n">dlerror</span><span class="p">());</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="n">iRet</span> <span class="o">=</span>  <span class="p">(</span><span class="o">*</span><span class="n">pFunc</span><span class="p">)(</span><span class="n">iNum1</span><span class="p">,</span> <span class="n">iNum2</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;iRet = %d</span><span class="se">\r\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">iRet</span><span class="p">);</span>
+    <span class="n">dlclose</span><span class="p">(</span><span class="n">pHandle</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> 
+<span class="p">}</span>
+<span class="mi">192</span><span class="o">:</span><span class="n">zch</span> <span class="n">kane</span><span class="err">$</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>编译demodlopen.c，执行sumappd</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="m">192</span>:zch kane$ gcc -rdynamic -o sumappd demodlopen.c -ldl
+<span class="m">192</span>:zch kane$./sumappd 
+<span class="nv">iRet</span> <span class="o">=</span> <span class="m">3</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>编译时-rdynamic用来通知链接器将所有符号添加到动态符号表中（目的是能够通过使用 dlopen 来实现向后跟踪）。-ldl 表明一定要将 dllib 链接于该程序。</p>
+
+<p>总结：动态链接库在加载时机是进程启动，而动态加载库则由程序自行决定加载时机。看了下网上有一些同学也不太明白到底什么时候适合用动态链接库，什么时候适合用动态加载库。我说一下我在工作中遇到的一个场景就是用的动态加载。由于我们做的是基于linux的嵌入式软件平台，需要同时支持多款产品，而有些特性或者说业务，在某款产品上可能不支持，以达到产品差异化的目的。比如业务A在运行时可能会用到libabc.so, 但是 libabc.so在某款产品上可能会被裁减掉，因此对于这种情况，在编译版本及写代码的时候，就得用动态加载这种方式。因为如果你用动态链接的方式，而libabc.so刚好在这款产品上被裁掉了，会导致业务A的进程启动失败（动态链接在进程启动的时候去加载动态库失败）。</p>
+
+<p>转载：<a href="https://www.cnblogs.com/zhengchunhao/p/4881205.html">linux下的动态链接库和静态链接库到底是个什么鬼？（一）静态链接库的编译与使用</a></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-08-14</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://me.lucoder.com/tags/ubuntu/">Ubuntu</a>
+          <a href="https://me.lucoder.com/tags/%E9%93%BE%E6%8E%A5%E5%BA%93/">链接库</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2018/10/01/%E8%AE%BE%E7%BD%AEmaven%E9%95%9C%E5%83%8F%E5%8A%A0%E5%BF%AB%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">设置Maven镜像加快文件下载</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2018/07/27/envi%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85/">
+            <span class="next-text nav-default">ENVI的下载和安装</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@lucoder.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://me.lucoder.com/pages/open/" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://me.lucoder.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    <a class="hexo-link" href="http://www.miitbeian.gov.cn/">豫ICP备16017737号-2</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    图像CDN:<a class="theme-link" href="https://www.upyun.com/">又拍云</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="theme-link" href="https://www.foreverblog.cn/">十年之约</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        牧轩居士
+        
+      </span></span>
+
+  
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

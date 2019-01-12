@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>共享文件 on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/categories/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/</link>
+    <description>Recent content in 共享文件 on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Tue, 24 Jul 2018 14:21:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/categories/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows10系统和Ubuntu使用共享文件夹</title>
+      <link>https://me.lucoder.com/post/2018/07/24/windows10%E7%B3%BB%E7%BB%9F%E5%92%8Cubuntu%E4%BD%BF%E7%94%A8%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
+      <pubDate>Tue, 24 Jul 2018 14:21:50 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2018/07/24/windows10%E7%B3%BB%E7%BB%9F%E5%92%8Cubuntu%E4%BD%BF%E7%94%A8%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
+      <description>&lt;h1 id=&#34;需求&#34;&gt;需求&lt;/h1&gt;
+
+&lt;p&gt;Ubuntu和Windows系统之间通过虚拟机交换文件相当不方便，如果是windows虚拟系统支持拖放文件，但是Windows10和虚拟机中的Ubuntu始终实现不了拖放文件，并且拖放文件有限制，如果是很大的文件（假如1G）拖放过程会很久。再者是用FTP方式，这种方式对于小文件和跨主机非常方便，但是现在显然不是最好的方案，所以我选择了共享文件夹。共享文件夹对于双方而言都是本地文件夹，访问速度非常快，并且不受文件大小的限制。
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
