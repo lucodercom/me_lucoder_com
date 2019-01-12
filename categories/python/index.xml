@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>牧轩居士</copyright>
-    <lastBuildDate>Tue, 13 Nov 2018 14:23:06 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 12 Jan 2019 15:58:23 +0800</lastBuildDate>
     
 	<atom:link href="https://me.lucoder.com/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>树莓派Python版本更换</title>
+      <link>https://me.lucoder.com/post/2019/01/12/python%E7%89%88%E6%9C%AC%E6%9B%B4%E6%8D%A2/</link>
+      <pubDate>Sat, 12 Jan 2019 15:58:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/01/12/python%E7%89%88%E6%9C%AC%E6%9B%B4%E6%8D%A2/</guid>
+      <description>树莓派自带Python2和Python3，其中默认是Python2，使用Python3的方法是Python3和Pip3等，由于Python2</description>
+    </item>
     
     <item>
       <title>【陪着牧轩学Python】函数编程</title>
