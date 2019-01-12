@@ -1,0 +1,44 @@
+# https://docs.travis-ci.com/user/deployment/pages/
+# https://docs.travis-ci.com/user/languages/python/
+language: python
+
+python:
+    - "3.6"
+
+install:
+    
+script:
+    - uname -a
+    - sudo apt-get install -y libstdc++6 
+    - sudo apt-get install -y lib32stdc++6
+    - wget https://github.com/gohugoio/hugo/releases/download/v0.50/hugo_0.50_Linux-32bit.deb
+    - sudo dpkg -i hugo*.deb
+#    - rm -rvf ./*
+    - mkdir rawfile
+    - pwd
+    - cd rawfile
+    - pwd
+    - git config --global user.email "me@lucoder.com"
+    - git config --global user.name "lucodercom"
+    - git clone -b rawfile https://github.com/lucodercom/me_lucoder_com.git
+    - ls
+    - cd me_lucoder_com
+    - ls
+    - mkdir public
+    - pwd
+    - ls
+    - hugo -d public
+    - ls
+    - echo 'Hugo build done!'
+    - git clone https://$GH_TOKEN@github.com/lucodercom/me_lucoder_com.git master
+    - cd master 
+    - rm -rf ./*
+    - cp -r ../public/* ./
+    - echo 'me.lucoder.com' > CNAME
+    - git add .
+    - git commit -m 'Travis upate blog'
+    - git push -u origin master
+
+after_success:
+    - ls
+    
