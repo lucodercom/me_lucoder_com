@@ -30,13 +30,13 @@ script:
     - ls
     - echo 'Hugo build done!'
     - git clone -b master https://$GH_TOKEN@github.com/lucodercom/me_lucoder_com.git
-    - cd pages 
+    - cd master 
     - rm -rf ./*
     - cp -r ../public/* ./
     - echo 'me.lucoder.com' > CNAME
     - git add .
     - git commit -m 'Travis upate blogs'
-    - git push -u origin pages
+    - git push -u origin master
 
 after_success:
     - ls
