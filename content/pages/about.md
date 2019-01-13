@@ -6,6 +6,10 @@ date: 2018-11-03T16:01:23+08:00
 # you can close something for this content if you open it in config.toml.
 comment: false
 mathjax: false
+menu:
+  main:
+    parent: "关于"
+    weight: 100
 ---
 
 ## 研究方向

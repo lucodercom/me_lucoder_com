@@ -6,6 +6,10 @@ weight: 50
 # you can close something for this content if you open it in config.toml.
 comment: true
 mathjax: false
+menu:
+  main:
+    parent: "关于"
+    weight: 10
 ---
 
 > 招收各种机器学习、人工智能、机器视觉等友链，注意必须支持`https://`.
