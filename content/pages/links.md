@@ -9,7 +9,7 @@ mathjax: false
 menu:
   main:
     parent: "关于"
-    weight: 10
+    weight: 1
 ---
 
 > 招收各种机器学习、人工智能、机器视觉等友链，注意必须支持`https://`.

@@ -10,7 +10,7 @@ mathjax: false
 menu:
   main:
     parent: "关于"
-    weight: 5
+    weight: 1
 ---
 
 |项目|地址|说明|备注|

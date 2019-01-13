@@ -9,7 +9,7 @@ mathjax: false
 menu:
   main:
     parent: "关于"
-    weight: 100
+    weight: 1
 ---
 
 ## 研究方向
