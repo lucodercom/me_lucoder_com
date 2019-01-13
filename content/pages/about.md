@@ -1,5 +1,5 @@
 ---
-title: "关于"
+title: "关于我"
 menu: "main"
 weight: 50
 date: 2018-11-03T16:01:23+08:00
