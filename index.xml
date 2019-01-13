@@ -79,6 +79,17 @@
     </item>
     
     <item>
+      <title>分类模型评价指标</title>
+      <link>https://me.lucoder.com/post/2019/01/13/%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</link>
+      <pubDate>Sun, 13 Jan 2019 22:00:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/01/13/%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</guid>
+      
+        <description>分类方法常用的评估模型好坏的方法，一般的用于机器学习，但是其他领域也可以用来评价。 几个概念 TP（True Precision）：表示正确预测的</description>
+      
+    </item>
+    
+    <item>
       <title>树莓派Python版本更换</title>
       <link>https://me.lucoder.com/post/2019/01/12/python%E7%89%88%E6%9C%AC%E6%9B%B4%E6%8D%A2/</link>
       <pubDate>Sat, 12 Jan 2019 15:58:23 +0800</pubDate>
