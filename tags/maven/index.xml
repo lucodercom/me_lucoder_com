@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>牧轩居士</copyright>
-    <lastBuildDate>Mon, 01 Oct 2018 14:21:50 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Jan 2019 23:16:23 +0800</lastBuildDate>
     
 	<atom:link href="https://me.lucoder.com/tags/maven/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spring Boot报错 No goals have been specified for this build</title>
+      <link>https://me.lucoder.com/post/2019/01/28/springboot%E6%8A%A5%E9%94%99/</link>
+      <pubDate>Tue, 22 Jan 2019 23:16:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/01/28/springboot%E6%8A%A5%E9%94%99/</guid>
+      <description>错误 废话不多，直接来图！ 解决办法 pom.xml文件标签里面添加。 1 &amp;lt;defaultGoal&amp;gt;compile&amp;lt;/defaultGoal&amp;gt;</description>
+    </item>
     
     <item>
       <title>设置Maven镜像加快文件下载</title>

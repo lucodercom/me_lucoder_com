@@ -132,7 +132,7 @@
     <item>
       <title>Java</title>
       <link>https://me.lucoder.com/tags/java/</link>
-      <pubDate>Mon, 01 Oct 2018 14:21:50 +0800</pubDate>
+      <pubDate>Tue, 22 Jan 2019 23:16:23 +0800</pubDate>
       
       <guid>https://me.lucoder.com/tags/java/</guid>
       <description></description>
@@ -186,7 +186,7 @@
     <item>
       <title>Maven</title>
       <link>https://me.lucoder.com/tags/maven/</link>
-      <pubDate>Mon, 01 Oct 2018 14:21:50 +0800</pubDate>
+      <pubDate>Tue, 22 Jan 2019 23:16:23 +0800</pubDate>
       
       <guid>https://me.lucoder.com/tags/maven/</guid>
       <description></description>
@@ -243,6 +243,15 @@
       <pubDate>Thu, 26 Jul 2018 14:21:50 +0800</pubDate>
       
       <guid>https://me.lucoder.com/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Springboot</title>
+      <link>https://me.lucoder.com/tags/springboot/</link>
+      <pubDate>Tue, 22 Jan 2019 23:16:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/tags/springboot/</guid>
       <description></description>
     </item>
     
@@ -450,15 +459,6 @@
       <pubDate>Fri, 27 Jul 2018 14:21:50 +0800</pubDate>
       
       <guid>https://me.lucoder.com/tags/%E5%B7%A5%E5%85%B7/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>并行计算</title>
-      <link>https://me.lucoder.com/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</link>
-      <pubDate>Tue, 08 Jan 2019 21:01:23 +0800</pubDate>
-      
-      <guid>https://me.lucoder.com/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</guid>
       <description></description>
     </item>
     
