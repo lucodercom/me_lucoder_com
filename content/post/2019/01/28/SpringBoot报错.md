@@ -15,7 +15,7 @@ toc: false
 
 # 解决办法
 
-`pom.xml文件`<build>标签里面添加。
+`pom.xml`文件<build>标签里面最后面添加。
 ```
 <defaultGoal>compile</defaultGoal>  
 ```
