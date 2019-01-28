@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>科研 · 牧轩日志 - 记录开发中的点点滴滴</title>
+  <title>Opencv图像拼接 - 牧轩日志 - 记录开发中的点点滴滴</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -25,7 +25,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="牧轩居士" />
-  <meta name="description" content="牧轩笔记录，记录开发的点点滴滴" />
+  <meta name="description" content="图像拼接 https://blog.csdn.net/ktigerhero3/article/details/53105372 等列拼接 1 Mat.push_back(); 等行拼接" />
+
   <meta name="keywords" content="牧轩, 牧轩居士, 笔记录" />
 
 
@@ -36,8 +37,7 @@
 <meta name="generator" content="Hugo 0.50" />
 
 
-<link rel="canonical" href="https://me.lucoder.com/categories/%E7%A7%91%E7%A0%94/" />
-<link href="https://me.lucoder.com/categories/%E7%A7%91%E7%A0%94/index.xml" rel="alternate" type="application/rss+xml" title="牧轩日志 - 记录开发中的点点滴滴" />
+<link rel="canonical" href="https://me.lucoder.com/post/2019/01/22/opencv%E5%9B%BE%E5%83%8F%E6%8B%BC%E6%8E%A5/" />
 
 
 
@@ -57,18 +57,26 @@
 
 
 
-<meta property="og:title" content="科研" />
-<meta property="og:description" content="牧轩笔记录，记录开发的点点滴滴" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://me.lucoder.com/categories/%E7%A7%91%E7%A0%94/" />
-<meta property="og:updated_time" content="2019-01-13T22:00:23&#43;08:00"/>
+<meta property="og:title" content="Opencv图像拼接" />
+<meta property="og:description" content="图像拼接 https://blog.csdn.net/ktigerhero3/article/details/53105372 等列拼接 1 Mat.push_back(); 等行拼接" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.lucoder.com/post/2019/01/22/opencv%E5%9B%BE%E5%83%8F%E6%8B%BC%E6%8E%A5/" /><meta property="article:published_time" content="2019-01-22T23:16:23&#43;08:00"/>
+<meta property="article:modified_time" content="2019-01-22T23:16:23&#43;08:00"/>
 
-<meta itemprop="name" content="科研">
-<meta itemprop="description" content="牧轩笔记录，记录开发的点点滴滴">
+<meta itemprop="name" content="Opencv图像拼接">
+<meta itemprop="description" content="图像拼接 https://blog.csdn.net/ktigerhero3/article/details/53105372 等列拼接 1 Mat.push_back(); 等行拼接">
 
+
+<meta itemprop="datePublished" content="2019-01-22T23:16:23&#43;08:00" />
+<meta itemprop="dateModified" content="2019-01-22T23:16:23&#43;08:00" />
+<meta itemprop="wordCount" content="15">
+
+
+
+<meta itemprop="keywords" content="Opencv,图像拼接," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="科研"/>
-<meta name="twitter:description" content="牧轩笔记录，记录开发的点点滴滴"/>
+<meta name="twitter:title" content="Opencv图像拼接"/>
+<meta name="twitter:description" content="图像拼接 https://blog.csdn.net/ktigerhero3/article/details/53105372 等列拼接 1 Mat.push_back(); 等行拼接"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -381,55 +389,106 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-
-<section id="archive" class="archive">
-  
+          <article class="post bg-white">
     
-      <div class="archive-title category">
-        <h2 class="archive-name">Category: 科研</h2>
+    <header class="post-header">
+      <h1 class="post-title">Opencv图像拼接</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-01-22" class="post-time">
+          2019-01-22
+        </time>
+        <div class="post-category">
+            <a href="https://me.lucoder.com/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"> 机器视觉 </a>
+            <a href="https://me.lucoder.com/categories/%E5%9B%BE%E5%83%8F%E6%8B%BC%E6%8E%A5/"> 图像拼接 </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
       </div>
+    </header>
+
     
-  
+    
 
-  
-    <div class="archive-post">
-      <time datetime="2019-01-13" class="archive-post-time">
-        2019-01-13
-      </time>
-      <span class="archive-post-title">
-        <a href="/post/2019/01/13/%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" class="archive-post-link">
-          分类模型评价指标
-        </a>
-      </span>
+    
+    <div class="post-content">
+      
+
+<h1 id="图像拼接">图像拼接</h1>
+
+<p><a href="https://blog.csdn.net/ktigerhero3/article/details/53105372">https://blog.csdn.net/ktigerhero3/article/details/53105372</a></p>
+
+<h1 id="等列拼接">等列拼接</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Mat.push_back();</pre></td></tr></table>
+</div>
+</div>
+<h1 id="等行拼接">等行拼接</h1>
+
     </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-01-22</span>
+  </p>
   
-</section>
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
 
+    
+    
 
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://me.lucoder.com/tags/opencv/">Opencv</a>
+          <a href="https://me.lucoder.com/tags/%E5%9B%BE%E5%83%8F%E6%8B%BC%E6%8E%A5/">图像拼接</a>
+          
+        </div>
 
-
-
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/2019/01/12/python%E7%89%88%E6%9C%AC%E6%9B%B4%E6%8D%A2/">
+            <span class="next-text nav-default">树莓派Python版本更换</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
 
   
   
-  
 
   
   
 
   
-  
 
-  
   
 
   
-  
-
-
-
-
 
         </div>
       </div>

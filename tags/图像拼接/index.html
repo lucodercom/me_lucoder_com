@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>分类模型评价指标 - 牧轩日志 - 记录开发中的点点滴滴</title>
+  <title>图像拼接 · 牧轩日志 - 记录开发中的点点滴滴</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -25,8 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="牧轩居士" />
-  <meta name="description" content="分类方法常用的评估模型好坏的方法，一般的用于机器学习，但是其他领域也可以用来评价。 几个概念 TP（True Precision）：表示正确预测的" />
-
+  <meta name="description" content="牧轩笔记录，记录开发的点点滴滴" />
   <meta name="keywords" content="牧轩, 牧轩居士, 笔记录" />
 
 
@@ -37,7 +36,8 @@
 <meta name="generator" content="Hugo 0.50" />
 
 
-<link rel="canonical" href="https://me.lucoder.com/post/2019/01/13/%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" />
+<link rel="canonical" href="https://me.lucoder.com/tags/%E5%9B%BE%E5%83%8F%E6%8B%BC%E6%8E%A5/" />
+<link href="https://me.lucoder.com/tags/%E5%9B%BE%E5%83%8F%E6%8B%BC%E6%8E%A5/index.xml" rel="alternate" type="application/rss+xml" title="牧轩日志 - 记录开发中的点点滴滴" />
 
 
 
@@ -57,26 +57,18 @@
 
 
 
-<meta property="og:title" content="分类模型评价指标" />
-<meta property="og:description" content="分类方法常用的评估模型好坏的方法，一般的用于机器学习，但是其他领域也可以用来评价。 几个概念 TP（True Precision）：表示正确预测的" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://me.lucoder.com/post/2019/01/13/%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/" /><meta property="article:published_time" content="2019-01-13T22:00:23&#43;08:00"/>
-<meta property="article:modified_time" content="2019-01-13T22:00:23&#43;08:00"/>
+<meta property="og:title" content="图像拼接" />
+<meta property="og:description" content="牧轩笔记录，记录开发的点点滴滴" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://me.lucoder.com/tags/%E5%9B%BE%E5%83%8F%E6%8B%BC%E6%8E%A5/" />
+<meta property="og:updated_time" content="2019-01-22T23:16:23&#43;08:00"/>
 
-<meta itemprop="name" content="分类模型评价指标">
-<meta itemprop="description" content="分类方法常用的评估模型好坏的方法，一般的用于机器学习，但是其他领域也可以用来评价。 几个概念 TP（True Precision）：表示正确预测的">
+<meta itemprop="name" content="图像拼接">
+<meta itemprop="description" content="牧轩笔记录，记录开发的点点滴滴">
 
-
-<meta itemprop="datePublished" content="2019-01-13T22:00:23&#43;08:00" />
-<meta itemprop="dateModified" content="2019-01-13T22:00:23&#43;08:00" />
-<meta itemprop="wordCount" content="951">
-
-
-
-<meta itemprop="keywords" content="科研,分类模型,评价指标," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="分类模型评价指标"/>
-<meta name="twitter:description" content="分类方法常用的评估模型好坏的方法，一般的用于机器学习，但是其他领域也可以用来评价。 几个概念 TP（True Precision）：表示正确预测的"/>
+<meta name="twitter:title" content="图像拼接"/>
+<meta name="twitter:description" content="牧轩笔记录，记录开发的点点滴滴"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -389,168 +381,55 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          <article class="post bg-white">
-    
-    <header class="post-header">
-      <h1 class="post-title">分类模型评价指标</h1>
-      
-      <div class="post-meta">
-        <time datetime="2019-01-13" class="post-time">
-          2019-01-13
-        </time>
-        <div class="post-category">
-            <a href="https://me.lucoder.com/categories/%E7%A7%91%E7%A0%94/"> 科研 </a>
-            <a href="https://me.lucoder.com/categories/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/"> 评价指标 </a>
-            
-          </div>
-        
-
-        
-        
-
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    
-    <div class="post-content">
-      
-
-<blockquote>
-<p>分类方法常用的评估模型好坏的方法，一般的用于机器学习，但是其他领域也可以用来评价。</p>
-</blockquote>
-
-<h1 id="几个概念">几个概念</h1>
-
-<p>TP（True Precision）：表示正确预测的数目，就是完全符合算法的样本的数目。</p>
-
-<p>FP（False Precision）：表示预测错误的数目，就是在自己预测的样本中，有些样本被预测出来了但是它是不符合算法的，一般的是程序或者编写程序错误、算法不够完善导致的。</p>
-
-<p>TN（True Not Precision）：表示正确预测出错误样本数目，在所有的检测样本中，有些样本是不符合算法的，并且没有被检测出来的样本的数目。</p>
-
-<p>FN（False Not Precision）：表示错误预测符合算法的样本为错误样本的数目。</p>
-
-<p>你看到这或许有点云里雾里，看下下面的案例或许就会清楚很多。</p>
-
-<h1 id="案例">案例</h1>
-
-<p>有一批水果，其中橘子假如是7个，苹果有10个。现在有一套程序，挑选出所有的橘子，程序检测出来了6个橘子，而实际情况是6个橘子中有一个苹果，即把5个橘子1个苹果当成了6个苹果。</p>
-
-<p>TP是正确预测出来的数目，就是5(<code>程序检测出来的6个橘子中有5个就是橘子</code>)，那么其中FP就是1(<code>1个苹果被认为是橘子</code>)，TN是被正确预测出来不是样本的数目就是9（<code>10个苹果中有一个苹果被认为是橘子了</code>），FN就是1(<code>中一个橘子被认为是苹果，也就是没有被检测出来</code>).</p>
-
-<h1 id="评价">评价</h1>
-
-<ol>
-<li>其中最常用的是Precision，就是精度。</li>
-</ol>
-
-<p><img src="https://oss.lucoder.com/uploads/2019/01/13/20190113220415.png" alt="https://oss.lucoder.com/uploads/2019/01/13/20190113220415.png" /></p>
-
-<ol>
-<li>其中关注真实样本的数据中正确预测的比例使用<code>Recall</code>来衡量。</li>
-</ol>
-
-<p><img src="https://oss.lucoder.com/uploads/2019/01/13/20190113220513.png" alt="https://oss.lucoder.com/uploads/2019/01/13/20190113220513.png" /></p>
-
-<ol>
-<li>然后就是最终的衡量公式<code>F-Score</code>。</li>
-</ol>
-
-<p><img src="https://oss.lucoder.com/uploads/2019/01/13/20190113220822.png" alt="https://oss.lucoder.com/uploads/2019/01/13/20190113220822.png" /></p>
-
-<p>需要解释一下，对于1、2公式无可厚非，TP、TF、FP、FN都已经介绍，主要着重介绍一下F-Score中的变量β，其中β是一个权重用于指定精度和召回率那个更重要。其实认真观察公式就可看出，当β值大于1时候，显然<code>Recall</code>更加重要，如果是小于1则表示<code>Precision</code>更加重要，但是一般的都会选择β是1表示两个一样重要，变形成为下面的公式。</p>
-
-<h1 id="计算">计算</h1>
-
-<p>通过分析阶段已经的到下面的这几组值：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">TP = 5
-FP = 1
-TN = 9
-FN = 1</pre></td></tr></table>
-</div>
-</div>
-<p>所以的到最后的结果是：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Precision   = 1/6
-Recall      = 1/6
-F-Score     = 1/27</pre></td></tr></table>
-</div>
-</div>
-<p>本文的案例纯属巧合，得到了一组Precision和Recall相等的一组数据，一般的这两个有一种反比的结果趋势（<code>注意：其实没太大关系，但是往往有这么一种趋势</code>），即当<code>Recall</code>比较大时候<code>Precision</code>比较小，反之亦然。</p>
-
-    </div>
-
-    
-    
-<div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">Author</span>
-    <span class="item-content">牧轩居士</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">LastMod</span>
-    <span class="item-content">2019-01-13</span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">License</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
-  </p>
-</div>
-
-    
-    
-
-    <footer class="post-footer">
-      <div class="post-tags">
-          <a href="https://me.lucoder.com/tags/%E7%A7%91%E7%A0%94/">科研</a>
-          <a href="https://me.lucoder.com/tags/%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B/">分类模型</a>
-          <a href="https://me.lucoder.com/tags/%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/">评价指标</a>
           
-        </div>
 
-      
-      <nav class="post-nav">
-        
-        
-          <a class="next" href="/post/2019/01/12/python%E7%89%88%E6%9C%AC%E6%9B%B4%E6%8D%A2/">
-            <span class="next-text nav-default">树莓派Python版本更换</span>
-            <span class="prev-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
-      </nav>
-    </footer>
-  </article>
-
+<section id="archive" class="archive">
   
+    
+      <div class="archive-title tag">
+        <h2 class="archive-name">Tag: 图像拼接</h2>
+      </div>
+    
   
 
   
+    <div class="archive-post">
+      <time datetime="2019-01-22" class="archive-post-time">
+        2019-01-22
+      </time>
+      <span class="archive-post-title">
+        <a href="/post/2019/01/22/opencv%E5%9B%BE%E5%83%8F%E6%8B%BC%E6%8E%A5/" class="archive-post-link">
+          Opencv图像拼接
+        </a>
+      </span>
+    </div>
+  
+</section>
+
+
+
+
+
+
+  
+  
   
 
   
-
   
 
   
+  
+
+  
+  
+
+  
+  
+
+
+
+
 
         </div>
       </div>
