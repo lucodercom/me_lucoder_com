@@ -42,7 +42,7 @@
     <item>
       <title>C#</title>
       <link>https://me.lucoder.com/tags/c/</link>
-      <pubDate>Tue, 08 Jan 2019 21:01:23 +0800</pubDate>
+      <pubDate>Mon, 11 Feb 2019 10:01:23 +0800</pubDate>
       
       <guid>https://me.lucoder.com/tags/c/</guid>
       <description></description>
@@ -132,7 +132,7 @@
     <item>
       <title>Java</title>
       <link>https://me.lucoder.com/tags/java/</link>
-      <pubDate>Tue, 22 Jan 2019 23:16:23 +0800</pubDate>
+      <pubDate>Mon, 11 Feb 2019 10:01:23 +0800</pubDate>
       
       <guid>https://me.lucoder.com/tags/java/</guid>
       <description></description>
@@ -213,7 +213,7 @@
     <item>
       <title>Opencv</title>
       <link>https://me.lucoder.com/tags/opencv/</link>
-      <pubDate>Tue, 22 Jan 2019 23:16:23 +0800</pubDate>
+      <pubDate>Sun, 06 Jan 2019 22:01:23 +0800</pubDate>
       
       <guid>https://me.lucoder.com/tags/opencv/</guid>
       <description></description>
@@ -409,15 +409,6 @@
     </item>
     
     <item>
-      <title>图像拼接</title>
-      <link>https://me.lucoder.com/tags/%E5%9B%BE%E5%83%8F%E6%8B%BC%E6%8E%A5/</link>
-      <pubDate>Tue, 22 Jan 2019 23:16:23 +0800</pubDate>
-      
-      <guid>https://me.lucoder.com/tags/%E5%9B%BE%E5%83%8F%E6%8B%BC%E6%8E%A5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>外星人</title>
       <link>https://me.lucoder.com/tags/%E5%A4%96%E6%98%9F%E4%BA%BA/</link>
       <pubDate>Thu, 26 Jul 2018 14:21:50 +0800</pubDate>
@@ -459,6 +450,15 @@
       <pubDate>Fri, 27 Jul 2018 14:21:50 +0800</pubDate>
       
       <guid>https://me.lucoder.com/tags/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>并行计算</title>
+      <link>https://me.lucoder.com/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</link>
+      <pubDate>Tue, 08 Jan 2019 21:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</guid>
       <description></description>
     </item>
     

@@ -658,33 +658,33 @@
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-	<span class="n">IplImage</span><span class="o">*</span> <span class="n">imgload</span> <span class="o">=</span> <span class="n">cvLoadImage</span><span class="p">(</span><span class="s">&#34;20180726095642.png&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-	<span class="n">IplImage</span><span class="o">*</span> <span class="n">Bimg</span> <span class="o">=</span> <span class="n">cvCreateImage</span><span class="p">(</span><span class="n">cvGetSize</span><span class="p">(</span><span class="n">imgload</span><span class="p">),</span> <span class="n">IPL_DEPTH_8U</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-	<span class="n">IplImage</span><span class="o">*</span> <span class="n">Gimg</span> <span class="o">=</span> <span class="n">cvCreateImage</span><span class="p">(</span><span class="n">cvGetSize</span><span class="p">(</span><span class="n">imgload</span><span class="p">),</span> <span class="n">IPL_DEPTH_8U</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-	<span class="n">IplImage</span><span class="o">*</span> <span class="n">Rimg</span> <span class="o">=</span> <span class="n">cvCreateImage</span><span class="p">(</span><span class="n">cvGetSize</span><span class="p">(</span><span class="n">imgload</span><span class="p">),</span> <span class="n">IPL_DEPTH_8U</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-	
-	<span class="n">cvSplit</span><span class="p">(</span><span class="n">imgload</span><span class="p">,</span> <span class="n">Bimg</span><span class="p">,</span> <span class="n">Gimg</span><span class="p">,</span> <span class="n">Rimg</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-	
-	<span class="n">IplImage</span><span class="o">*</span> <span class="n">pImg1</span> <span class="o">=</span> <span class="n">cvCreateImage</span><span class="p">(</span><span class="n">cvGetSize</span><span class="p">(</span><span class="n">imgload</span><span class="p">),</span> <span class="n">IPL_DEPTH_8U</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-	<span class="n">IplImage</span><span class="o">*</span> <span class="n">pImg2</span> <span class="o">=</span> <span class="n">cvCreateImage</span><span class="p">(</span><span class="n">cvGetSize</span><span class="p">(</span><span class="n">imgload</span><span class="p">),</span> <span class="n">IPL_DEPTH_8U</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-	<span class="n">IplImage</span><span class="o">*</span> <span class="n">pImg3</span> <span class="o">=</span> <span class="n">cvCreateImage</span><span class="p">(</span><span class="n">cvGetSize</span><span class="p">(</span><span class="n">imgload</span><span class="p">),</span> <span class="n">IPL_DEPTH_8U</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="n">IplImage</span><span class="o">*</span> <span class="n">imgload</span> <span class="o">=</span> <span class="n">cvLoadImage</span><span class="p">(</span><span class="s">&#34;20180726095642.png&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">IplImage</span><span class="o">*</span> <span class="n">Bimg</span> <span class="o">=</span> <span class="n">cvCreateImage</span><span class="p">(</span><span class="n">cvGetSize</span><span class="p">(</span><span class="n">imgload</span><span class="p">),</span> <span class="n">IPL_DEPTH_8U</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">IplImage</span><span class="o">*</span> <span class="n">Gimg</span> <span class="o">=</span> <span class="n">cvCreateImage</span><span class="p">(</span><span class="n">cvGetSize</span><span class="p">(</span><span class="n">imgload</span><span class="p">),</span> <span class="n">IPL_DEPTH_8U</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">IplImage</span><span class="o">*</span> <span class="n">Rimg</span> <span class="o">=</span> <span class="n">cvCreateImage</span><span class="p">(</span><span class="n">cvGetSize</span><span class="p">(</span><span class="n">imgload</span><span class="p">),</span> <span class="n">IPL_DEPTH_8U</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    
+    <span class="n">cvSplit</span><span class="p">(</span><span class="n">imgload</span><span class="p">,</span> <span class="n">Bimg</span><span class="p">,</span> <span class="n">Gimg</span><span class="p">,</span> <span class="n">Rimg</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    
+    <span class="n">IplImage</span><span class="o">*</span> <span class="n">pImg1</span> <span class="o">=</span> <span class="n">cvCreateImage</span><span class="p">(</span><span class="n">cvGetSize</span><span class="p">(</span><span class="n">imgload</span><span class="p">),</span> <span class="n">IPL_DEPTH_8U</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="n">IplImage</span><span class="o">*</span> <span class="n">pImg2</span> <span class="o">=</span> <span class="n">cvCreateImage</span><span class="p">(</span><span class="n">cvGetSize</span><span class="p">(</span><span class="n">imgload</span><span class="p">),</span> <span class="n">IPL_DEPTH_8U</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="n">IplImage</span><span class="o">*</span> <span class="n">pImg3</span> <span class="o">=</span> <span class="n">cvCreateImage</span><span class="p">(</span><span class="n">cvGetSize</span><span class="p">(</span><span class="n">imgload</span><span class="p">),</span> <span class="n">IPL_DEPTH_8U</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 
-	<span class="n">cvSetZero</span><span class="p">(</span><span class="n">pImg1</span><span class="p">);</span>
-	<span class="n">cvSetZero</span><span class="p">(</span><span class="n">pImg2</span><span class="p">);</span>
-	<span class="n">cvSetZero</span><span class="p">(</span><span class="n">pImg3</span><span class="p">);</span>
+    <span class="n">cvSetZero</span><span class="p">(</span><span class="n">pImg1</span><span class="p">);</span>
+    <span class="n">cvSetZero</span><span class="p">(</span><span class="n">pImg2</span><span class="p">);</span>
+    <span class="n">cvSetZero</span><span class="p">(</span><span class="n">pImg3</span><span class="p">);</span>
 
-	<span class="n">cvMerge</span><span class="p">(</span><span class="n">Bimg</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pImg3</span><span class="p">);</span>
-	<span class="n">cvMerge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Gimg</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pImg2</span><span class="p">);</span>
-	<span class="n">cvMerge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Rimg</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pImg1</span><span class="p">);</span>
+    <span class="n">cvMerge</span><span class="p">(</span><span class="n">Bimg</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pImg3</span><span class="p">);</span>
+    <span class="n">cvMerge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Gimg</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pImg2</span><span class="p">);</span>
+    <span class="n">cvMerge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Rimg</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pImg1</span><span class="p">);</span>
 
-	<span class="n">cvShowImage</span><span class="p">(</span><span class="s">&#34;RGB&#34;</span><span class="p">,</span> <span class="n">imgload</span><span class="p">);</span>
-	<span class="n">cvShowImage</span><span class="p">(</span><span class="s">&#34;R&#34;</span><span class="p">,</span> <span class="n">pImg1</span><span class="p">);</span>
-	<span class="n">cvShowImage</span><span class="p">(</span><span class="s">&#34;G&#34;</span><span class="p">,</span> <span class="n">pImg2</span><span class="p">);</span>
-	<span class="n">cvShowImage</span><span class="p">(</span><span class="s">&#34;B&#34;</span><span class="p">,</span> <span class="n">pImg3</span><span class="p">);</span>
+    <span class="n">cvShowImage</span><span class="p">(</span><span class="s">&#34;RGB&#34;</span><span class="p">,</span> <span class="n">imgload</span><span class="p">);</span>
+    <span class="n">cvShowImage</span><span class="p">(</span><span class="s">&#34;R&#34;</span><span class="p">,</span> <span class="n">pImg1</span><span class="p">);</span>
+    <span class="n">cvShowImage</span><span class="p">(</span><span class="s">&#34;G&#34;</span><span class="p">,</span> <span class="n">pImg2</span><span class="p">);</span>
+    <span class="n">cvShowImage</span><span class="p">(</span><span class="s">&#34;B&#34;</span><span class="p">,</span> <span class="n">pImg3</span><span class="p">);</span>
 
-	<span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 
-	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
