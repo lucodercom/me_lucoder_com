@@ -57,6 +57,17 @@
     </item>
     
     <item>
+      <title>陪着牧轩学CUDA</title>
+      <link>https://me.lucoder.com/topics/cuda/cudastudy/</link>
+      <pubDate>Sat, 03 Nov 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/topics/cuda/cudastudy/</guid>
+      
+        <description>说明</description>
+      
+    </item>
+    
+    <item>
       <title>陪着牧轩学Python</title>
       <link>https://me.lucoder.com/topics/python/</link>
       <pubDate>Sat, 03 Nov 2018 16:01:23 +0800</pubDate>
@@ -75,6 +86,17 @@
       <guid>https://me.lucoder.com/pages/links/</guid>
       
         <description>招收各种机器学习、人工智能、机器视觉等友链，注意必须支持https://. 名称 地址 方向 新生命团队 https://www.newlifex.com C# 十年之约 https://www.Foreverblog.cn 其他方向 联系我 QQ : 1053024080 Email : dev@lucoder.com</description>
+      
+    </item>
+    
+    <item>
+      <title>HelloCUDA</title>
+      <link>https://me.lucoder.com/post/2019/02/19/hellocuda/</link>
+      <pubDate>Mon, 11 Feb 2019 10:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/02/19/hellocuda/</guid>
+      
+        <description>引言 本节主要开篇，开始CUDA编程第一步！ 案例 下面的是Helloworld的案例代码。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 using namespace std; __global__ void helloFromGPU() { printf(&amp;#34;hello from GPU!\n&amp;#34;); } int main()</description>
       
     </item>
     

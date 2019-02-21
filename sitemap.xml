@@ -31,6 +31,13 @@
   </url>
   
   <url>
+    <loc>https://me.lucoder.com/topics/cuda/cudastudy/</loc>
+    <lastmod>2018-11-03T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://me.lucoder.com/topics/python/</loc>
     <lastmod>2018-11-03T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -39,6 +46,13 @@
   
   <url>
     <loc>https://me.lucoder.com/pages/links/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.lucoder.com/post/2019/02/19/hellocuda/</loc>
+    <lastmod>2019-02-11T10:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -410,6 +424,20 @@
   <url>
     <loc>https://me.lucoder.com/categories/cordova/</loc>
     <lastmod>2018-10-11T14:21:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.lucoder.com/tags/cuda/</loc>
+    <lastmod>2019-02-11T10:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://me.lucoder.com/categories/cuda/</loc>
+    <lastmod>2019-02-11T10:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1039,7 +1067,7 @@
   
   <url>
     <loc>https://me.lucoder.com/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</loc>
-    <lastmod>2019-01-08T21:01:23+08:00</lastmod>
+    <lastmod>2019-02-11T10:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1305,7 +1333,7 @@
   
   <url>
     <loc>https://me.lucoder.com/categories/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/</loc>
-    <lastmod>2019-01-08T21:01:23+08:00</lastmod>
+    <lastmod>2019-02-11T10:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
