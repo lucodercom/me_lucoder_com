@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>科研 on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/categories/%E7%A7%91%E7%A0%94/</link>
+    <description>Recent content in 科研 on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Sat, 02 Mar 2019 22:00:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/categories/%E7%A7%91%E7%A0%94/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>分类模型评价指标(全部)</title>
+      <link>https://me.lucoder.com/post/2019/03/02/%E7%A7%91%E7%A0%94%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</link>
+      <pubDate>Sat, 02 Mar 2019 22:00:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/03/02/%E7%A7%91%E7%A0%94%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</guid>
+      <description>评价指标： 准确率 （Accuracy），混淆矩阵 （Confusion Matrix），精确率（Precision），召回率（Recall），平均</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -57,17 +57,6 @@
     </item>
     
     <item>
-      <title>陪着牧轩学CUDA</title>
-      <link>https://me.lucoder.com/topics/cuda/cudastudy/</link>
-      <pubDate>Sat, 03 Nov 2018 16:01:23 +0800</pubDate>
-      
-      <guid>https://me.lucoder.com/topics/cuda/cudastudy/</guid>
-      
-        <description>说明</description>
-      
-    </item>
-    
-    <item>
       <title>陪着牧轩学Python</title>
       <link>https://me.lucoder.com/topics/python/</link>
       <pubDate>Sat, 03 Nov 2018 16:01:23 +0800</pubDate>
@@ -86,6 +75,17 @@
       <guid>https://me.lucoder.com/pages/links/</guid>
       
         <description>招收各种机器学习、人工智能、机器视觉等友链，注意必须支持https://. 名称 地址 方向 新生命团队 https://www.newlifex.com C# 十年之约 https://www.Foreverblog.cn 其他方向 联系我 QQ : 1053024080 Email : dev@lucoder.com</description>
+      
+    </item>
+    
+    <item>
+      <title>分类模型评价指标(全部)</title>
+      <link>https://me.lucoder.com/post/2019/03/02/%E7%A7%91%E7%A0%94%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</link>
+      <pubDate>Sat, 02 Mar 2019 22:00:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/03/02/%E7%A7%91%E7%A0%94%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</guid>
+      
+        <description>评价指标： 准确率 （Accuracy），混淆矩阵 （Confusion Matrix），精确率（Precision），召回率（Recall），平均</description>
       
     </item>
     
