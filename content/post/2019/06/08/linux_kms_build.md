@@ -1,6 +1,6 @@
 ---
 title: "搭建Linux版KMS服务器"
-date: 2019-06-08T14:24:33+08:00
+date: 2019-06-05T14:24:33+08:00
 draft: false
 tags: ["开发", "Linux", "KMS"]
 categories: ["开发", "Linux", "KMS"]
