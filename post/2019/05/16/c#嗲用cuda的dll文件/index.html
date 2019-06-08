@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>C#调用CUDA的DLL执行GPU计算 - 牧轩日志 - 记录开发中的点点滴滴</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="C#调用CUDA dll 进行GPU计算 创建项目 创建一个空白解决方案： 创建一个C#项目一个C&#43;&#43;项目，注意C&#43;&#43;的是动态链接库项目： 编写C&#43;&#43;的CU" />
+
+  <meta name="keywords" content="牧轩, 牧轩居士, 笔记录" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50" />
+
+
+<link rel="canonical" href="https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="C#调用CUDA的DLL执行GPU计算" />
+<meta property="og:description" content="C#调用CUDA dll 进行GPU计算 创建项目 创建一个空白解决方案： 创建一个C#项目一个C&#43;&#43;项目，注意C&#43;&#43;的是动态链接库项目： 编写C&#43;&#43;的CU" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/" /><meta property="article:published_time" content="2019-05-16T09:51:51&#43;08:00"/>
+<meta property="article:modified_time" content="2019-05-16T09:51:51&#43;08:00"/>
+
+<meta itemprop="name" content="C#调用CUDA的DLL执行GPU计算">
+<meta itemprop="description" content="C#调用CUDA dll 进行GPU计算 创建项目 创建一个空白解决方案： 创建一个C#项目一个C&#43;&#43;项目，注意C&#43;&#43;的是动态链接库项目： 编写C&#43;&#43;的CU">
+
+
+<meta itemprop="datePublished" content="2019-05-16T09:51:51&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-16T09:51:51&#43;08:00" />
+<meta itemprop="wordCount" content="990">
+
+
+
+<meta itemprop="keywords" content="开发,高性能计算,GPU," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C#调用CUDA的DLL执行GPU计算"/>
+<meta name="twitter:description" content="C#调用CUDA dll 进行GPU计算 创建项目 创建一个空白解决方案： 创建一个C#项目一个C&#43;&#43;项目，注意C&#43;&#43;的是动态链接库项目： 编写C&#43;&#43;的CU"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">牧轩笔记</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              专题
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              关于
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/about/">关于我</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/links/">友链</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              工具
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      牧轩笔记
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">专题</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">关于</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/about/">关于我</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/links/">友链</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">工具</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">C#调用CUDA的DLL执行GPU计算</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-05-16" class="post-time">
+          2019-05-16
+        </time>
+        <div class="post-category">
+            <a href="https://me.lucoder.com/categories/%E5%BC%80%E5%8F%91/"> 开发 </a>
+            <a href="https://me.lucoder.com/categories/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/"> 高性能计算 </a>
+            <a href="https://me.lucoder.com/categories/cuda/"> CUDA </a>
+            <a href="https://me.lucoder.com/categories/.net/"> .NET </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h1 id="c-调用cuda-dll-进行gpu计算">C#调用CUDA dll 进行GPU计算</h1>
+
+<h2 id="创建项目">创建项目</h2>
+
+<p>创建一个空白解决方案：
+<img src="https://oss.lucoder.com/md/2019/05/16/20190516095751.png" alt="20190516095751" /></p>
+
+<p>创建一个C#项目一个C++项目，注意C++的是动态链接库项目：</p>
+
+<p><img src="https://oss.lucoder.com/md/2019/05/16/20190516095852.png" alt="20190516095852" /></p>
+
+<p><img src="https://oss.lucoder.com/md/2019/05/16/20190516095938.png" alt="20190516095938" /></p>
+
+<h2 id="编写c-的cuda类库">编写C++的CUDA类库</h2>
+
+<p>添加一个<code>cudalib.h</code>的头文件，输入下面的代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#define CUDADLL32_API __declspec(dllimport)
+</span><span class="cp"></span><span class="k">extern</span> <span class="s">&#34;C&#34;</span> <span class="n">CUDADLL32_API</span> <span class="kt">int</span> <span class="n">vectorAdd</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">a</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">b</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">size</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>添加CUDA的头文件<code>kernel.cuh</code>和CUDA的实现文件<code>kernel.cuh</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">//kernel.cuh
+</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&#34;cuda_runtime.h&#34;  </span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&#34;device_launch_parameters.h&#34;    </span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&#34;cudalib.h&#34;</span><span class="cp">
+</span><span class="cp"></span><span class="c1">//CUDA核函数  
+</span><span class="c1"></span><span class="n">__global__</span> <span class="kt">void</span> <span class="nf">addKernel</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">b</span><span class="p">);</span>
+
+<span class="c1">//向量相加  
+</span><span class="c1"></span><span class="n">CUDADD_API</span> <span class="kt">int</span> <span class="n">vectorAdd</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">a</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">b</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">size</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">//kernel.cu
+</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&#34;kernel.cuh&#34;</span><span class="cp">
+</span><span class="cp"></span><span class="c1">//CUDA核函数  
+</span><span class="c1"></span><span class="n">__global__</span> <span class="kt">void</span> <span class="nf">addKernel</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">c</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+    <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="p">}</span>
+
+
+<span class="c1">//向量相加  
+</span><span class="c1"></span><span class="n">CUDADLL32_API</span> <span class="kt">int</span> <span class="nf">vectorAdd</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">a</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">b</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">size</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">dev_a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">dev_b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">dev_c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">cudaError_t</span> <span class="n">cudaStatus</span><span class="p">;</span>
+    <span class="c1">// 选择用于运行的GPU  
+</span><span class="c1"></span>    <span class="n">cudaStatus</span> <span class="o">=</span> <span class="n">cudaSetDevice</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">cudaStatus</span> <span class="o">!=</span> <span class="n">cudaSuccess</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">goto</span> <span class="n">Error</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// 在GPU中为变量dev_a、dev_b、dev_c分配内存空间.  
+</span><span class="c1"></span>    <span class="n">cudaStatus</span> <span class="o">=</span> <span class="n">cudaMalloc</span><span class="p">((</span><span class="kt">void</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">dev_c</span><span class="p">,</span> <span class="n">size</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">cudaStatus</span> <span class="o">!=</span> <span class="n">cudaSuccess</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="k">goto</span> <span class="n">Error</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cudaStatus</span> <span class="o">=</span> <span class="n">cudaMalloc</span><span class="p">((</span><span class="kt">void</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">dev_a</span><span class="p">,</span> <span class="n">size</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">cudaStatus</span> <span class="o">!=</span> <span class="n">cudaSuccess</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="k">goto</span> <span class="n">Error</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cudaStatus</span> <span class="o">=</span> <span class="n">cudaMalloc</span><span class="p">((</span><span class="kt">void</span><span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">dev_b</span><span class="p">,</span> <span class="n">size</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">cudaStatus</span> <span class="o">!=</span> <span class="n">cudaSuccess</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+        <span class="k">goto</span> <span class="n">Error</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// 从主机内存复制数据到GPU内存中.  
+</span><span class="c1"></span>    <span class="n">cudaStatus</span> <span class="o">=</span> <span class="n">cudaMemcpy</span><span class="p">(</span><span class="n">dev_a</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">size</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span> <span class="n">cudaMemcpyHostToDevice</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">cudaStatus</span> <span class="o">!=</span> <span class="n">cudaSuccess</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+        <span class="k">goto</span> <span class="n">Error</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cudaStatus</span> <span class="o">=</span> <span class="n">cudaMemcpy</span><span class="p">(</span><span class="n">dev_b</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span> <span class="n">cudaMemcpyHostToDevice</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">cudaStatus</span> <span class="o">!=</span> <span class="n">cudaSuccess</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+        <span class="k">goto</span> <span class="n">Error</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// 启动GPU内核函数  
+</span><span class="c1"></span>    <span class="n">addKernel</span> <span class="o">&lt;&lt;</span> <span class="o">&lt;</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span> <span class="o">&gt;&gt;</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">dev_c</span><span class="p">,</span> <span class="n">dev_a</span><span class="p">,</span> <span class="n">dev_b</span><span class="p">);</span>
+
+    <span class="c1">// 采用cudaDeviceSynchronize等待GPU内核函数执行完成并且返回遇到的任何错误信息  
+</span><span class="c1"></span>    <span class="n">cudaStatus</span> <span class="o">=</span> <span class="n">cudaDeviceSynchronize</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">cudaStatus</span> <span class="o">!=</span> <span class="n">cudaSuccess</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">7</span>
+            <span class="k">goto</span> <span class="n">Error</span>
+    <span class="p">}</span>
+    <span class="c1">// 从GPU内存中复制数据到主机内存中  
+</span><span class="c1"></span>    <span class="n">cudaStatus</span> <span class="o">=</span> <span class="n">cudaMemcpy</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">dev_c</span><span class="p">,</span> <span class="n">size</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span> <span class="n">cudaMemcpyDeviceToHost</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">cudaStatus</span> <span class="o">!=</span> <span class="n">cudaSuccess</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+        <span class="k">goto</span> <span class="n">Error</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">// 重置CUDA设备，在退出之前必须调用cudaDeviceReset  
+</span><span class="c1"></span>    <span class="n">cudaStatus</span> <span class="o">=</span> <span class="n">cudaDeviceReset</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">cudaStatus</span> <span class="o">!=</span> <span class="n">cudaSuccess</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nl">Error</span><span class="p">:</span>
+    <span class="c1">//释放设备中变量所占内存  
+</span><span class="c1"></span>    <span class="n">cudaFree</span><span class="p">(</span><span class="n">dev_c</span><span class="p">);</span>
+    <span class="n">cudaFree</span><span class="p">(</span><span class="n">dev_a</span><span class="p">);</span>
+    <span class="n">cudaFree</span><span class="p">(</span><span class="n">dev_b</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="代码编译">代码编译</h2>
+
+<p>默认是MSVC编译的，可能不识别CUDA的符号，所以需要修改为CUDA的NVCC编译符号：</p>
+
+<p><img src="https://oss.lucoder.com/md/2019/05/16/20190516101353.png" alt="20190516101353" /></p>
+
+<p><img src="https://oss.lucoder.com/md/2019/05/16/20190516101411.png" alt="20190516101411" /></p>
+
+<p>修改cu文件属性：</p>
+
+<p><img src="https://oss.lucoder.com/md/2019/05/16/20190516103048.png" alt="20190516103048" /></p>
+
+<p><img src="https://oss.lucoder.com/md/2019/05/16/20190516103103.png" alt="20190516103103" /></p>
+
+<p>输入库<code>cudart.lib</code>：</p>
+
+<p><img src="https://oss.lucoder.com/md/2019/05/16/20190516103252.png" alt="20190516103252" /></p>
+
+<p>重新生成项目：</p>
+
+<p><img src="https://oss.lucoder.com/md/2019/05/16/20190516101711.png" alt="20190516101711" /></p>
+
+<h2 id="c-调用">C#调用</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cs" data-lang="cs"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cs" data-lang="cs"><span class="k">class</span> <span class="nc">CudaRunner</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">void</span> <span class="n">Run</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">a</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="na">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">45</span><span class="p">,</span> <span class="m">456</span><span class="p">,</span> <span class="m">454</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">65</span><span class="p">,</span> <span class="m">32</span><span class="p">,</span> <span class="m">456</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">56</span><span class="p">,</span> <span class="m">32</span><span class="p">,</span> <span class="m">512</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">5416</span><span class="p">,</span> <span class="m">86</span><span class="p">,</span> <span class="m">54</span><span class="p">,</span> <span class="m">4236</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">113</span><span class="p">,</span> <span class="m">321</span> <span class="p">};</span>
+            <span class="kt">var</span> <span class="n">b</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="na">[]</span> <span class="p">{</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">45</span><span class="p">,</span> <span class="m">456</span><span class="p">,</span> <span class="m">454</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">65</span><span class="p">,</span> <span class="m">32</span><span class="p">,</span> <span class="m">456</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">56</span><span class="p">,</span> <span class="m">32</span><span class="p">,</span> <span class="m">512</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">5416</span><span class="p">,</span> <span class="m">86</span><span class="p">,</span> <span class="m">54</span><span class="p">,</span> <span class="m">4236</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">113</span><span class="p">,</span> <span class="m">321</span> <span class="p">};</span>
+            <span class="kt">var</span> <span class="n">c</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="na">[a.Length]</span><span class="p">;</span>
+
+            <span class="n">vectorAdd</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">c</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+            <span class="p">{</span>
+                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;{0} + {1} = {2}&#34;</span><span class="p">,</span> <span class="n">a</span><span class="na">[0]</span><span class="p">,</span> <span class="n">b</span><span class="na">[i]</span><span class="p">,</span> <span class="n">c</span><span class="na">[i]</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="na">
+</span><span class="na">
+</span><span class="na">        [DllImport(&#34;../../../Debug/CudaLib.dll&#34;, CallingConvention = CallingConvention.StdCall)]</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="k">extern</span> <span class="kt">int</span> <span class="n">vectorAdd</span><span class="p">(</span><span class="kt">int</span><span class="na">[]</span> <span class="n">c</span><span class="p">,</span> <span class="kt">int</span><span class="na">[]</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span><span class="na">[]</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">);</span>
+    <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cs" data-lang="cs"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cs" data-lang="cs"><span class="kt">var</span> <span class="n">run</span> <span class="p">=</span> <span class="k">new</span> <span class="n">CudaRunner</span><span class="p">();</span>
+<span class="n">run</span><span class="p">.</span><span class="n">Run</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">Read</span><span class="p">();</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Code:[]()</p>
+
+<h1 id="结果">结果</h1>
+
+<p><img src="https://oss.lucoder.com/md/2019/05/16/20190516105035.png" alt="20190516105035" /></p>
+
+<h1 id="遇到问题">遇到问题</h1>
+
+<p><img src="https://oss.lucoder.com/md/2019/05/16/20190516104944.png" alt="20190516104944" /></p>
+
+<p>切换成为对应的平台：
+<img src="https://oss.lucoder.com/md/2019/05/16/20190516105002.png" alt="20190516105002" /></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-05-16</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://me.lucoder.com/tags/%E5%BC%80%E5%8F%91/">开发</a>
+          <a href="https://me.lucoder.com/tags/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/">高性能计算</a>
+          <a href="https://me.lucoder.com/tags/gpu/">GPU</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2019/05/22/mpi.net%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">C#开发MPI应用</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2019/04/29/%E4%B9%8C%E7%9B%86%E8%AE%B0/">
+            <span class="next-text nav-default">乌盆记</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@lucoder.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://me.lucoder.com/pages/open/" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://me.lucoder.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    <a class="hexo-link" href="http://www.miitbeian.gov.cn/">豫ICP备16017737号-2</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    图像CDN:<a class="theme-link" href="https://www.upyun.com/">又拍云</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="theme-link" href="https://www.foreverblog.cn/">十年之约</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        牧轩居士
+        
+      </span></span>
+
+  
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

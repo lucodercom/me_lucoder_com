@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>图像的形态学操作 - 牧轩日志 - 记录开发中的点点滴滴</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="什么是形态学 形态学（形态学）常应用在生物学中，研究动植物的形态和结构; 图像形态学即数学形态学（Mathematical morphology）" />
+
+  <meta name="keywords" content="牧轩, 牧轩居士, 笔记录" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50" />
+
+
+<link rel="canonical" href="https://me.lucoder.com/post/2019/04/25/%E5%9B%BE%E5%83%8F%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="图像的形态学操作" />
+<meta property="og:description" content="什么是形态学 形态学（形态学）常应用在生物学中，研究动植物的形态和结构; 图像形态学即数学形态学（Mathematical morphology）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.lucoder.com/post/2019/04/25/%E5%9B%BE%E5%83%8F%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/" /><meta property="article:published_time" content="2019-04-25T11:01:23&#43;08:00"/>
+<meta property="article:modified_time" content="2019-04-25T11:01:23&#43;08:00"/>
+
+<meta itemprop="name" content="图像的形态学操作">
+<meta itemprop="description" content="什么是形态学 形态学（形态学）常应用在生物学中，研究动植物的形态和结构; 图像形态学即数学形态学（Mathematical morphology）">
+
+
+<meta itemprop="datePublished" content="2019-04-25T11:01:23&#43;08:00" />
+<meta itemprop="dateModified" content="2019-04-25T11:01:23&#43;08:00" />
+<meta itemprop="wordCount" content="1162">
+
+
+
+<meta itemprop="keywords" content="高性能计算,OpenMP," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="图像的形态学操作"/>
+<meta name="twitter:description" content="什么是形态学 形态学（形态学）常应用在生物学中，研究动植物的形态和结构; 图像形态学即数学形态学（Mathematical morphology）"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">牧轩笔记</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              专题
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              关于
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/about/">关于我</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/links/">友链</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              工具
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      牧轩笔记
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">专题</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">关于</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/about/">关于我</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/links/">友链</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">工具</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">图像的形态学操作</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-04-25" class="post-time">
+          2019-04-25
+        </time>
+        <div class="post-category">
+            <a href="https://me.lucoder.com/categories/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/"> 高性能计算 </a>
+            <a href="https://me.lucoder.com/categories/openmp/"> OpenMP </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h1 id="什么是形态学">什么是形态学</h1>
+
+<ol>
+<li>形态学（形态学）常应用在生物学中，研究动植物的形态和结构;</li>
+<li>图像形态学即数学形态学（Mathematical morphology）是一门建立在格伦和拓扑学基础上的图像分析学科，是数学形态学图像处理的基本理论;</li>
+<li>常见图像形态学运算：腐蚀，膨胀，开运算，闭运算，骨架抽取，极线腐蚀，击中击不中变换，顶帽变换，颗粒分析，流域变换，形态学梯度等;</li>
+<li>最基本的形态学操作是：膨胀（扩张）和腐蚀（侵蚀）;</li>
+</ol>
+
+<h1 id="有何作用">有何作用</h1>
+
+<ol>
+<li>消除噪声;</li>
+<li>分割出独立的图像元素，在图像中连接相邻的元素;</li>
+<li>寻找图像中明显的极大值或极小值区;</li>
+<li>求出图像的梯度;</li>
+</ol>
+
+<blockquote>
+<p>【注】：</p>
+</blockquote>
+
+<ol>
+<li>腐蚀和膨胀是对像素值大的部分而言的，即高亮白部分而不是黑色部分;</li>
+<li>膨胀是图像中的高亮部分进行膨胀，领域扩张，效果图拥有比原图更大的高亮区域;</li>
+<li>腐蚀是图像中的高亮部分被腐蚀掉，领域缩减，效果图拥有比原图更小的高亮区域;</li>
+</ol>
+
+<h1 id="膨胀和腐蚀">膨胀和腐蚀</h1>
+
+<h2 id="膨胀">膨胀</h2>
+
+<p>膨胀即为加点操作，将一幅图像A和图像B进行异或的操作，即:C=A⊕B</p>
+
+<p><img src="https://oss.lucoder.com/md/2019/04/25/201904251101.png" alt="201904251101" /></p>
+
+<blockquote>
+<p>途中意思是以正方形<code>中心</code>为基准点与被操作图的个个点做操作，得到一个新的图像。</p>
+</blockquote>
+
+<h2 id="腐蚀">腐蚀</h2>
+
+<p>腐蚀和膨胀是互相反操作，</p>
+
+<h1 id="开闭操作">开闭操作</h1>
+
+<h2 id="目的">目的</h2>
+
+<p>开操作可以平滑物体轮廓，断开狭窄的间断和消除细小的突出物。它具有消除细小物体，在纤细处分离物体和平滑较大物体边界的作用。采用上图的结构B对原件进行开操作。
+<img src="https://oss.lucoder.com/md/2019/04/25/20161110160457655.png" alt="20161110160457655" />
+闭操作可以消弭狭窄的间断，消除小的孔洞。先膨胀后腐蚀的操作称之为闭操作。它具有填充物体内细小空洞，连接邻近物体和平滑边界的作用。采用上图的结构对原件进行闭操作。
+<img src="https://oss.lucoder.com/md/2019/04/25/20161110161825931.png" alt="20161110161825931" /></p>
+
+<h2 id="形态学开运算">形态学开运算</h2>
+
+<p>开运算（Open Operation）：先腐蚀后膨胀的过程;</p>
+
+<h3 id="功能">功能</h3>
+
+<ul>
+<li>消除小物体;</li>
+<li>在纤细处分离物体;</li>
+<li>平滑较大的边界并不明显改变其面积;</li>
+</ul>
+
+<h2 id="形态学闭运算">形态学闭运算</h2>
+
+<p>闭运算（Closing Openration），先膨胀后腐蚀;</p>
+
+<h3 id="功能-1">功能</h3>
+
+<ul>
+<li>排除小型黑洞（黑斑）;</li>
+</ul>
+
+<h1 id="实现">实现</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;opencv2/opencv.hpp&gt;</span><span class="cp">
+</span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">cv</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="n">Mat</span> <span class="n">src1</span><span class="p">,</span> <span class="n">src2</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">ment_size</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">demo</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="kt">void</span><span class="o">*</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">src1</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s">&#34;C:</span><span class="se">\\</span><span class="s">Users</span><span class="se">\\</span><span class="s">马迎伟</span><span class="se">\\</span><span class="s">Desktop</span><span class="se">\\</span><span class="s">douyin.jpg&#34;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">src1</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;could not find src1&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">namedWindow</span><span class="p">(</span><span class="s">&#34;output&#34;</span><span class="p">,</span><span class="n">CV_WINDOW_AUTOSIZE</span><span class="p">);</span>
+    <span class="n">createTrackbar</span><span class="p">(</span><span class="s">&#34;elementsize&#34;</span><span class="p">,</span> <span class="s">&#34;output&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ment_size</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="n">demo</span><span class="p">);</span>
+    <span class="n">demo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">imshow</span><span class="p">(</span><span class="s">&#34;output&#34;</span><span class="p">,</span><span class="n">src2</span><span class="p">);</span>
+    <span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">demo</span><span class="p">(</span><span class="kt">int</span> <span class="p">,</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">ment_size</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+    <span class="c1">//获取 kernel的形状
+</span><span class="c1"></span>    <span class="n">Mat</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">getStructuringElement</span><span class="p">(</span><span class="n">MORPH_RECT</span><span class="p">,</span> <span class="n">Size</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">),</span><span class="n">Point</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+  <span class="c1">//dilate(src1, src2, ds);   //膨胀
+</span><span class="c1"></span>    <span class="n">erode</span><span class="p">(</span><span class="n">src1</span><span class="p">,</span><span class="n">src2</span><span class="p">,</span><span class="n">ds</span><span class="p">,</span><span class="n">Point</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>      <span class="c1">//腐蚀
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;opencv2/opencv.hpp&gt;</span><span class="cp">
+</span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">cv</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="n">Mat</span> <span class="n">src1</span><span class="p">,</span> <span class="n">src2</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">src1</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s">&#34;C:</span><span class="se">\\</span><span class="s">Users</span><span class="se">\\</span><span class="s">马迎伟</span><span class="se">\\</span><span class="s">Desktop</span><span class="se">\\</span><span class="s">douyin.jpg&#34;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">src1</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;could not find src1&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">namedWindow</span><span class="p">(</span><span class="s">&#34;output&#34;</span><span class="p">,</span> <span class="n">CV_WINDOW_AUTOSIZE</span><span class="p">);</span>
+    <span class="c1">//开 操作，先腐蚀后膨胀；  （深色背景中去 浅色）
+</span><span class="c1"></span>    <span class="c1">//闭 操作，先膨胀后腐蚀；  （浅色背景中去 深色）
+</span><span class="c1"></span>    <span class="n">Mat</span> <span class="n">kernel</span> <span class="o">=</span> <span class="n">getStructuringElement</span><span class="p">(</span><span class="n">MORPH_RECT</span><span class="p">,</span><span class="n">Size</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">40</span><span class="p">),</span><span class="n">Point</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+    <span class="c1">//cout &lt;&lt; kernel &lt;&lt; endl;
+</span><span class="c1"></span>    <span class="c1">//morphologyEx(src1,src2,CV_MOP_OPEN,kernel);
+</span><span class="c1"></span>    <span class="n">morphologyEx</span><span class="p">(</span><span class="n">src1</span><span class="p">,</span> <span class="n">src2</span><span class="p">,</span> <span class="n">CV_MOP_TOPHAT</span><span class="p">,</span> <span class="n">kernel</span><span class="p">);</span>
+    <span class="c1">//imshow(&#34;output&#34;, src2);
+</span><span class="c1"></span>    <span class="c1">//形态学梯度，又称为基本梯度，（膨胀减去腐蚀）CV_MOP_GRADIENT
+</span><span class="c1"></span>    <span class="c1">//黑帽 （闭操作与原图像的差值）  CV_MOP_BLACKHAT
+</span><span class="c1"></span>    <span class="c1">//顶帽 （原图像与开操作的差值）  CV_MOP_TOPHAT
+</span><span class="c1"></span>    <span class="n">imshow</span><span class="p">(</span><span class="s">&#34;output&#34;</span><span class="p">,</span><span class="n">src2</span><span class="p">);</span>
+    <span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-04-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://me.lucoder.com/tags/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/">高性能计算</a>
+          <a href="https://me.lucoder.com/tags/openmp/">OpenMP</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2019/04/29/%E4%B9%8C%E7%9B%86%E8%AE%B0/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">乌盆记</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2019/04/08/openmp%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF/">
+            <span class="next-text nav-default">OpenMP嵌套循环</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@lucoder.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://me.lucoder.com/pages/open/" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://me.lucoder.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    <a class="hexo-link" href="http://www.miitbeian.gov.cn/">豫ICP备16017737号-2</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    图像CDN:<a class="theme-link" href="https://www.upyun.com/">又拍云</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="theme-link" href="https://www.foreverblog.cn/">十年之约</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        牧轩居士
+        
+      </span></span>
+
+  
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

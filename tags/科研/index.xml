@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>牧轩居士</copyright>
-    <lastBuildDate>Sat, 02 Mar 2019 22:00:23 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 May 2019 10:14:26 +0800</lastBuildDate>
     
 	<atom:link href="https://me.lucoder.com/tags/%E7%A7%91%E7%A0%94/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>免VPN下载知网等网站论文</title>
+      <link>https://me.lucoder.com/post/2019/05/26/%E5%85%8Dvpn%E4%B8%8B%E8%BD%BD%E8%AE%BA%E6%96%87/</link>
+      <pubDate>Sun, 26 May 2019 10:14:26 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/05/26/%E5%85%8Dvpn%E4%B8%8B%E8%BD%BD%E8%AE%BA%E6%96%87/</guid>
+      <description>支付宝内搜索并关注“浙江图书馆”的生活号，点击“服务”-》“服务大厅”-》“办理读者证（免费的，自定义读者证的密码）”，办理完读者证后可以去</description>
+    </item>
     
     <item>
       <title>分类模型评价指标(全部)</title>

@@ -7,10 +7,82 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>牧轩居士</copyright>
-    <lastBuildDate>Sat, 02 Mar 2019 22:00:23 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 01 Jun 2019 10:01:03 +0800</lastBuildDate>
     
 	<atom:link href="https://me.lucoder.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>孔雀复西行</title>
+      <link>https://me.lucoder.com/post/2019/06/01/%E5%AD%94%E9%9B%80%E5%A4%8D%E8%A5%BF%E8%A1%8C/</link>
+      <pubDate>Sat, 01 Jun 2019 10:01:03 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/06/01/%E5%AD%94%E9%9B%80%E5%A4%8D%E8%A5%BF%E8%A1%8C/</guid>
+      <description>《孔雀复西行》（一） 孔雀复西行，行止夜三更，闻得唐楼阁，焦母泣连声，邻家有阿嫂，过门问详情，止不住哽咽，话语不成声，淡淡描几句，错词描详情。</description>
+    </item>
+    
+    <item>
+      <title>免VPN下载知网等网站论文</title>
+      <link>https://me.lucoder.com/post/2019/05/26/%E5%85%8Dvpn%E4%B8%8B%E8%BD%BD%E8%AE%BA%E6%96%87/</link>
+      <pubDate>Sun, 26 May 2019 10:14:26 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/05/26/%E5%85%8Dvpn%E4%B8%8B%E8%BD%BD%E8%AE%BA%E6%96%87/</guid>
+      <description>支付宝内搜索并关注“浙江图书馆”的生活号，点击“服务”-》“服务大厅”-》“办理读者证（免费的，自定义读者证的密码）”，办理完读者证后可以去</description>
+    </item>
+    
+    <item>
+      <title>C#开发MPI应用</title>
+      <link>https://me.lucoder.com/post/2019/05/22/mpi.net%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 22 May 2019 20:24:25 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/05/22/mpi.net%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>MPI.NET 作者的Github:https://github.com/jmp75/MPI.NET 文本代码:等待上传 创建项目 注意Framework版本不</description>
+    </item>
+    
+    <item>
+      <title>C#调用CUDA的DLL执行GPU计算</title>
+      <link>https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 16 May 2019 09:51:51 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/</guid>
+      <description>C#调用CUDA dll 进行GPU计算 创建项目 创建一个空白解决方案： 创建一个C#项目一个C++项目，注意C++的是动态链接库项目： 编写C++的CU</description>
+    </item>
+    
+    <item>
+      <title>乌盆记</title>
+      <link>https://me.lucoder.com/post/2019/04/29/%E4%B9%8C%E7%9B%86%E8%AE%B0/</link>
+      <pubDate>Mon, 29 Apr 2019 10:14:26 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/04/29/%E4%B9%8C%E7%9B%86%E8%AE%B0/</guid>
+      <description>简单介绍 《乌盆记》是距今将近1000年的事情，说的是主人公刘世昌和刘升主仆二人外出贩卖缎绸，回乡之际因雨借宿赵大家里，然后赵大发现刘世昌的配</description>
+    </item>
+    
+    <item>
+      <title>图像的形态学操作</title>
+      <link>https://me.lucoder.com/post/2019/04/25/%E5%9B%BE%E5%83%8F%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Thu, 25 Apr 2019 11:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/04/25/%E5%9B%BE%E5%83%8F%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/</guid>
+      <description>什么是形态学 形态学（形态学）常应用在生物学中，研究动植物的形态和结构; 图像形态学即数学形态学（Mathematical morphology）</description>
+    </item>
+    
+    <item>
+      <title>OpenMP嵌套循环</title>
+      <link>https://me.lucoder.com/post/2019/04/08/openmp%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF/</link>
+      <pubDate>Mon, 08 Apr 2019 10:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/04/08/openmp%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF/</guid>
+      <description>说明 有时候开发过程中或许会遇到多重循环的现象，如果只是在最外层放上一个OpenMP的并行计算标志，那么只有在第一层for循环才会并行计算，循</description>
+    </item>
+    
+    <item>
+      <title>MS-MPI安装配置</title>
+      <link>https://me.lucoder.com/post/2019/03/28/ms-mpi%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 28 Mar 2019 19:37:28 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/03/28/ms-mpi%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>MPI简介 官网 http://www.mpich.org/downloads/ 安装步骤 选择MS-MPI： 下载结束后，按照下一步下一步安装软件，安装结束后就可以配置环境变量进行编程了，假设你的安装目录是：</description>
+    </item>
     
     <item>
       <title>分类模型评价指标(全部)</title>
@@ -422,15 +494,6 @@
       
       <guid>https://me.lucoder.com/post/2017/11/22/visual-studio-code/</guid>
       <description>Visual Studio Code 官网：https://code.visualstudio.com/ VSCode可以认为是一个迷你版的Visual Studio，大概45</description>
-    </item>
-    
-    <item>
-      <title>IONIC开发环境搭建</title>
-      <link>https://me.lucoder.com/post/2017/11/03/ioni%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
-      <pubDate>Fri, 03 Nov 2017 16:01:23 +0800</pubDate>
-      
-      <guid>https://me.lucoder.com/post/2017/11/03/ioni%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
-      <description>IONI开发环境搭建 官网：https://ionicframework.com/docs/ ionic是一个用来开发混合手机应用的，开源的，免</description>
     </item>
     
   </channel>

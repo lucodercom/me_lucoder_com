@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gpu on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/tags/gpu/</link>
+    <description>Recent content in Gpu on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Thu, 16 May 2019 09:51:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/tags/gpu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C#调用CUDA的DLL执行GPU计算</title>
+      <link>https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 16 May 2019 09:51:51 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/</guid>
+      <description>C#调用CUDA dll 进行GPU计算 创建项目 创建一个空白解决方案： 创建一个C#项目一个C++项目，注意C++的是动态链接库项目： 编写C++的CU</description>
+    </item>
+    
+  </channel>
+</rss>

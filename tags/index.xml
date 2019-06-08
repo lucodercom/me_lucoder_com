@@ -85,6 +85,15 @@
     </item>
     
     <item>
+      <title>Gpu</title>
+      <link>https://me.lucoder.com/tags/gpu/</link>
+      <pubDate>Thu, 16 May 2019 09:51:51 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/tags/gpu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>H5db</title>
       <link>https://me.lucoder.com/tags/h5db/</link>
       <pubDate>Sat, 21 Apr 2018 14:21:50 +0800</pubDate>
@@ -195,7 +204,7 @@
     <item>
       <title>Mpi</title>
       <link>https://me.lucoder.com/tags/mpi/</link>
-      <pubDate>Mon, 01 Oct 2018 14:21:50 +0800</pubDate>
+      <pubDate>Wed, 22 May 2019 20:24:25 +0800</pubDate>
       
       <guid>https://me.lucoder.com/tags/mpi/</guid>
       <description></description>
@@ -216,6 +225,15 @@
       <pubDate>Sun, 06 Jan 2019 22:01:23 +0800</pubDate>
       
       <guid>https://me.lucoder.com/tags/opencv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Openmp</title>
+      <link>https://me.lucoder.com/tags/openmp/</link>
+      <pubDate>Thu, 25 Apr 2019 11:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/tags/openmp/</guid>
       <description></description>
     </item>
     
@@ -427,38 +445,20 @@
     </item>
     
     <item>
-      <title>定位</title>
-      <link>https://me.lucoder.com/tags/%E5%AE%9A%E4%BD%8D/</link>
-      <pubDate>Tue, 24 Apr 2018 14:21:50 +0800</pubDate>
+      <title>奇异录</title>
+      <link>https://me.lucoder.com/tags/%E5%A5%87%E5%BC%82%E5%BD%95/</link>
+      <pubDate>Sat, 01 Jun 2019 10:01:03 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/tags/%E5%AE%9A%E4%BD%8D/</guid>
+      <guid>https://me.lucoder.com/tags/%E5%A5%87%E5%BC%82%E5%BD%95/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>密钥</title>
-      <link>https://me.lucoder.com/tags/%E5%AF%86%E9%92%A5/</link>
-      <pubDate>Wed, 09 Jan 2019 21:31:23 +0800</pubDate>
+      <title>娱乐</title>
+      <link>https://me.lucoder.com/tags/%E5%A8%B1%E4%B9%90/</link>
+      <pubDate>Mon, 29 Apr 2019 10:14:26 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/tags/%E5%AF%86%E9%92%A5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>嵌入式</title>
-      <link>https://me.lucoder.com/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
-      <pubDate>Sat, 12 Jan 2019 15:58:23 +0800</pubDate>
-      
-      <guid>https://me.lucoder.com/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>工具</title>
-      <link>https://me.lucoder.com/tags/%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Fri, 27 Jul 2018 14:21:50 +0800</pubDate>
-      
-      <guid>https://me.lucoder.com/tags/%E5%B7%A5%E5%85%B7/</guid>
+      <guid>https://me.lucoder.com/tags/%E5%A8%B1%E4%B9%90/</guid>
       <description></description>
     </item>
     

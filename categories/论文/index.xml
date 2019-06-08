@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>论文 on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/categories/%E8%AE%BA%E6%96%87/</link>
+    <description>Recent content in 论文 on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Sun, 26 May 2019 10:14:26 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/categories/%E8%AE%BA%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>免VPN下载知网等网站论文</title>
+      <link>https://me.lucoder.com/post/2019/05/26/%E5%85%8Dvpn%E4%B8%8B%E8%BD%BD%E8%AE%BA%E6%96%87/</link>
+      <pubDate>Sun, 26 May 2019 10:14:26 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/05/26/%E5%85%8Dvpn%E4%B8%8B%E8%BD%BD%E8%AE%BA%E6%96%87/</guid>
+      <description>支付宝内搜索并关注“浙江图书馆”的生活号，点击“服务”-》“服务大厅”-》“办理读者证（免费的，自定义读者证的密码）”，办理完读者证后可以去</description>
+    </item>
+    
+  </channel>
+</rss>

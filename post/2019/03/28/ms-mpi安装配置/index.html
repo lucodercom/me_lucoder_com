@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>MS-MPI安装配置 - 牧轩日志 - 记录开发中的点点滴滴</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="MPI简介 官网 http://www.mpich.org/downloads/ 安装步骤 选择MS-MPI： 下载结束后，按照下一步下一步安装软件，安装结束后就可以配置环境变量进行编程了，假设你的安装目录是：" />
+
+  <meta name="keywords" content="牧轩, 牧轩居士, 笔记录" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50" />
+
+
+<link rel="canonical" href="https://me.lucoder.com/post/2019/03/28/ms-mpi%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="MS-MPI安装配置" />
+<meta property="og:description" content="MPI简介 官网 http://www.mpich.org/downloads/ 安装步骤 选择MS-MPI： 下载结束后，按照下一步下一步安装软件，安装结束后就可以配置环境变量进行编程了，假设你的安装目录是：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.lucoder.com/post/2019/03/28/ms-mpi%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" /><meta property="article:published_time" content="2019-03-28T19:37:28&#43;08:00"/>
+<meta property="article:modified_time" content="2019-03-28T19:37:28&#43;08:00"/>
+
+<meta itemprop="name" content="MS-MPI安装配置">
+<meta itemprop="description" content="MPI简介 官网 http://www.mpich.org/downloads/ 安装步骤 选择MS-MPI： 下载结束后，按照下一步下一步安装软件，安装结束后就可以配置环境变量进行编程了，假设你的安装目录是：">
+
+
+<meta itemprop="datePublished" content="2019-03-28T19:37:28&#43;08:00" />
+<meta itemprop="dateModified" content="2019-03-28T19:37:28&#43;08:00" />
+<meta itemprop="wordCount" content="510">
+
+
+
+<meta itemprop="keywords" content="开发,高性能计算,MPI," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MS-MPI安装配置"/>
+<meta name="twitter:description" content="MPI简介 官网 http://www.mpich.org/downloads/ 安装步骤 选择MS-MPI： 下载结束后，按照下一步下一步安装软件，安装结束后就可以配置环境变量进行编程了，假设你的安装目录是："/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">牧轩笔记</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              专题
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              关于
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/about/">关于我</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/links/">友链</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              工具
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      牧轩笔记
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">专题</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">关于</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/about/">关于我</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/links/">友链</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">工具</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/onlinetools/">在线工具</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">MS-MPI安装配置</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-03-28" class="post-time">
+          2019-03-28
+        </time>
+        <div class="post-category">
+            <a href="https://me.lucoder.com/categories/%E5%BC%80%E5%8F%91/"> 开发 </a>
+            <a href="https://me.lucoder.com/categories/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/"> 高性能计算 </a>
+            <a href="https://me.lucoder.com/categories/mpi/"> MPI </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h1 id="mpi简介">MPI简介</h1>
+
+<h1 id="官网">官网</h1>
+
+<p><a href="http://www.mpich.org/downloads/">http://www.mpich.org/downloads/</a></p>
+
+<h1 id="安装步骤">安装步骤</h1>
+
+<p><img src="https://oss.lucoder.com/md/2019/03/28/20190328192844.png" alt="打开官网" /></p>
+
+<p>选择MS-MPI：</p>
+
+<p><img src="https://oss.lucoder.com/md/2019/03/28/20190328192946.png" alt="选择MSMPI" /></p>
+
+<p><img src="https://oss.lucoder.com/md/2019/03/28/20190328193113.png" alt="打开MSMPI" /></p>
+
+<p><img src="https://oss.lucoder.com/md/2019/03/28/20190328193233.png" alt="下载MSMPI" /></p>
+
+<p><img src="https://oss.lucoder.com/md/2019/03/28/20190328193302.png" alt="下载MSMPI" /></p>
+
+<p>下载结束后，按照下一步下一步安装软件，安装结束后就可以配置环境变量进行编程了，假设你的安装目录是：C:\Program Files\Microsoft MPI(运行目录)和C:\Program Files (x86)\Microsoft SDKs\MPI（SDK目录）。</p>
+
+<h1 id="编程">编程</h1>
+
+<p>创建一个C++项目：</p>
+
+<p><img src="https://oss.lucoder.com/md/2019/03/28/20190328193614.png" alt="创建C++项目" /></p>
+
+<p>右键点击项目，选择属性：</p>
+
+<p><img src="https://oss.lucoder.com/md/2019/03/28/20190328193728.png" alt="设置属性" /></p>
+
+<p>设置你的Include目录和Lib目录。（例如：我的Include目录&ndash;&gt; C:\Program Files (x86)\Microsoft SDKs\MPI\Include，C:\Program Files (x86)\Microsoft SDKs\MPI\Include\x64 , 我的Lib目录&ndash;&gt; C:\Program Files (x86)\Microsoft SDKs\MPI\Lib\x64）</p>
+
+<p><img src="https://oss.lucoder.com/md/2019/03/28/20190328193924.png" alt="设置项目" /></p>
+
+<p>主库必须选择：<code>msmpi.lib</code></p>
+
+<p><img src="https://oss.lucoder.com/md/2019/03/28/20190328194110.png" alt="填写库" /></p>
+
+<p>注意一点：因为我全程配置的都是<code>x64</code>，所以选择项目也需要是<code>x64</code>的，如果你是<code>x86</code>的，俺就需要配置<code>x86</code>.</p>
+
+<p><img src="https://oss.lucoder.com/md/2019/03/28/20190328194148.png" alt="最后一步" /></p>
+
+<p>下面是一个mpi的案例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&#34;pch.h&#34;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;mpi.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">totalTaskNum</span><span class="p">,</span> <span class="n">rankID</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">rt</span> <span class="o">=</span> <span class="n">MPI_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">rt</span> <span class="o">!=</span> <span class="n">MPI_SUCCESS</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Error starting MPI.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+        <span class="n">MPI_Abort</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="n">rt</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">totalTaskNum</span><span class="p">);</span>
+    <span class="n">MPI_Comm_rank</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">rankID</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Hellow, world! %dth of totalTaskNum = %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">rankID</span><span class="p">,</span> <span class="n">totalTaskNum</span><span class="p">);</span>
+
+    <span class="n">MPI_Finalize</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>点击项目，重新生成：
+<img src="https://oss.lucoder.com/md/2019/03/28/20190328194952.png" alt="重新生成" /></p>
+
+<h1 id="运行">运行</h1>
+
+<p>MPI的运行不能直接点击调试，需要使用命令运行，首先找到你的可执行程序，按住Shif键，点击鼠标右键，在Powershell打开（或者控制台打开）：</p>
+
+<p><img src="https://oss.lucoder.com/md/2019/03/28/20190328195133.png" alt="重新生成" /></p>
+
+<p>然后运行程序：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">mpiexec -n <span class="m">4</span> ConsoleApplication2.exe</code></pre></td></tr></table>
+</div>
+</div>
+<p><img src="https://oss.lucoder.com/md/2019/03/28/20190328195209.png" alt="结果" /></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-03-28</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://me.lucoder.com/tags/%E5%BC%80%E5%8F%91/">开发</a>
+          <a href="https://me.lucoder.com/tags/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/">高性能计算</a>
+          <a href="https://me.lucoder.com/tags/mpi/">MPI</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2019/04/08/openmp%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">OpenMP嵌套循环</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2019/03/02/%E7%A7%91%E7%A0%94%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/">
+            <span class="next-text nav-default">分类模型评价指标(全部)</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@lucoder.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://me.lucoder.com/pages/open/" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://me.lucoder.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    <a class="hexo-link" href="http://www.miitbeian.gov.cn/">豫ICP备16017737号-2</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    图像CDN:<a class="theme-link" href="https://www.upyun.com/">又拍云</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="theme-link" href="https://www.foreverblog.cn/">十年之约</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        牧轩居士
+        
+      </span></span>
+
+  
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

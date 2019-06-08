@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>牧轩居士</copyright>
-    <lastBuildDate>Sun, 06 Jan 2019 21:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 May 2019 20:24:25 +0800</lastBuildDate>
     
 	<atom:link href="https://me.lucoder.com/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C#开发MPI应用</title>
+      <link>https://me.lucoder.com/post/2019/05/22/mpi.net%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 22 May 2019 20:24:25 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/05/22/mpi.net%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>MPI.NET 作者的Github:https://github.com/jmp75/MPI.NET 文本代码:等待上传 创建项目 注意Framework版本不</description>
+    </item>
+    
+    <item>
+      <title>C#调用CUDA的DLL执行GPU计算</title>
+      <link>https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 16 May 2019 09:51:51 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/</guid>
+      <description>C#调用CUDA dll 进行GPU计算 创建项目 创建一个空白解决方案： 创建一个C#项目一个C++项目，注意C++的是动态链接库项目： 编写C++的CU</description>
+    </item>
+    
+    <item>
+      <title>MS-MPI安装配置</title>
+      <link>https://me.lucoder.com/post/2019/03/28/ms-mpi%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 28 Mar 2019 19:37:28 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/03/28/ms-mpi%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>MPI简介 官网 http://www.mpich.org/downloads/ 安装步骤 选择MS-MPI： 下载结束后，按照下一步下一步安装软件，安装结束后就可以配置环境变量进行编程了，假设你的安装目录是：</description>
+    </item>
     
     <item>
       <title>Jetson TX2 编译安装Visual Studio Code</title>

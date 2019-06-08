@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>牧轩居士</copyright>
-    <lastBuildDate>Mon, 01 Oct 2018 14:21:50 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 May 2019 20:24:25 +0800</lastBuildDate>
     
 	<atom:link href="https://me.lucoder.com/categories/mpi/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C#开发MPI应用</title>
+      <link>https://me.lucoder.com/post/2019/05/22/mpi.net%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 22 May 2019 20:24:25 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/05/22/mpi.net%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>MPI.NET 作者的Github:https://github.com/jmp75/MPI.NET 文本代码:等待上传 创建项目 注意Framework版本不</description>
+    </item>
+    
+    <item>
+      <title>MS-MPI安装配置</title>
+      <link>https://me.lucoder.com/post/2019/03/28/ms-mpi%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 28 Mar 2019 19:37:28 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/03/28/ms-mpi%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>MPI简介 官网 http://www.mpich.org/downloads/ 安装步骤 选择MS-MPI： 下载结束后，按照下一步下一步安装软件，安装结束后就可以配置环境变量进行编程了，假设你的安装目录是：</description>
+    </item>
     
     <item>
       <title>Ubuntu安装MPI</title>

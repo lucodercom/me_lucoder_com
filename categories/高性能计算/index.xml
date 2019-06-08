@@ -7,10 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>牧轩居士</copyright>
-    <lastBuildDate>Tue, 08 Jan 2019 21:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 May 2019 20:24:25 +0800</lastBuildDate>
     
 	<atom:link href="https://me.lucoder.com/categories/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C#开发MPI应用</title>
+      <link>https://me.lucoder.com/post/2019/05/22/mpi.net%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 22 May 2019 20:24:25 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/05/22/mpi.net%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>MPI.NET 作者的Github:https://github.com/jmp75/MPI.NET 文本代码:等待上传 创建项目 注意Framework版本不</description>
+    </item>
+    
+    <item>
+      <title>C#调用CUDA的DLL执行GPU计算</title>
+      <link>https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 16 May 2019 09:51:51 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/</guid>
+      <description>C#调用CUDA dll 进行GPU计算 创建项目 创建一个空白解决方案： 创建一个C#项目一个C++项目，注意C++的是动态链接库项目： 编写C++的CU</description>
+    </item>
+    
+    <item>
+      <title>图像的形态学操作</title>
+      <link>https://me.lucoder.com/post/2019/04/25/%E5%9B%BE%E5%83%8F%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Thu, 25 Apr 2019 11:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/04/25/%E5%9B%BE%E5%83%8F%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/</guid>
+      <description>什么是形态学 形态学（形态学）常应用在生物学中，研究动植物的形态和结构; 图像形态学即数学形态学（Mathematical morphology）</description>
+    </item>
+    
+    <item>
+      <title>OpenMP嵌套循环</title>
+      <link>https://me.lucoder.com/post/2019/04/08/openmp%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF/</link>
+      <pubDate>Mon, 08 Apr 2019 10:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/04/08/openmp%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF/</guid>
+      <description>说明 有时候开发过程中或许会遇到多重循环的现象，如果只是在最外层放上一个OpenMP的并行计算标志，那么只有在第一层for循环才会并行计算，循</description>
+    </item>
+    
+    <item>
+      <title>MS-MPI安装配置</title>
+      <link>https://me.lucoder.com/post/2019/03/28/ms-mpi%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 28 Mar 2019 19:37:28 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/03/28/ms-mpi%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description>MPI简介 官网 http://www.mpich.org/downloads/ 安装步骤 选择MS-MPI： 下载结束后，按照下一步下一步安装软件，安装结束后就可以配置环境变量进行编程了，假设你的安装目录是：</description>
+    </item>
     
     <item>
       <title>C#并行算法</title>
