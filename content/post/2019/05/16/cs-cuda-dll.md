@@ -9,6 +9,8 @@ toc: false
 
 # C#调用CUDA dll 进行GPU计算
 
+本项目是用C++开发CUDA程序，编译成dll文件供C#调用，实现C#进行GPU计算。
+
 ## 创建项目
 
 创建一个空白解决方案：
