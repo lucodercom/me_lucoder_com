@@ -14,11 +14,11 @@
     
     <item>
       <title>C#调用CUDA的DLL执行GPU计算</title>
-      <link>https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/</link>
+      <link>https://me.lucoder.com/post/2019/05/16/cs-cuda-dll/</link>
       <pubDate>Thu, 16 May 2019 09:51:51 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/</guid>
-      <description>C#调用CUDA dll 进行GPU计算 创建项目 创建一个空白解决方案： 创建一个C#项目一个C++项目，注意C++的是动态链接库项目： 编写C++的CU</description>
+      <guid>https://me.lucoder.com/post/2019/05/16/cs-cuda-dll/</guid>
+      <description>C#调用CUDA dll 进行GPU计算 本项目是用C++开发CUDA程序，编译成dll文件供C#调用，实现C#进行GPU计算。 创建项目 创建一个空白解</description>
     </item>
     
   </channel>

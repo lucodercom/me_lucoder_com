@@ -79,6 +79,28 @@
     </item>
     
     <item>
+      <title>搭建Linux版KMS服务器</title>
+      <link>https://me.lucoder.com/post/2019/06/08/linux_kms_build/</link>
+      <pubDate>Sat, 08 Jun 2019 14:24:33 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/06/08/linux_kms_build/</guid>
+      
+        <description>采用的是vlmcsd的服务。 下载编译 1 2 git clone https://github.com/Wind4/vlmcsd make -j 此时你可以看到有一个目录， bin 里面有两个文件一个是 vlmcsd 一个是 vlmcs。 运行软件 1 ./vlmcsd 测试软件 1</description>
+      
+    </item>
+    
+    <item>
+      <title>6月风波</title>
+      <link>https://me.lucoder.com/post/2019/06/08/6%E6%9C%88%E9%A3%8E%E6%B3%A2/</link>
+      <pubDate>Thu, 06 Jun 2019 22:39:46 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/06/08/6%E6%9C%88%E9%A3%8E%E6%B3%A2/</guid>
+      
+        <description>6月是一个特殊的月份，华为被禁、贸易战&amp;hellip;.，就在6月，不可抗拒的原因导致我的服务器凉了，丢了很多数据，不打算等着恢复了，所以再</description>
+      
+    </item>
+    
+    <item>
       <title>孔雀复西行</title>
       <link>https://me.lucoder.com/post/2019/06/01/%E5%AD%94%E9%9B%80%E5%A4%8D%E8%A5%BF%E8%A1%8C/</link>
       <pubDate>Sat, 01 Jun 2019 10:01:03 +0800</pubDate>
@@ -113,12 +135,12 @@
     
     <item>
       <title>C#调用CUDA的DLL执行GPU计算</title>
-      <link>https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/</link>
+      <link>https://me.lucoder.com/post/2019/05/16/cs-cuda-dll/</link>
       <pubDate>Thu, 16 May 2019 09:51:51 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://me.lucoder.com/post/2019/05/16/cs-cuda-dll/</guid>
       
-        <description>C#调用CUDA dll 进行GPU计算 创建项目 创建一个空白解决方案： 创建一个C#项目一个C++项目，注意C++的是动态链接库项目： 编写C++的CU</description>
+        <description>C#调用CUDA dll 进行GPU计算 本项目是用C++开发CUDA程序，编译成dll文件供C#调用，实现C#进行GPU计算。 创建项目 创建一个空白解</description>
       
     </item>
     
@@ -546,34 +568,6 @@
       <guid>https://me.lucoder.com/post/2018/04/24/ionic-%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</guid>
       
         <description>ionic 融入百度地图 百度地图是一个非常成熟的一个地图组件，在很多项目中都会用到百度地图组件，本节就介绍如何在ionic项目中使用百度地图。 在ind</description>
-      
-    </item>
-    
-    <item>
-      <title>ionic 使用 webrtc</title>
-      <link>https://me.lucoder.com/post/2018/04/23/ionic-%E4%BD%BF%E7%94%A8-webrtc/</link>
-      <pubDate>Mon, 23 Apr 2018 14:21:50 +0800</pubDate>
-      
-      <guid>https://me.lucoder.com/post/2018/04/23/ionic-%E4%BD%BF%E7%94%A8-webrtc/</guid>
-      
-        <description>ionic 使用 webrtc WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Re</description>
-      
-    </item>
-    
-    <item>
-      <title>基于LocalSortage实现的web临时数据库</title>
-      <link>https://me.lucoder.com/post/2018/04/21/%E5%9F%BA%E4%BA%8Elocalsortage%E5%AE%9E%E7%8E%B0%E7%9A%84web%E4%B8%B4%E6%97%B6%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
-      <pubDate>Sat, 21 Apr 2018 14:21:50 +0800</pubDate>
-      
-      <guid>https://me.lucoder.com/post/2018/04/21/%E5%9F%BA%E4%BA%8Elocalsortage%E5%AE%9E%E7%8E%B0%E7%9A%84web%E4%B8%B4%E6%97%B6%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
-      
-        <description>&lt;h1 id=&#34;基于localsortage实现的web临时数据库&#34;&gt;基于LocalSortage实现的web临时数据库&lt;/h1&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;该数据库基于localStorage的一个封装，实现键值对的存入和键值的取出，支持跨页面数据保存。该封装是团队内部使用的封装，不保证通用性以及bug的出现。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
       
     </item>
     

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>牧轩居士</copyright>
-    <lastBuildDate>Wed, 22 May 2019 20:24:25 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 08 Jun 2019 14:24:33 +0800</lastBuildDate>
     
 	<atom:link href="https://me.lucoder.com/categories/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>搭建Linux版KMS服务器</title>
+      <link>https://me.lucoder.com/post/2019/06/08/linux_kms_build/</link>
+      <pubDate>Sat, 08 Jun 2019 14:24:33 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/06/08/linux_kms_build/</guid>
+      <description>采用的是vlmcsd的服务。 下载编译 1 2 git clone https://github.com/Wind4/vlmcsd make -j 此时你可以看到有一个目录， bin 里面有两个文件一个是 vlmcsd 一个是 vlmcs。 运行软件 1 ./vlmcsd 测试软件 1</description>
+    </item>
     
     <item>
       <title>C#开发MPI应用</title>
@@ -23,11 +32,11 @@
     
     <item>
       <title>C#调用CUDA的DLL执行GPU计算</title>
-      <link>https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/</link>
+      <link>https://me.lucoder.com/post/2019/05/16/cs-cuda-dll/</link>
       <pubDate>Thu, 16 May 2019 09:51:51 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/05/16/c#%E5%97%B2%E7%94%A8cuda%E7%9A%84dll%E6%96%87%E4%BB%B6/</guid>
-      <description>C#调用CUDA dll 进行GPU计算 创建项目 创建一个空白解决方案： 创建一个C#项目一个C++项目，注意C++的是动态链接库项目： 编写C++的CU</description>
+      <guid>https://me.lucoder.com/post/2019/05/16/cs-cuda-dll/</guid>
+      <description>C#调用CUDA dll 进行GPU计算 本项目是用C++开发CUDA程序，编译成dll文件供C#调用，实现C#进行GPU计算。 创建项目 创建一个空白解</description>
     </item>
     
     <item>
