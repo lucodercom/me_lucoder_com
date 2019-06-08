@@ -58,15 +58,6 @@
     </item>
     
     <item>
-      <title>Cuda</title>
-      <link>https://me.lucoder.com/categories/cuda/</link>
-      <pubDate>Mon, 11 Feb 2019 10:01:23 +0800</pubDate>
-      
-      <guid>https://me.lucoder.com/categories/cuda/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Ef Core</title>
       <link>https://me.lucoder.com/categories/ef-core/</link>
       <pubDate>Mon, 02 Apr 2018 14:21:50 +0800</pubDate>
@@ -459,6 +450,15 @@
       <pubDate>Mon, 11 Feb 2019 10:01:23 +0800</pubDate>
       
       <guid>https://me.lucoder.com/categories/%E5%BC%95%E6%88%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数据库</title>
+      <link>https://me.lucoder.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Sat, 21 Apr 2018 14:21:50 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
       <description></description>
     </item>
     

@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>牧轩居士</copyright>
-    <lastBuildDate>Mon, 11 Feb 2019 10:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 08 Jan 2019 21:01:23 +0800</lastBuildDate>
     
 	<atom:link href="https://me.lucoder.com/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>HelloCUDA</title>
-      <link>https://me.lucoder.com/post/2019/02/19/hellocuda/</link>
-      <pubDate>Mon, 11 Feb 2019 10:01:23 +0800</pubDate>
-      
-      <guid>https://me.lucoder.com/post/2019/02/19/hellocuda/</guid>
-      <description>引言 本节主要开篇，开始CUDA编程第一步！ 案例 下面的是Helloworld的案例代码。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 using namespace std; __global__ void helloFromGPU() { printf(&amp;#34;hello from GPU!\n&amp;#34;); } int main()</description>
-    </item>
     
     <item>
       <title>C#并行算法</title>
