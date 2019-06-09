@@ -14,19 +14,19 @@
     
     <item>
       <title>图像的形态学操作</title>
-      <link>https://me.lucoder.com/post/2019/04/25/%E5%9B%BE%E5%83%8F%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/</link>
+      <link>https://me.lucoder.com/post/2019/04/25/morphology/</link>
       <pubDate>Thu, 25 Apr 2019 11:01:23 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/04/25/%E5%9B%BE%E5%83%8F%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/</guid>
+      <guid>https://me.lucoder.com/post/2019/04/25/morphology/</guid>
       <description>什么是形态学 形态学（形态学）常应用在生物学中，研究动植物的形态和结构; 图像形态学即数学形态学（Mathematical morphology）</description>
     </item>
     
     <item>
       <title>OpenMP嵌套循环</title>
-      <link>https://me.lucoder.com/post/2019/04/08/openmp%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF/</link>
+      <link>https://me.lucoder.com/post/2019/04/08/openmp-inner-loop/</link>
       <pubDate>Mon, 08 Apr 2019 10:01:23 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/04/08/openmp%E5%B5%8C%E5%A5%97%E5%BE%AA%E7%8E%AF/</guid>
+      <guid>https://me.lucoder.com/post/2019/04/08/openmp-inner-loop/</guid>
       <description>说明 有时候开发过程中或许会遇到多重循环的现象，如果只是在最外层放上一个OpenMP的并行计算标志，那么只有在第一层for循环才会并行计算，循</description>
     </item>
     

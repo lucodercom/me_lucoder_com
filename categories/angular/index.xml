@@ -14,10 +14,10 @@
     
     <item>
       <title>IONIC使用HTTP</title>
-      <link>https://me.lucoder.com/post/2018/10/08/ionic%E4%BD%BF%E7%94%A8http/</link>
+      <link>https://me.lucoder.com/post/2018/10/08/ionic-http/</link>
       <pubDate>Mon, 08 Oct 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/10/08/ionic%E4%BD%BF%E7%94%A8http/</guid>
+      <guid>https://me.lucoder.com/post/2018/10/08/ionic-http/</guid>
       <description>Http技术 http请求是客户端请求api使用的一项非常重要的技术，主要有下面几种方法。 使用Native组件 这种方法是一种和原生交互行最强的</description>
     </item>
     

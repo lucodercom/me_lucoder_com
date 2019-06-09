@@ -14,28 +14,28 @@
     
     <item>
       <title>Jetson Xavier 安装中文输入法</title>
-      <link>https://me.lucoder.com/post/2019/01/06/jetson-xavier%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+      <link>https://me.lucoder.com/post/2019/01/06/jetson-xavier-input/</link>
       <pubDate>Sun, 06 Jan 2019 22:01:23 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/01/06/jetson-xavier%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/</guid>
+      <guid>https://me.lucoder.com/post/2019/01/06/jetson-xavier-input/</guid>
       <description>我实验结果是只有谷歌输入法可以用，并且用户体验不错。 一共两个步骤，首先更新软件园，然后安装谷歌拼音。 1 2 3 4 5 # update software repertories sudo apt-get update # fix google pin yin sudo apt-get install</description>
     </item>
     
     <item>
       <title>图像上采样和下采样</title>
-      <link>https://me.lucoder.com/post/2019/01/04/%E5%9B%BE%E5%83%8F%E4%B8%8B%E9%87%87%E6%A0%B7/</link>
+      <link>https://me.lucoder.com/post/2019/01/04/pyrdown-pyrup/</link>
       <pubDate>Fri, 04 Jan 2019 10:01:23 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/01/04/%E5%9B%BE%E5%83%8F%E4%B8%8B%E9%87%87%E6%A0%B7/</guid>
+      <guid>https://me.lucoder.com/post/2019/01/04/pyrdown-pyrup/</guid>
       <description>本文使用的Opencv C#，如何在.NET Core环境下使用 Opencv，请参考这篇文章配置 Opencv 的 C#开发环境。 什么是下采样和上采样 如图所示，</description>
     </item>
     
     <item>
       <title>使用C#开发Opencv项目</title>
-      <link>https://me.lucoder.com/post/2018/12/24/csharpopencv/</link>
+      <link>https://me.lucoder.com/post/2018/12/24/csharp-opencv/</link>
       <pubDate>Mon, 24 Dec 2018 10:01:23 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/12/24/csharpopencv/</guid>
+      <guid>https://me.lucoder.com/post/2018/12/24/csharp-opencv/</guid>
       <description>如果仅仅是简单处理图像，建议使用C++或者Python版本的Opencv，但是很明显无论是C++还是Python都对UI显示有不同层次的支持</description>
     </item>
     

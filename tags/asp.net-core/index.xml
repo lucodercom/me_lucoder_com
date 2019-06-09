@@ -14,10 +14,10 @@
     
     <item>
       <title>ASP.NET CORE EF操作数据库</title>
-      <link>https://me.lucoder.com/post/2018/04/21/asp.net-core-ef%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <link>https://me.lucoder.com/post/2018/04/21/asp-net-core-ef-core/</link>
       <pubDate>Mon, 02 Apr 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/04/21/asp.net-core-ef%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <guid>https://me.lucoder.com/post/2018/04/21/asp-net-core-ef-core/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;写在前面：本文主要内容大多参考的MSD官网文档，本节参考网址 &lt;a href=&#34;https://docs.microsoft.com/zh-cn/aspnet/core/data/ef-rp/intro&#34;&gt;https://docs.microsoft.com/zh-cn/aspnet/core/data/ef-rp/intro&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;

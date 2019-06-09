@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>C#开发MPI应用 - 牧轩日志 - 记录开发中的点点滴滴</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="MPI.NET 作者的Github:https://github.com/jmp75/MPI.NET 文本代码:等待上传 创建项目 注意Framework版本不" />
+
+  <meta name="keywords" content="牧轩, 牧轩居士, 笔记录" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50" />
+
+
+<link rel="canonical" href="https://me.lucoder.com/post/2019/05/22/msmpi-mpi-net/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="C#开发MPI应用" />
+<meta property="og:description" content="MPI.NET 作者的Github:https://github.com/jmp75/MPI.NET 文本代码:等待上传 创建项目 注意Framework版本不" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.lucoder.com/post/2019/05/22/msmpi-mpi-net/" /><meta property="article:published_time" content="2019-05-22T20:24:25&#43;08:00"/>
+<meta property="article:modified_time" content="2019-05-22T20:24:25&#43;08:00"/>
+
+<meta itemprop="name" content="C#开发MPI应用">
+<meta itemprop="description" content="MPI.NET 作者的Github:https://github.com/jmp75/MPI.NET 文本代码:等待上传 创建项目 注意Framework版本不">
+
+
+<meta itemprop="datePublished" content="2019-05-22T20:24:25&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-22T20:24:25&#43;08:00" />
+<meta itemprop="wordCount" content="336">
+
+
+
+<meta itemprop="keywords" content="开发,高性能计算,MPI," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C#开发MPI应用"/>
+<meta name="twitter:description" content="MPI.NET 作者的Github:https://github.com/jmp75/MPI.NET 文本代码:等待上传 创建项目 注意Framework版本不"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">牧轩笔记</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              专题
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              关于
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/about/">关于我</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/links/">友链</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              工具
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/online-tools/">在线工具</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      牧轩笔记
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">专题</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">关于</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/about/">关于我</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/links/">友链</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">工具</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/online-tools/">在线工具</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">C#开发MPI应用</h1>
+      
+      <div class="post-meta">
+        <time datetime="2019-05-22" class="post-time">
+          2019-05-22
+        </time>
+        <div class="post-category">
+            <a href="https://me.lucoder.com/categories/%E5%BC%80%E5%8F%91/"> 开发 </a>
+            <a href="https://me.lucoder.com/categories/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/"> 高性能计算 </a>
+            <a href="https://me.lucoder.com/categories/mpi/"> MPI </a>
+            <a href="https://me.lucoder.com/categories/mpi.net/"> MPI.NET </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h1 id="mpi-net">MPI.NET</h1>
+
+<p>作者的Github:<a href="https://github.com/jmp75/MPI.NET">https://github.com/jmp75/MPI.NET</a></p>
+
+<p>文本代码:等待上传</p>
+
+<h1 id="创建项目">创建项目</h1>
+
+<blockquote>
+<p>注意Framework版本不要低于 4.6.2！</p>
+</blockquote>
+
+<p><img src="https://oss.lucoder.com/md/2019/05/22/20190522202425.png" alt="20190522202425" /></p>
+
+<h1 id="安装类库">安装类库</h1>
+
+<p>使用<code>Nuget</code>安装类库：</p>
+
+<p><img src="https://oss.lucoder.com/md/2019/05/22/20190522202450.png" alt="20190522202450" /></p>
+
+<p><img src="https://oss.lucoder.com/md/2019/05/22/20190522202559.png" alt="20190522202559" /></p>
+
+<h1 id="使用mpi">使用MPI</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cs" data-lang="cs"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cs" data-lang="cs"><span class="k">public</span> <span class="k">void</span> <span class="n">RunMpiAction</span><span class="p">(</span><span class="kt">string</span><span class="na">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">using</span> <span class="p">(</span><span class="k">new</span> <span class="n">MPI</span><span class="p">.</span><span class="n">Environment</span><span class="p">(</span><span class="k">ref</span> <span class="n">args</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="c1">//切割数据
+</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">rank</span> <span class="p">=</span> <span class="n">Communicator</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">Rank</span> <span class="p">-</span> <span class="m">1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">ranks</span> <span class="p">=</span> <span class="n">Communicator</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">Size</span><span class="p">;</span>
+        <span class="n">rank</span> <span class="p">+=</span> <span class="m">1</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">rank</span> <span class="p">==</span> <span class="m">0</span><span class="p">){</span>
+            <span class="c1">//数据分为groups组
+</span><span class="c1"></span>            <span class="kt">int</span> <span class="n">groups</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">ranks</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+            <span class="p">{</span>
+                <span class="n">Communicator</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">rank</span> <span class="p">!=</span> <span class="m">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">groups</span> <span class="p">=</span> <span class="n">Communicator</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">Receive</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;(</span><span class="m">0</span><span class="p">,</span> <span class="n">rank</span><span class="p">);</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;rank {0} , groups {1}&#34;</span><span class="p">,</span> <span class="n">rank</span><span class="p">,</span> <span class="n">groups</span><span class="p">);</span>
+            <span class="kt">var</span> <span class="n">list</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;()</span> <span class="p">{</span> <span class="s">$&#34;{rank} - a&#34;</span><span class="p">,</span> <span class="s">$&#34;{rank} - b&#34;</span><span class="p">,</span> <span class="s">$&#34;{rank} - c&#34;</span> <span class="p">};</span>
+            <span class="c1">//rank -= 1;
+</span><span class="c1"></span>            <span class="n">Communicator</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">rank</span><span class="p">);</span>
+            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;current rank is {0}&#34;</span><span class="p">,</span> <span class="n">rank</span><span class="p">);</span>
+        <span class="p">}</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">rank</span> <span class="p">==</span> <span class="m">0</span><span class="p">){</span>
+            <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">ranks</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">list</span> <span class="p">=</span> <span class="n">Communicator</span><span class="p">.</span><span class="n">world</span><span class="p">.</span><span class="n">Receive</span><span class="p">&lt;</span><span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;&gt;(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+                <span class="n">result</span><span class="p">.</span><span class="n">AddRange</span><span class="p">(</span><span class="n">list</span><span class="p">);</span>
+            <span class="p">}</span>
+            
+            <span class="c1">//接受结果
+</span><span class="c1"></span>            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;current rank is {0}&#34;</span><span class="p">,</span> <span class="n">rank</span><span class="p">);</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">result</span><span class="p">.</span><span class="n">Count</span><span class="p">;</span> <span class="n">i</span><span class="p">++){</span>
+                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">result</span><span class="na">[i]</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h1 id="运行结果">运行结果</h1>
+
+<blockquote>
+<p>需要安装<code>msmpi</code>，不要点击调试运行，需要使用命令执行。</p>
+</blockquote>
+
+<p><img src="https://oss.lucoder.com/md/2019/05/22/20190522203302.png" alt="20190522203302" /></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2019-05-22</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://me.lucoder.com/tags/%E5%BC%80%E5%8F%91/">开发</a>
+          <a href="https://me.lucoder.com/tags/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97/">高性能计算</a>
+          <a href="https://me.lucoder.com/tags/mpi/">MPI</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2019/05/26/no-vpn-download-papers/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">免VPN下载知网等网站论文</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2019/05/16/cs-cuda-dll/">
+            <span class="next-text nav-default">C#调用CUDA的DLL执行GPU计算</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@lucoder.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://me.lucoder.com/pages/open/" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://me.lucoder.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    <a class="hexo-link" href="http://www.miitbeian.gov.cn/">豫ICP备16017737号-2</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    图像CDN:<a class="theme-link" href="https://www.upyun.com/">又拍云</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="theme-link" href="https://www.foreverblog.cn/">十年之约</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        牧轩居士
+        
+      </span></span>
+
+  
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

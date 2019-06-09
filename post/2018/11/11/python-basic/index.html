@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>【陪着牧轩学Python】（二） 基础篇 - 牧轩日志 - 记录开发中的点点滴滴</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="说明 这一小节内容不多（相对于有基础的同学），包括最基础的变量、变量使用等等。 变量 Python对于变量类型非常的敏不敏感，看着是矛盾句子，其实" />
+
+  <meta name="keywords" content="牧轩, 牧轩居士, 笔记录" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50" />
+
+
+<link rel="canonical" href="https://me.lucoder.com/post/2018/11/11/python-basic/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="【陪着牧轩学Python】（二） 基础篇" />
+<meta property="og:description" content="说明 这一小节内容不多（相对于有基础的同学），包括最基础的变量、变量使用等等。 变量 Python对于变量类型非常的敏不敏感，看着是矛盾句子，其实" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.lucoder.com/post/2018/11/11/python-basic/" /><meta property="article:published_time" content="2018-11-11T14:14:22&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-11T14:14:22&#43;08:00"/>
+
+<meta itemprop="name" content="【陪着牧轩学Python】（二） 基础篇">
+<meta itemprop="description" content="说明 这一小节内容不多（相对于有基础的同学），包括最基础的变量、变量使用等等。 变量 Python对于变量类型非常的敏不敏感，看着是矛盾句子，其实">
+
+
+<meta itemprop="datePublished" content="2018-11-11T14:14:22&#43;08:00" />
+<meta itemprop="dateModified" content="2018-11-11T14:14:22&#43;08:00" />
+<meta itemprop="wordCount" content="1516">
+
+
+
+<meta itemprop="keywords" content="专题,Python," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="【陪着牧轩学Python】（二） 基础篇"/>
+<meta name="twitter:description" content="说明 这一小节内容不多（相对于有基础的同学），包括最基础的变量、变量使用等等。 变量 Python对于变量类型非常的敏不敏感，看着是矛盾句子，其实"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">牧轩笔记</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              专题
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              关于
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/about/">关于我</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/links/">友链</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              工具
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/online-tools/">在线工具</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      牧轩笔记
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">专题</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">关于</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/about/">关于我</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/links/">友链</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">工具</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/online-tools/">在线工具</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">【陪着牧轩学Python】（二） 基础篇</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-11-11" class="post-time">
+          2018-11-11
+        </time>
+        <div class="post-category">
+            <a href="https://me.lucoder.com/categories/%E4%B8%93%E9%A2%98/"> 专题 </a>
+            <a href="https://me.lucoder.com/categories/python/"> Python </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h1 id="说明">说明</h1>
+
+<p>这一小节内容不多（相对于有基础的同学），包括最基础的变量、变量使用等等。</p>
+
+<h1 id="变量">变量</h1>
+
+<p>Python对于变量类型非常的敏不敏感，看着是矛盾句子，其实不然，Python不像Java、C#、C++等语法，有严格的类型定义，但是对于类型的使用非常的严格，后期慢慢体会吧，</p>
+
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>案例</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>数值</td>
+<td>1234</td>
+<td>不区分int、float、double</td>
+</tr>
+
+<tr>
+<td>字符串</td>
+<td>&lsquo;lucoder&rsquo;</td>
+<td>字符串都懂，不再赘述</td>
+</tr>
+
+<tr>
+<td>列表</td>
+<td>[1,[2,&lsquo;three&rsquo;],4]</td>
+<td>em&hellip;.数组知道吧？不太一样，因为Python显得更加随意</td>
+</tr>
+
+<tr>
+<td>字典</td>
+<td>{&lsquo;name&rsquo;:&lsquo;牧轩&rsquo;,&lsquo;work&rsquo;:&lsquo;学习Python&rsquo;}</td>
+<td>字典，传说中的键值对</td>
+</tr>
+
+<tr>
+<td>元组</td>
+<td>(1,&lsquo;muxuan&rsquo;,2,false)</td>
+<td>你是不是觉得元组的内容很熟悉？对就是特殊的列表！</td>
+</tr>
+
+<tr>
+<td>文件</td>
+<td>reader=open(&lsquo;a.txt&rsquo;,&lsquo;r&rsquo;)</td>
+<td>IO资源类型</td>
+</tr>
+
+<tr>
+<td>集合</td>
+<td>Set(&lsquo;abc&rsquo;),{&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;}</td>
+<td>这个目前用的不多，还没领会到真正的含义</td>
+</tr>
+
+<tr>
+<td>其他</td>
+<td>None、bool</td>
+<td>其他的类型</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="写在前面">写在前面</h2>
+
+<p>任何编程都需要了解注释符号和输入输出：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 是行注释符号</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>输入后期给你们说，一步一步来，不要着急。另外，注意Python没有花括号分区域，全靠缩进代替花括号，所以一定要注意缩进问题。</p>
+
+<h2 id="数值类型">数值类型</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">a</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">b</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">c</span><span class="o">+=</span><span class="mf">1.0</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="n">pi</span><span class="o">=</span><span class="mf">3.1415926</span>
+<span class="n">r</span><span class="o">=</span><span class="mi">6</span>
+<span class="n">s</span><span class="o">=</span><span class="n">pi</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="nb">pow</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;the s of r is </span><span class="si">%.10g</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">s</span><span class="p">)</span> <span class="c1"># 保留10位（从第一位开始）</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;this is a number </span><span class="si">%.5d</span><span class="s1">&#39;</span><span class="p">,</span><span class="mf">3.1415926</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mf">1.11</span><span class="p">)</span>  <span class="c1"># 默认保留6位小数</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.1f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mf">1.11</span><span class="p">)</span>  <span class="c1"># 取1位小数</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%e</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mf">1.11</span><span class="p">)</span>  <span class="c1"># 默认6位小数，用科学计数法</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.3e</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mf">1.11</span><span class="p">)</span>  <span class="c1"># 取3位小数，用科学计数法</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%g</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mf">1111.1111</span><span class="p">)</span>  <span class="c1"># 默认6位有效数字</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.7g</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mf">1111.1111</span><span class="p">)</span>  <span class="c1"># 取7位有效数字</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%.2g</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mf">1111.1111</span><span class="p">)</span>  <span class="c1"># 取2位有效数字，自动转换为科学计数法</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="列表类型">列表类型</h2>
+
+<p>列表，简单的当成一个数组吧，先看下面的图，等下有用：</p>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/11/11/20181112221637.png" alt="https://oss.lucoder.com/uploads/2018/11/11/20181112221637.png" /></p>
+
+<h2 id="字符串类型">字符串类型</h2>
+
+<p>字符串是一个特殊的列表，因为列表的所有元素都是<code>字符</code>！现在上面的图有用了，看看下面的代码，先别看结果，猜一下结果。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">S</span><span class="o">=</span><span class="s1">&#39;hello I am muxuan&#39;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mi">6</span><span class="p">:])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="o">-</span><span class="mi">6</span><span class="p">:])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">])</span> <span class="c1">#注意后面的空格</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="o">-</span><span class="mi">6</span><span class="p">])))</span>
+
+<span class="c1">#error</span>
+<span class="c1">#S[0]=&#39;z&#39;</span>
+
+<span class="n">S</span><span class="o">=</span><span class="s1">&#39;Hi&#39;</span> <span class="o">+</span> <span class="n">S</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">S</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">h</span>
+<span class="n">hello</span>
+<span class="n">I</span> <span class="n">am</span> <span class="n">muxuan</span>
+<span class="n">muxuan</span>
+<span class="n">I</span> <span class="n">am</span>
+<span class="mi">5</span>
+<span class="n">Hi</span> <span class="n">I</span> <span class="n">am</span> <span class="n">muxuan</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>稍微点一下，防止真的不懂，<code>X[start,stop]</code>，其中X是一个列表，<code>start</code>是开始下表，<code>stop</code>是结束坐标，<code>start</code>和<code>stop</code>如果是正直是正向，负数是负向，来给你们一个口诀:
+<code>列表很特殊，方向也要确定。正负两方向，结果却不同。一正向右跑，二正往左行。如遇负数标，逆向定能行</code>。</p>
+
+<h2 id="字典类型">字典类型</h2>
+
+<p>字典类型可以理解为就是键值对组合，这个很简单，不做其他赘述：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">dic</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span><span class="s1">&#39;value&#39;</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">))</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="元组类型">元组类型</h2>
+
+<p>学会了列表，那么元组就很简单了，元组可以理解为一个特殊的元组，他是一个对象（抽象为对象）的最小单位，内容不可修改。用法和列表相同。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tpl</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tpl</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="文件类型">文件类型</h2>
+
+<p>文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">me.lucoder.com
+me.lucoder.com
+me.lucoder.com</code></pre></td></tr></table>
+</div>
+</div>
+<p>IO的问题以后会单独讨论，所以看不懂也不用着急。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;e:/t.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span>
+<span class="n">readContent</span><span class="o">=</span><span class="nb">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">readContent</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">readContent</span><span class="p">)</span>
+    <span class="n">readContent</span><span class="o">=</span><span class="nb">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="其他类型">其他类型</h2>
+
+<p>Python的类型是比较宽松的，会按照类型自己判断，比如：<code>c=a==b</code>，c自动就会变成<code>bool</code>，所以比较宽松。比较需要注意的问题是<code>a==None</code>。</p>
+
+<h1 id="语法">语法</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">d</span> <span class="o">=</span> <span class="mi">225</span>  <span class="c1"># 赋值</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">225</span>  <span class="c1"># 加</span>
+<span class="n">d</span> <span class="o">+=</span> <span class="mi">100</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">225</span>  <span class="c1"># 减</span>
+<span class="n">d</span> <span class="o">-=</span> <span class="mi">100</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">*=</span> <span class="n">d</span>   <span class="c1">#乘</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">/=</span> <span class="mi">5</span>   <span class="c1">#除</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">d</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">d</span> <span class="o">**=</span> <span class="mi">10</span> <span class="c1">#幂运算</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">d</span><span class="o">=</span><span class="mi">1024</span>
+<span class="n">d</span> <span class="o">//=</span> <span class="mi">3</span> <span class="c1"># 整除 向下取整</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="n">d</span><span class="o">=</span><span class="mi">1024</span>
+<span class="n">d</span> <span class="o">%=</span> <span class="mi">3</span> <span class="c1"># 取余数</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">==</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">!=</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">&gt;</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">&lt;</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">&gt;=</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">&lt;=</span><span class="n">a</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span> <span class="n">d</span> <span class="o">&amp;</span> <span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="n">d</span> <span class="o">|</span> <span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="n">d</span> <span class="o">^</span> <span class="n">a</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="o">~</span><span class="n">d</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="n">d</span><span class="o">&lt;&lt;</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="o">&gt;&gt;</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">and</span> <span class="n">d</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="n">a</span> <span class="ow">or</span> <span class="n">d</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">d</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">int</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>**</td>
+<td>指数 (最高优先级)</td>
+</tr>
+
+<tr>
+<td>~ + -</td>
+<td>按位翻转, 一元加号和减号 (最后两个的方法名为 +@ 和 -@)</td>
+</tr>
+
+<tr>
+<td>* / % //</td>
+<td>乘，除，取模和取整除</td>
+</tr>
+
+<tr>
+<td>+ -</td>
+<td>加法减法</td>
+</tr>
+
+<tr>
+<td>&gt;&gt; &lt;&lt;</td>
+<td>右移，左移运算符</td>
+</tr>
+
+<tr>
+<td>&amp;</td>
+<td>位 &lsquo;AND&rsquo;</td>
+</tr>
+
+<tr>
+<td>^</td>
+<td>位运算符</td>
+</tr>
+
+<tr>
+<td>&lt;= &lt; &gt; &gt;=</td>
+<td>比较运算符</td>
+</tr>
+
+<tr>
+<td>&lt;&gt; == !=</td>
+<td>等于运算符</td>
+</tr>
+
+<tr>
+<td>= %= /= //= -= += *= **=</td>
+<td>赋值运算符</td>
+</tr>
+
+<tr>
+<td>is is not</td>
+<td>身份运算符</td>
+</tr>
+
+<tr>
+<td>in not in</td>
+<td>成员运算符</td>
+</tr>
+
+<tr>
+<td>not and or</td>
+<td>逻辑运算符</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="结束语">结束语</h1>
+
+<p>到现在你已经掌握Python的基本类型和语法了，为自己鼓掌，噼啦啪啦，噼啦啪啦！！！本章节主要介绍Python 的基本类型和语法。</p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-11-11</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://me.lucoder.com/tags/%E4%B8%93%E9%A2%98/">专题</a>
+          <a href="https://me.lucoder.com/tags/python/">Python</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2018/11/11/python-before/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">【陪着牧轩学Python】扯淡篇</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2018/10/11/ionic3-android-manifest.xml/">
+            <span class="next-text nav-default">ionic3构建过程中遇到找不到AndroidManifest.xml</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@lucoder.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://me.lucoder.com/pages/open/" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://me.lucoder.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    <a class="hexo-link" href="http://www.miitbeian.gov.cn/">豫ICP备16017737号-2</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    图像CDN:<a class="theme-link" href="https://www.upyun.com/">又拍云</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="theme-link" href="https://www.foreverblog.cn/">十年之约</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        牧轩居士
+        
+      </span></span>
+
+  
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

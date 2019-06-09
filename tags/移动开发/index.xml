@@ -14,19 +14,19 @@
     
     <item>
       <title>IONIC跨域问题</title>
-      <link>https://me.lucoder.com/post/2018/07/22/ionic%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</link>
+      <link>https://me.lucoder.com/post/2018/07/22/ionic-cross-error/</link>
       <pubDate>Sun, 22 Jul 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/07/22/ionic%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://me.lucoder.com/post/2018/07/22/ionic-cross-error/</guid>
       <description>Ionic跨域问题是一个重要的问题，但是一定要注意一点真机里网页的访问走的是file://协议，而非http://或https://，因此不</description>
     </item>
     
     <item>
       <title>Ionic错误集合</title>
-      <link>https://me.lucoder.com/post/2018/07/02/ionic%E9%94%99%E8%AF%AF%E9%9B%86%E5%90%88/</link>
+      <link>https://me.lucoder.com/post/2018/07/02/ionic-errors/</link>
       <pubDate>Mon, 02 Jul 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/07/02/ionic%E9%94%99%E8%AF%AF%E9%9B%86%E5%90%88/</guid>
+      <guid>https://me.lucoder.com/post/2018/07/02/ionic-errors/</guid>
       <description>IONIC是一个非常强大的开源混合开发框架，但是部署项目总会遇到或多或少的错误，对于新手就会非常棘手。 安装错误 开发错误 缺少IONIC脚本 ionic serve</description>
     </item>
     

@@ -14,37 +14,37 @@
     
     <item>
       <title>C#开发MPI应用</title>
-      <link>https://me.lucoder.com/post/2019/05/22/mpi.net%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <link>https://me.lucoder.com/post/2019/05/22/msmpi-mpi-net/</link>
       <pubDate>Wed, 22 May 2019 20:24:25 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/05/22/mpi.net%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://me.lucoder.com/post/2019/05/22/msmpi-mpi-net/</guid>
       <description>MPI.NET 作者的Github:https://github.com/jmp75/MPI.NET 文本代码:等待上传 创建项目 注意Framework版本不</description>
     </item>
     
     <item>
       <title>MS-MPI安装配置</title>
-      <link>https://me.lucoder.com/post/2019/03/28/ms-mpi%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <link>https://me.lucoder.com/post/2019/03/28/ms-mpi/</link>
       <pubDate>Thu, 28 Mar 2019 19:37:28 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/03/28/ms-mpi%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://me.lucoder.com/post/2019/03/28/ms-mpi/</guid>
       <description>MPI简介 官网 http://www.mpich.org/downloads/ 安装步骤 选择MS-MPI： 下载结束后，按照下一步下一步安装软件，安装结束后就可以配置环境变量进行编程了，假设你的安装目录是：</description>
     </item>
     
     <item>
       <title>Ubuntu安装MPI</title>
-      <link>https://me.lucoder.com/post/2018/10/01/ubuntu%E5%AE%89%E8%A3%85mpi/</link>
+      <link>https://me.lucoder.com/post/2018/10/01/ubuntu-mpi/</link>
       <pubDate>Mon, 01 Oct 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/10/01/ubuntu%E5%AE%89%E8%A3%85mpi/</guid>
+      <guid>https://me.lucoder.com/post/2018/10/01/ubuntu-mpi/</guid>
       <description>现正在研究ARM多机并行环境，由于学过MPI并行环境，而且MPI支持Ubuntu系统，所以就开始在Ubuntu上部署MPI开发环境。 下载源码</description>
     </item>
     
     <item>
       <title>mpi并行计算环境搭建</title>
-      <link>https://me.lucoder.com/post/2018/04/25/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <link>https://me.lucoder.com/post/2018/04/25/mpi-env/</link>
       <pubDate>Wed, 25 Apr 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/04/25/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <guid>https://me.lucoder.com/post/2018/04/25/mpi-env/</guid>
       <description>&lt;h1 id=&#34;什么是mpi&#34;&gt;什么是MPI&lt;/h1&gt;
 
 &lt;p&gt;MPI是一个跨语言的通讯协议，用于编写并行计算机。支持点对点和广播。MPI是一个信息传递应用程序接口，包括协议和和语义说明，他们指明其如何在各种实现中发挥其特性。MPI的目标是高性能，大规模性，和可移植性。MPI在今天仍为高性能计算的主要模型。

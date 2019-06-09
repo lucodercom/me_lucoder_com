@@ -14,55 +14,55 @@
     
     <item>
       <title>ionic3构建过程中遇到找不到AndroidManifest.xml</title>
-      <link>https://me.lucoder.com/post/2018/10/11/ionic3%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E6%89%BE%E4%B8%8D%E5%88%B0androidmanifest.xml/</link>
+      <link>https://me.lucoder.com/post/2018/10/11/ionic3-android-manifest.xml/</link>
       <pubDate>Thu, 11 Oct 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/10/11/ionic3%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E6%89%BE%E4%B8%8D%E5%88%B0androidmanifest.xml/</guid>
+      <guid>https://me.lucoder.com/post/2018/10/11/ionic3-android-manifest.xml/</guid>
       <description>构建Ionic时候有时候会遇到下面问题： 1 2 3 4 5 6 7 8 9 10 11 Failed to install &amp;#39;ionic-plugin-keyboard&amp;#39;: Error: ENOENT: no such file or directory, open &amp;#39;/Users/theo/Projects/mobile/platforms/android/AndroidManifest.xml&amp;#39; at Object.fs.openSync (fs.js:651:18) at Object.fs.readFileSync (fs.js:553:33) at Object.parseElementtreeSync (/Users/theo/Projects/mobile/platforms/android/cordova/node_modules/cordova-common/src/util/xml-helpers.js:180:27) at new AndroidManifest (/Users/theo/Projects/mobile/platforms/android/cordova/lib/AndroidManifest.js:29:20) at AndroidProject.getPackageName (/Users/theo/Projects/mobile/platforms/android/cordova/lib/AndroidProject.js:99:12) at Api.addPlugin (/Users/theo/Projects/mobile/platforms/android/cordova/Api.js:223:57) at handleInstall (/Users/theo/.nvm/versions/node/v8.1.2/lib/node_modules/cordova/node_modules/cordova-lib/src/plugman/install.js:594:10) at /Users/theo/.nvm/versions/node/v8.1.2/lib/node_modules/cordova/node_modules/cordova-lib/src/plugman/install.js:357:28 at _fulfilled</description>
     </item>
     
     <item>
       <title>IONIC使用HTTP</title>
-      <link>https://me.lucoder.com/post/2018/10/08/ionic%E4%BD%BF%E7%94%A8http/</link>
+      <link>https://me.lucoder.com/post/2018/10/08/ionic-http/</link>
       <pubDate>Mon, 08 Oct 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/10/08/ionic%E4%BD%BF%E7%94%A8http/</guid>
+      <guid>https://me.lucoder.com/post/2018/10/08/ionic-http/</guid>
       <description>Http技术 http请求是客户端请求api使用的一项非常重要的技术，主要有下面几种方法。 使用Native组件 这种方法是一种和原生交互行最强的</description>
     </item>
     
     <item>
       <title>IONIC跨域问题</title>
-      <link>https://me.lucoder.com/post/2018/07/22/ionic%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</link>
+      <link>https://me.lucoder.com/post/2018/07/22/ionic-cross-error/</link>
       <pubDate>Sun, 22 Jul 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/07/22/ionic%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://me.lucoder.com/post/2018/07/22/ionic-cross-error/</guid>
       <description>Ionic跨域问题是一个重要的问题，但是一定要注意一点真机里网页的访问走的是file://协议，而非http://或https://，因此不</description>
     </item>
     
     <item>
       <title>Ionic错误集合</title>
-      <link>https://me.lucoder.com/post/2018/07/02/ionic%E9%94%99%E8%AF%AF%E9%9B%86%E5%90%88/</link>
+      <link>https://me.lucoder.com/post/2018/07/02/ionic-errors/</link>
       <pubDate>Mon, 02 Jul 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/07/02/ionic%E9%94%99%E8%AF%AF%E9%9B%86%E5%90%88/</guid>
+      <guid>https://me.lucoder.com/post/2018/07/02/ionic-errors/</guid>
       <description>IONIC是一个非常强大的开源混合开发框架，但是部署项目总会遇到或多或少的错误，对于新手就会非常棘手。 安装错误 开发错误 缺少IONIC脚本 ionic serve</description>
     </item>
     
     <item>
       <title>ionic 融入百度地图</title>
-      <link>https://me.lucoder.com/post/2018/04/24/ionic-%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</link>
+      <link>https://me.lucoder.com/post/2018/04/24/ionic-bdmap/</link>
       <pubDate>Tue, 24 Apr 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/04/24/ionic-%E8%9E%8D%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</guid>
+      <guid>https://me.lucoder.com/post/2018/04/24/ionic-bdmap/</guid>
       <description>ionic 融入百度地图 百度地图是一个非常成熟的一个地图组件，在很多项目中都会用到百度地图组件，本节就介绍如何在ionic项目中使用百度地图。 在ind</description>
     </item>
     
     <item>
       <title>ionic 使用 webrtc</title>
-      <link>https://me.lucoder.com/post/2018/04/23/ionic-%E4%BD%BF%E7%94%A8-webrtc/</link>
+      <link>https://me.lucoder.com/post/2018/04/23/ionic-webrtc/</link>
       <pubDate>Mon, 23 Apr 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/04/23/ionic-%E4%BD%BF%E7%94%A8-webrtc/</guid>
+      <guid>https://me.lucoder.com/post/2018/04/23/ionic-webrtc/</guid>
       <description>ionic 使用 webrtc WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Re</description>
     </item>
     

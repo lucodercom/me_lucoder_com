@@ -14,10 +14,10 @@
     
     <item>
       <title>C#并行算法</title>
-      <link>https://me.lucoder.com/post/2019/01/08/c#_parallel/</link>
+      <link>https://me.lucoder.com/post/2019/01/08/csharp-parallel/</link>
       <pubDate>Tue, 08 Jan 2019 21:01:23 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/01/08/c#_parallel/</guid>
+      <guid>https://me.lucoder.com/post/2019/01/08/csharp-parallel/</guid>
       <description>用了这么多次的C#，总在抱怨C#效率低，其实不然，C#可能是启动效率低，一旦运行起来或许性能比C++差不了多少（前提GC关掉），尤其是Spa</description>
     </item>
     

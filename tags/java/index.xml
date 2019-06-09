@@ -14,55 +14,55 @@
     
     <item>
       <title>[引战]-尘埃未定，语言之争</title>
-      <link>https://me.lucoder.com/post/2019/02/11/%E8%AF%AD%E8%A8%80%E4%B9%8B%E4%BA%89/</link>
+      <link>https://me.lucoder.com/post/2019/02/11/plr/</link>
       <pubDate>Mon, 11 Feb 2019 10:01:23 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/02/11/%E8%AF%AD%E8%A8%80%E4%B9%8B%E4%BA%89/</guid>
+      <guid>https://me.lucoder.com/post/2019/02/11/plr/</guid>
       <description>看到公众号推送的文章又在引战，说实话写这篇文章我有很大压力，但是我又很轻松，写本文不是为了引战，就是陈述一个客观事实！ 追溯历史 以古为镜，可以</description>
     </item>
     
     <item>
       <title>Spring Boot报错 No goals have been specified for this build</title>
-      <link>https://me.lucoder.com/post/2019/01/28/springboot%E6%8A%A5%E9%94%99/</link>
+      <link>https://me.lucoder.com/post/2019/01/28/springboot-error/</link>
       <pubDate>Tue, 22 Jan 2019 23:16:23 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/01/28/springboot%E6%8A%A5%E9%94%99/</guid>
+      <guid>https://me.lucoder.com/post/2019/01/28/springboot-error/</guid>
       <description>错误 废话不多，直接来图！ 解决办法 pom.xml文件标签里面最后面添加。 1 &amp;lt;defaultGoal&amp;gt;compile&amp;lt;/defaultGoal&amp;gt;</description>
     </item>
     
     <item>
       <title>设置Maven镜像加快文件下载</title>
-      <link>https://me.lucoder.com/post/2018/10/01/%E8%AE%BE%E7%BD%AEmaven%E9%95%9C%E5%83%8F%E5%8A%A0%E5%BF%AB%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/</link>
+      <link>https://me.lucoder.com/post/2018/10/01/maven-cdn/</link>
       <pubDate>Mon, 01 Oct 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/10/01/%E8%AE%BE%E7%BD%AEmaven%E9%95%9C%E5%83%8F%E5%8A%A0%E5%BF%AB%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/</guid>
+      <guid>https://me.lucoder.com/post/2018/10/01/maven-cdn/</guid>
       <description>设置Maven镜像加快文件下载 在日常生活中，我们使用maven下载需要的jar包，但是很多的时候由于中央仓库没有，所以我们没有办法下载到需要</description>
     </item>
     
     <item>
       <title>动态网站模块错误</title>
-      <link>https://me.lucoder.com/post/2018/02/27/dynamic_web_module_3.0_require_1.6_or_newer/</link>
+      <link>https://me.lucoder.com/post/2018/02/27/dynamic-web-module-3-0-require-1-6-or-newer/</link>
       <pubDate>Tue, 27 Feb 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/02/27/dynamic_web_module_3.0_require_1.6_or_newer/</guid>
+      <guid>https://me.lucoder.com/post/2018/02/27/dynamic-web-module-3-0-require-1-6-or-newer/</guid>
       <description>动态网站模块错误 1 Dynamic Web Module 3.0 Require 1.6 Or Newer。 修改pom.xml 1 2 3 4 5 6 7 8 9 10 11 12 13 &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;source&amp;gt;1.8&amp;lt;/source&amp;gt; &amp;lt;target&amp;gt;1.8&amp;lt;/target&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt;</description>
     </item>
     
     <item>
       <title>Java中的SSM框架和配置</title>
-      <link>https://me.lucoder.com/post/2018/02/24/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/</link>
+      <link>https://me.lucoder.com/post/2018/02/24/java-ssm/</link>
       <pubDate>Sat, 24 Feb 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/02/24/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://me.lucoder.com/post/2018/02/24/java-ssm/</guid>
       <description>什么是SSM框架 SSM框架是JavaWeb中常用的框架，包括Spring、Spring MVC、Mybatis三种框架的一个整合。其中任意两个</description>
     </item>
     
     <item>
       <title>使用JAXB处理XML文件</title>
-      <link>https://me.lucoder.com/post/2018/02/21/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/</link>
+      <link>https://me.lucoder.com/post/2018/02/21/java-jaxb-xml/</link>
       <pubDate>Wed, 21 Feb 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/02/21/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://me.lucoder.com/post/2018/02/21/java-jaxb-xml/</guid>
       <description>使用JAXB处理XML文件 JAXB（Java Architecture for XML Binding) 是一个业界的标准，是一项可以根据XML Schema产生Java类的技术。该过程中，JAX</description>
     </item>
     

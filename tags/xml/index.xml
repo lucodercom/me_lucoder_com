@@ -14,10 +14,10 @@
     
     <item>
       <title>使用JAXB处理XML文件</title>
-      <link>https://me.lucoder.com/post/2018/02/21/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/</link>
+      <link>https://me.lucoder.com/post/2018/02/21/java-jaxb-xml/</link>
       <pubDate>Wed, 21 Feb 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/02/21/%E4%BD%BF%E7%94%A8jaxb%E5%A4%84%E7%90%86xml%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://me.lucoder.com/post/2018/02/21/java-jaxb-xml/</guid>
       <description>使用JAXB处理XML文件 JAXB（Java Architecture for XML Binding) 是一个业界的标准，是一项可以根据XML Schema产生Java类的技术。该过程中，JAX</description>
     </item>
     

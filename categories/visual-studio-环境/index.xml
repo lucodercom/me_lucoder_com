@@ -14,10 +14,10 @@
     
     <item>
       <title>Visual Studio 2017 配置OpenCV环境</title>
-      <link>https://me.lucoder.com/post/2018/07/26/visual-studio-2017-%E9%85%8D%E7%BD%AEopencv%E7%8E%AF%E5%A2%83.md/</link>
+      <link>https://me.lucoder.com/post/2018/07/26/vs2017-opencv/</link>
       <pubDate>Sun, 22 Jul 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/07/26/visual-studio-2017-%E9%85%8D%E7%BD%AEopencv%E7%8E%AF%E5%A2%83.md/</guid>
+      <guid>https://me.lucoder.com/post/2018/07/26/vs2017-opencv/</guid>
       <description>硬件和环境 环境 配置 OS Windos 10 X64 OpenCV 3.2 Visual Studio 2017 下载OpenCV OpenCV官方下载地址：http://opencv.org/releases.html</description>
     </item>
     

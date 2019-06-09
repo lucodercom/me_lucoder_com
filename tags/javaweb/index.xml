@@ -14,28 +14,28 @@
     
     <item>
       <title>Vscode 调试Spring Boot程序</title>
-      <link>https://me.lucoder.com/post/2018/07/26/vscode-%E8%B0%83%E8%AF%95spring-boot%E7%A8%8B%E5%BA%8F/</link>
+      <link>https://me.lucoder.com/post/2018/07/26/vscode-springboot/</link>
       <pubDate>Thu, 26 Jul 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/07/26/vscode-%E8%B0%83%E8%AF%95spring-boot%E7%A8%8B%E5%BA%8F/</guid>
+      <guid>https://me.lucoder.com/post/2018/07/26/vscode-springboot/</guid>
       <description>摘要 Build Anything with Spring Boot：Spring Boot is the starting point for building all Spring-based applications. Spring Boot is designed to get you up and running as quickly as possible, with minimal upfront configuration of Spring. 大概意思翻译一下：Spring Boot 是所有基于 Spring 开</description>
     </item>
     
     <item>
       <title>动态网站模块错误</title>
-      <link>https://me.lucoder.com/post/2018/02/27/dynamic_web_module_3.0_require_1.6_or_newer/</link>
+      <link>https://me.lucoder.com/post/2018/02/27/dynamic-web-module-3-0-require-1-6-or-newer/</link>
       <pubDate>Tue, 27 Feb 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/02/27/dynamic_web_module_3.0_require_1.6_or_newer/</guid>
+      <guid>https://me.lucoder.com/post/2018/02/27/dynamic-web-module-3-0-require-1-6-or-newer/</guid>
       <description>动态网站模块错误 1 Dynamic Web Module 3.0 Require 1.6 Or Newer。 修改pom.xml 1 2 3 4 5 6 7 8 9 10 11 12 13 &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;source&amp;gt;1.8&amp;lt;/source&amp;gt; &amp;lt;target&amp;gt;1.8&amp;lt;/target&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt;</description>
     </item>
     
     <item>
       <title>Java中的SSM框架和配置</title>
-      <link>https://me.lucoder.com/post/2018/02/24/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/</link>
+      <link>https://me.lucoder.com/post/2018/02/24/java-ssm/</link>
       <pubDate>Sat, 24 Feb 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/02/24/java%E4%B8%AD%E7%9A%84ssm%E6%A1%86%E6%9E%B6%E5%92%8C%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://me.lucoder.com/post/2018/02/24/java-ssm/</guid>
       <description>什么是SSM框架 SSM框架是JavaWeb中常用的框架，包括Spring、Spring MVC、Mybatis三种框架的一个整合。其中任意两个</description>
     </item>
     

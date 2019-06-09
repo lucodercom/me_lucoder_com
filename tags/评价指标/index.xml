@@ -14,10 +14,10 @@
     
     <item>
       <title>分类模型评价指标(全部)</title>
-      <link>https://me.lucoder.com/post/2019/03/02/%E7%A7%91%E7%A0%94%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</link>
+      <link>https://me.lucoder.com/post/2019/03/02/evaluation-classic/</link>
       <pubDate>Sat, 02 Mar 2019 22:00:23 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/03/02/%E7%A7%91%E7%A0%94%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</guid>
+      <guid>https://me.lucoder.com/post/2019/03/02/evaluation-classic/</guid>
       <description>评价指标： 准确率 （Accuracy），混淆矩阵 （Confusion Matrix），精确率（Precision），召回率（Recall），平均</description>
     </item>
     

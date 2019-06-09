@@ -14,10 +14,10 @@
     
     <item>
       <title>OpenCV将RGB转换为单通道灰图</title>
-      <link>https://me.lucoder.com/post/2018/07/26/opencv%E5%B0%86rgb%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%8D%95%E9%80%9A%E9%81%93%E7%81%B0%E5%9B%BE/</link>
+      <link>https://me.lucoder.com/post/2018/07/26/opencv-rgb2gray/</link>
       <pubDate>Thu, 26 Jul 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/07/26/opencv%E5%B0%86rgb%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%8D%95%E9%80%9A%E9%81%93%E7%81%B0%E5%9B%BE/</guid>
+      <guid>https://me.lucoder.com/post/2018/07/26/opencv-rgb2gray/</guid>
       <description>环境 项目 参数 OS Windows 10 Professional amd x64 IDE Visual Studio 2017 Professional OpenCV 3.2 思路 首先使用cvLoadImage函数将图片读入到一个IplImage中。 1 2 3 4 5 6 7 8 /* load image from file iscolor</description>
     </item>
     

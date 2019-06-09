@@ -14,10 +14,10 @@
     
     <item>
       <title>设置Maven镜像加快文件下载</title>
-      <link>https://me.lucoder.com/post/2018/10/01/%E8%AE%BE%E7%BD%AEmaven%E9%95%9C%E5%83%8F%E5%8A%A0%E5%BF%AB%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/</link>
+      <link>https://me.lucoder.com/post/2018/10/01/maven-cdn/</link>
       <pubDate>Mon, 01 Oct 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/10/01/%E8%AE%BE%E7%BD%AEmaven%E9%95%9C%E5%83%8F%E5%8A%A0%E5%BF%AB%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/</guid>
+      <guid>https://me.lucoder.com/post/2018/10/01/maven-cdn/</guid>
       <description>设置Maven镜像加快文件下载 在日常生活中，我们使用maven下载需要的jar包，但是很多的时候由于中央仓库没有，所以我们没有办法下载到需要</description>
     </item>
     

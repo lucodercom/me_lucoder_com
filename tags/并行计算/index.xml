@@ -14,28 +14,28 @@
     
     <item>
       <title>C#并行算法</title>
-      <link>https://me.lucoder.com/post/2019/01/08/c#_parallel/</link>
+      <link>https://me.lucoder.com/post/2019/01/08/csharp-parallel/</link>
       <pubDate>Tue, 08 Jan 2019 21:01:23 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/01/08/c#_parallel/</guid>
+      <guid>https://me.lucoder.com/post/2019/01/08/csharp-parallel/</guid>
       <description>用了这么多次的C#，总在抱怨C#效率低，其实不然，C#可能是启动效率低，一旦运行起来或许性能比C++差不了多少（前提GC关掉），尤其是Spa</description>
     </item>
     
     <item>
       <title>Ubuntu安装MPI</title>
-      <link>https://me.lucoder.com/post/2018/10/01/ubuntu%E5%AE%89%E8%A3%85mpi/</link>
+      <link>https://me.lucoder.com/post/2018/10/01/ubuntu-mpi/</link>
       <pubDate>Mon, 01 Oct 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/10/01/ubuntu%E5%AE%89%E8%A3%85mpi/</guid>
+      <guid>https://me.lucoder.com/post/2018/10/01/ubuntu-mpi/</guid>
       <description>现正在研究ARM多机并行环境，由于学过MPI并行环境，而且MPI支持Ubuntu系统，所以就开始在Ubuntu上部署MPI开发环境。 下载源码</description>
     </item>
     
     <item>
       <title>mpi并行计算环境搭建</title>
-      <link>https://me.lucoder.com/post/2018/04/25/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <link>https://me.lucoder.com/post/2018/04/25/mpi-env/</link>
       <pubDate>Wed, 25 Apr 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/04/25/mpi%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <guid>https://me.lucoder.com/post/2018/04/25/mpi-env/</guid>
       <description>&lt;h1 id=&#34;什么是mpi&#34;&gt;什么是MPI&lt;/h1&gt;
 
 &lt;p&gt;MPI是一个跨语言的通讯协议，用于编写并行计算机。支持点对点和广播。MPI是一个信息传递应用程序接口，包括协议和和语义说明，他们指明其如何在各种实现中发挥其特性。MPI的目标是高性能，大规模性，和可移植性。MPI在今天仍为高性能计算的主要模型。

@@ -14,19 +14,19 @@
     
     <item>
       <title>Spring Boot报错 No goals have been specified for this build</title>
-      <link>https://me.lucoder.com/post/2019/01/28/springboot%E6%8A%A5%E9%94%99/</link>
+      <link>https://me.lucoder.com/post/2019/01/28/springboot-error/</link>
       <pubDate>Tue, 22 Jan 2019 23:16:23 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/01/28/springboot%E6%8A%A5%E9%94%99/</guid>
+      <guid>https://me.lucoder.com/post/2019/01/28/springboot-error/</guid>
       <description>错误 废话不多，直接来图！ 解决办法 pom.xml文件标签里面最后面添加。 1 &amp;lt;defaultGoal&amp;gt;compile&amp;lt;/defaultGoal&amp;gt;</description>
     </item>
     
     <item>
       <title>Vscode 调试Spring Boot程序</title>
-      <link>https://me.lucoder.com/post/2018/07/26/vscode-%E8%B0%83%E8%AF%95spring-boot%E7%A8%8B%E5%BA%8F/</link>
+      <link>https://me.lucoder.com/post/2018/07/26/vscode-springboot/</link>
       <pubDate>Thu, 26 Jul 2018 14:21:50 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2018/07/26/vscode-%E8%B0%83%E8%AF%95spring-boot%E7%A8%8B%E5%BA%8F/</guid>
+      <guid>https://me.lucoder.com/post/2018/07/26/vscode-springboot/</guid>
       <description>摘要 Build Anything with Spring Boot：Spring Boot is the starting point for building all Spring-based applications. Spring Boot is designed to get you up and running as quickly as possible, with minimal upfront configuration of Spring. 大概意思翻译一下：Spring Boot 是所有基于 Spring 开</description>
     </item>
     

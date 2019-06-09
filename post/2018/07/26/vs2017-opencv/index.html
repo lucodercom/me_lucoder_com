@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Visual Studio 2017 配置OpenCV环境 - 牧轩日志 - 记录开发中的点点滴滴</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="牧轩居士" />
+  <meta name="description" content="硬件和环境 环境 配置 OS Windos 10 X64 OpenCV 3.2 Visual Studio 2017 下载OpenCV OpenCV官方下载地址：http://opencv.org/releases.html" />
+
+  <meta name="keywords" content="牧轩, 牧轩居士, 笔记录" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.50" />
+
+
+<link rel="canonical" href="https://me.lucoder.com/post/2018/07/26/vs2017-opencv/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Visual Studio 2017 配置OpenCV环境" />
+<meta property="og:description" content="硬件和环境 环境 配置 OS Windos 10 X64 OpenCV 3.2 Visual Studio 2017 下载OpenCV OpenCV官方下载地址：http://opencv.org/releases.html" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://me.lucoder.com/post/2018/07/26/vs2017-opencv/" /><meta property="article:published_time" content="2018-07-22T14:21:50&#43;08:00"/>
+<meta property="article:modified_time" content="2018-07-22T14:21:50&#43;08:00"/>
+
+<meta itemprop="name" content="Visual Studio 2017 配置OpenCV环境">
+<meta itemprop="description" content="硬件和环境 环境 配置 OS Windos 10 X64 OpenCV 3.2 Visual Studio 2017 下载OpenCV OpenCV官方下载地址：http://opencv.org/releases.html">
+
+
+<meta itemprop="datePublished" content="2018-07-22T14:21:50&#43;08:00" />
+<meta itemprop="dateModified" content="2018-07-22T14:21:50&#43;08:00" />
+<meta itemprop="wordCount" content="971">
+
+
+
+<meta itemprop="keywords" content="机器视觉,图像处理," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Visual Studio 2017 配置OpenCV环境"/>
+<meta name="twitter:description" content="硬件和环境 环境 配置 OS Windos 10 X64 OpenCV 3.2 Visual Studio 2017 下载OpenCV OpenCV官方下载地址：http://opencv.org/releases.html"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">牧轩笔记</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              专题
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              关于
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/about/">关于我</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/links/">友链</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+              </li>
+            
+          </ul>
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          <div class="mobile-menu-parent">
+            <span class="mobile-submenu-open"></span>
+            <a href="https://me.lucoder.com/">
+              工具
+            </a>
+          </div>
+          <ul class="mobile-submenu-list">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/online-tools/">在线工具</a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+
+  
+    
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      牧轩笔记
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/">主页</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://me.lucoder.com/categories/">目录</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">专题</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/topics/python/">陪着牧轩学Python</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">关于</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/about/">关于我</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/links/">友链</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/pages/open/">牧轩开源</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          <a class="menu-item-link menu-parent" href="https://me.lucoder.com/">工具</a>
+          <ul class="submenu">
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/key/">便捷工具</a>
+              </li>
+            
+              <li>
+                <a href="https://me.lucoder.com/tools/online-tools/">在线工具</a>
+              </li>
+            
+          </ul>
+
+        
+
+      </li>
+    
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Visual Studio 2017 配置OpenCV环境</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-07-22" class="post-time">
+          2018-07-22
+        </time>
+        <div class="post-category">
+            <a href="https://me.lucoder.com/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"> 机器视觉 </a>
+            <a href="https://me.lucoder.com/categories/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"> 图像处理 </a>
+            <a href="https://me.lucoder.com/categories/opencv/"> OpenCV </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<h1 id="硬件和环境">硬件和环境</h1>
+
+<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>配置</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>OS</td>
+<td>Windos 10 X64</td>
+</tr>
+
+<tr>
+<td>OpenCV</td>
+<td>3.2</td>
+</tr>
+
+<tr>
+<td>Visual Studio</td>
+<td>2017</td>
+</tr>
+</tbody>
+</table>
+
+<!--more -->
+
+<h1 id="下载opencv">下载OpenCV</h1>
+
+<p>OpenCV官方下载地址：<a href="http://opencv.org/releases.html">http://opencv.org/releases.html</a> 本人选择opencv3.2.0基于Windows平台。读者根据自己需要选择合适版本及平台下载。</p>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/07/22/20180722161058.png" alt="https://oss.lucoder.com/uploads/2018/07/22/20180722161058.png" /></p>
+
+<p>下一步下一步安装即可！</p>
+
+<h1 id="环境变量配置">环境变量配置</h1>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/07/22/20180722161241.png" alt="https://oss.lucoder.com/uploads/2018/07/22/20180722161241.png" /></p>
+
+<p>如图所示，按照配置Java环境的方法，配置两个字段<code>OpenCV_Home</code>和<code>Path</code>,其中<code>OpenCV_Home</code>是配置到<code>build</code>层，<code>Path</code>里面配置到<code>bin</code>，例如：<code>%OpenCV_Home%\x64\vc14\bin</code>。然后执行下面命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">PS C:<span class="se">\U</span>sers<span class="se">\m</span>uxuan&gt; opencv_version.exe
+<span class="m">3</span>.2.0
+PS C:<span class="se">\U</span>sers<span class="se">\m</span>uxuan&gt;</code></pre></td></tr></table>
+</div>
+</div>
+<p>如果可以输出版本信息表示成功！</p>
+
+<h1 id="visual-studio-2017-配置">Visual Studio 2017 配置</h1>
+
+<p>下面在<code>Visual Studio 2017</code>中进行配置，如果你还没有安装<code>Visual Studio 2017</code>，自己百度。</p>
+
+<ol>
+<li>首先创建一个c++项目：</li>
+</ol>
+
+<p>选择windows 控制台即可。</p>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/07/22/20180722161440.png" alt="https://oss.lucoder.com/uploads/2018/07/22/20180722161440.png" /></p>
+
+<ol>
+<li>OpenCV配置</li>
+</ol>
+
+<p>选中<code>项目</code>&ndash;&gt; <code>属性</code>&ndash;&gt; <code>VC++目录</code>&ndash;&gt; <code>包含目录</code>&ndash;&gt; <code>添加OpenCV头文件</code></p>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/07/22/20180722162128.png" alt="https://oss.lucoder.com/uploads/2018/07/22/20180722162128.png" /></p>
+
+<p>选中<code>项目</code>&ndash;&gt; <code>属性</code>&ndash;&gt; <code>连接器</code>&ndash;&gt; <code>输入</code>&ndash;&gt; <code>附加依赖项</code>&ndash;&gt; <code>附加依赖项</code></p>
+
+<p>其中安装的库中有两个文件<code>opencv_world320d</code>、<code>opencv_world320</code>，开发阶段还是选择<code>opencv_world320d</code>.</p>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/07/22/20180722162426.png" alt="https://oss.lucoder.com/uploads/2018/07/22/20180722162426.png" /></p>
+
+<h1 id="代码调试">代码调试</h1>
+
+<p>输入下面的测试代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// MyOpenCV.cpp: 定义控制台应用程序的入口点。
+</span><span class="c1">//
+</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&#34;stdafx.h&#34; //注意这个放到最前面，有时候可能会报错</span><span class="cp">
+</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;highgui.h&gt; //解决cv命名空间找不到问题</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;opencv2/opencv.hpp&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">cv</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Mat</span> <span class="n">imgr</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s">&#34;C:</span><span class="se">\\</span><span class="s">Users</span><span class="se">\\</span><span class="s">muxuan</span><span class="se">\\</span><span class="s">Desktop</span><span class="se">\\</span><span class="s">mylogo.png&#34;</span><span class="p">);</span>
+    <span class="n">imshow</span><span class="p">(</span><span class="s">&#34;奔跑&#34;</span><span class="p">,</span> <span class="n">imgr</span><span class="p">);</span>
+    <span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>结果：</p>
+
+<p><img src="https://oss.lucoder.com/uploads/2018/07/22/20180722163713.png" alt="https://oss.lucoder.com/uploads/2018/07/22/20180722163713.png" /></p>
+
+<h1 id="错误和提示">错误和提示</h1>
+
+<ol>
+<li>cv命名空间找不到</li>
+</ol>
+
+<p>如果遇到cv命名空间找不到问题，在头部放上一个引用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;highgui.h&gt;</span><span class="cp">
+</span><span class="cp"></span></code></pre></td></tr></table>
+</div>
+</div>
+<ol>
+<li><p>调试可能会遇到下面的错误：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">严重性    代码    说明    项目    文件    行    禁止显示状态
+错误    C4996    &#39;fopen&#39;: This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.    MyOpenCV    d:\dev\opencv\3.2\opencv\build\include\opencv2\flann\logger.h    66    </pre></td></tr></table>
+</div>
+</div>
+<p>然后你可以选择<code>项目</code>&ndash;&gt; <code>属性</code>&ndash;&gt; <code>预处理器</code>&ndash;&gt; <code>预处理器定义</code>添加一行数据<code>_CRT_SECURE_NO_WARNINGS</code>即可解决问题。</p></li>
+
+<li><p>配置时候一定要注意你选择的平台，如果是使用的<code>x64</code>活动平台一定要选择<code>x64</code>，调试时候也要使用<code>x64</code>，否则必然报错：</p></li>
+</ol>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">牧轩居士</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-07-22</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://me.lucoder.com/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/">机器视觉</a>
+          <a href="https://me.lucoder.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">图像处理</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2018/07/22/ionic-cross-error/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">IONIC跨域问题</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        
+          <a class="next" href="/post/2018/07/22/bug10-wsl/">
+            <span class="next-text nav-default">Windows10使用Linux子系统</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:dev@lucoder.com" rel="me noopener" class="iconfont icon-email"
+        title="email">
+      </a>
+      <a href="https://me.lucoder.com/pages/open/" rel="me noopener" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="https://me.lucoder.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+  </div>
+
+<div class="copyright">
+  <span class="power-by">
+    <a class="hexo-link" href="http://www.miitbeian.gov.cn/">豫ICP备16017737号-2</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    图像CDN:<a class="theme-link" href="https://www.upyun.com/">又拍云</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    <a class="theme-link" href="https://www.foreverblog.cn/">十年之约</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">
+        牧轩居士
+        
+      </span></span>
+
+  
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+  
+    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

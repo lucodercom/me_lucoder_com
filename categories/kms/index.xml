@@ -14,10 +14,10 @@
     
     <item>
       <title>搭建Linux版KMS服务器</title>
-      <link>https://me.lucoder.com/post/2019/06/08/linux_kms_build/</link>
+      <link>https://me.lucoder.com/post/2019/06/08/linux-kms-build/</link>
       <pubDate>Wed, 05 Jun 2019 14:24:33 +0800</pubDate>
       
-      <guid>https://me.lucoder.com/post/2019/06/08/linux_kms_build/</guid>
+      <guid>https://me.lucoder.com/post/2019/06/08/linux-kms-build/</guid>
       <description>采用的是vlmcsd的服务。 下载编译 1 2 git clone https://github.com/Wind4/vlmcsd make -j 此时你可以看到有一个目录， bin 里面有两个文件一个是 vlmcsd 一个是 vlmcs。 运行软件 1 ./vlmcsd 测试软件 1</description>
     </item>
     
