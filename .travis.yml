@@ -28,7 +28,7 @@ script:
     - echo 'me.lucoder.com' > CNAME
     - echo 'This is the source code for a personal blog!' > README.md
     - git add .
-    - git commit -m 'Travis upate blog'
+    - git commit -m 'Travis auto upate blog!'
     - git push -u origin master
 
 after_success:
