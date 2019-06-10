@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>6月风波 - 牧轩日志 - 记录开发中的点点滴滴</title>
+  <title>OpenCV的type和int之间的对应关系 - 牧轩日志 - 记录开发中的点点滴滴</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="牧轩居士" />
-  <meta name="description" content="6月是一个特殊的月份，华为被禁、贸易战&amp;hellip;.，就在6月，不可抗拒的原因导致我的服务器凉了，丢了很多数据，不打算等着恢复了，所以再" />
+  <meta name="description" content="mat.type()表示了矩阵中元素的类型以及矩阵的通道个数，它是一系列的预定义的常量，其命名规则为CV_(位数）&#43;（数据类型）&#43;（通道数）" />
 
   <meta name="keywords" content="牧轩, 牧轩居士, 笔记录" />
 
@@ -37,7 +37,7 @@
 <meta name="generator" content="Hugo 0.50" />
 
 
-<link rel="canonical" href="https://me.lucoder.com/post/2019/06/08/jun-disturbance/" />
+<link rel="canonical" href="https://me.lucoder.com/post/2019/06/10/opencv-type/" />
 
 
 
@@ -57,26 +57,26 @@
 
 
 
-<meta property="og:title" content="6月风波" />
-<meta property="og:description" content="6月是一个特殊的月份，华为被禁、贸易战&hellip;.，就在6月，不可抗拒的原因导致我的服务器凉了，丢了很多数据，不打算等着恢复了，所以再" />
+<meta property="og:title" content="OpenCV的type和int之间的对应关系" />
+<meta property="og:description" content="mat.type()表示了矩阵中元素的类型以及矩阵的通道个数，它是一系列的预定义的常量，其命名规则为CV_(位数）&#43;（数据类型）&#43;（通道数）" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://me.lucoder.com/post/2019/06/08/jun-disturbance/" /><meta property="article:published_time" content="2019-06-06T22:39:46&#43;08:00"/>
-<meta property="article:modified_time" content="2019-06-06T22:39:46&#43;08:00"/>
+<meta property="og:url" content="https://me.lucoder.com/post/2019/06/10/opencv-type/" /><meta property="article:published_time" content="2019-06-10T18:01:23&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-10T18:01:23&#43;08:00"/>
 
-<meta itemprop="name" content="6月风波">
-<meta itemprop="description" content="6月是一个特殊的月份，华为被禁、贸易战&hellip;.，就在6月，不可抗拒的原因导致我的服务器凉了，丢了很多数据，不打算等着恢复了，所以再">
-
-
-<meta itemprop="datePublished" content="2019-06-06T22:39:46&#43;08:00" />
-<meta itemprop="dateModified" content="2019-06-06T22:39:46&#43;08:00" />
-<meta itemprop="wordCount" content="196">
+<meta itemprop="name" content="OpenCV的type和int之间的对应关系">
+<meta itemprop="description" content="mat.type()表示了矩阵中元素的类型以及矩阵的通道个数，它是一系列的预定义的常量，其命名规则为CV_(位数）&#43;（数据类型）&#43;（通道数）">
 
 
+<meta itemprop="datePublished" content="2019-06-10T18:01:23&#43;08:00" />
+<meta itemprop="dateModified" content="2019-06-10T18:01:23&#43;08:00" />
+<meta itemprop="wordCount" content="195">
 
-<meta itemprop="keywords" content="生活,吐槽," />
+
+
+<meta itemprop="keywords" content="机器视觉,Opencv,图像处理," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="6月风波"/>
-<meta name="twitter:description" content="6月是一个特殊的月份，华为被禁、贸易战&hellip;.，就在6月，不可抗拒的原因导致我的服务器凉了，丢了很多数据，不打算等着恢复了，所以再"/>
+<meta name="twitter:title" content="OpenCV的type和int之间的对应关系"/>
+<meta name="twitter:description" content="mat.type()表示了矩阵中元素的类型以及矩阵的通道个数，它是一系列的预定义的常量，其命名规则为CV_(位数）&#43;（数据类型）&#43;（通道数）"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -392,15 +392,15 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">6月风波</h1>
+      <h1 class="post-title">OpenCV的type和int之间的对应关系</h1>
       
       <div class="post-meta">
-        <time datetime="2019-06-06" class="post-time">
-          2019-06-06
+        <time datetime="2019-06-10" class="post-time">
+          2019-06-10
         </time>
         <div class="post-category">
-            <a href="https://me.lucoder.com/categories/%E7%94%9F%E6%B4%BB/"> 生活 </a>
-            <a href="https://me.lucoder.com/categories/%E5%90%90%E6%A7%BD/"> 吐槽 </a>
+            <a href="https://me.lucoder.com/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/"> 机器视觉 </a>
+            <a href="https://me.lucoder.com/categories/opencv/"> Opencv </a>
             
           </div>
         
@@ -418,34 +418,93 @@
 
     
     <div class="post-content">
-      
+      <p><code>mat.type()</code>表示了矩阵中元素的类型以及矩阵的通道个数，它是一系列的预定义的常量，其命名规则为<code>CV_(位数）+（数据类型）+（通道数）</code>。</p>
 
-<p>6月是一个特殊的月份，华为被禁、贸易战&hellip;.，就在6月，不可抗拒的原因导致我的服务器凉了，丢了很多数据，不打算等着恢复了，所以再次回到了Github，当然激活服务器也随着凉了:</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>C1</th>
+<th>C2</th>
+<th>C3</th>
+<th>C4</th>
+</tr>
+</thead>
 
-<h1 id="kms服务">KMS服务</h1>
+<tbody>
+<tr>
+<td>8U</td>
+<td>0</td>
+<td>8</td>
+<td>16</td>
+<td>24</td>
+</tr>
 
-<p>自己搭建吧，地址:<a href="/post/2019/06/08/linux-kms-build/">搭建步骤</a></p>
+<tr>
+<td>8S</td>
+<td>1</td>
+<td>9</td>
+<td>17</td>
+<td>25</td>
+</tr>
+
+<tr>
+<td>16U</td>
+<td>2</td>
+<td>10</td>
+<td>18</td>
+<td>26</td>
+</tr>
+
+<tr>
+<td>16S</td>
+<td>3</td>
+<td>11</td>
+<td>19</td>
+<td>27</td>
+</tr>
+
+<tr>
+<td>32S</td>
+<td>4</td>
+<td>12</td>
+<td>20</td>
+<td>28</td>
+</tr>
+
+<tr>
+<td>32F</td>
+<td>5</td>
+<td>13</td>
+<td>21</td>
+<td>29</td>
+</tr>
+
+<tr>
+<td>64F</td>
+<td>6</td>
+<td>14</td>
+<td>22</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+
+<p>任意的一个矩阵获取type得到一个整数都和CV的类型都是唯一对应的，比如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">kms.lucoder.com <span class="c1">#可能随时凉掉
-</span><span class="c1"></span>kms.gecore.win #在树莓派跑着，速度估计会很慢的。</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">auto</span> <span class="n">img</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="err">&#39;</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">pi</span><span class="o">/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">lena</span><span class="p">.</span><span class="n">jpg</span><span class="err">&#39;</span><span class="p">);</span>
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;type = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">img</span><span class="p">.</span><span class="n">type</span><span class="p">()</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</code></pre></td></tr></table>
 </div>
 </div>
-<h1 id="jetbrain服务">Jetbrain服务</h1>
+<p>返回是<code>16</code>，行是<code>8U</code>，列是<code>C3</code>，所以对应就是<code>CV_8U_C3</code>类型。</p>
 
-<p>JetBrain断供，提供一个地址：<a href="https://jetlicense.nss.im/">https://jetlicense.nss.im/</a></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-key" data-lang="key"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-key" data-lang="key">MTW881U3Z5-eyJsaWNlbnNlSWQiOiJNVFc4ODFVM1o1IiwibGljZW5zZWVOYW1lIjoiTnNzIEltIiwiYXNzaWduZWVOYW1lIjoiIiwiYXNzaWduZWVFbWFpbCI6IiIsImxpY2Vuc2VSZXN0cmljdGlvbiI6IkZvciBlZHVjYXRpb25hbCB1c2Ugb25seSIsImNoZWNrQ29uY3VycmVudFVzZSI6ZmFsc2UsInByb2R1Y3RzIjpbeyJjb2RlIjoiSUkiLCJwYWlkVXBUbyI6IjIwMTktMTEtMDYifSx7ImNvZGUiOiJBQyIsInBhaWRVcFRvIjoiMjAxOS0xMS0wNiJ9LHsiY29kZSI6IkRQTiIsInBhaWRVcFRvIjoiMjAxOS0xMS0wNiJ9LHsiY29kZSI6IlBTIiwicGFpZFVwVG8iOiIyMDE5LTExLTA2In0seyJjb2RlIjoiR08iLCJwYWlkVXBUbyI6IjIwMTktMTEtMDYifSx7ImNvZGUiOiJETSIsInBhaWRVcFRvIjoiMjAxOS0xMS0wNiJ9LHsiY29kZSI6IkNMIiwicGFpZFVwVG8iOiIyMDE5LTExLTA2In0seyJjb2RlIjoiUlMwIiwicGFpZFVwVG8iOiIyMDE5LTExLTA2In0seyJjb2RlIjoiUkMiLCJwYWlkVXBUbyI6IjIwMTktMTEtMDYifSx7ImNvZGUiOiJSRCIsInBhaWRVcFRvIjoiMjAxOS0xMS0wNiJ9LHsiY29kZSI6IlBDIiwicGFpZFVwVG8iOiIyMDE5LTExLTA2In0seyJjb2RlIjoiUk0iLCJwYWlkVXBUbyI6IjIwMTktMTEtMDYifSx7ImNvZGUiOiJXUyIsInBhaWRVcFRvIjoiMjAxOS0xMS0wNiJ9LHsiY29kZSI6IkRCIiwicGFpZFVwVG8iOiIyMDE5LTExLTA2In0seyJjb2RlIjoiREMiLCJwYWlkVXBUbyI6IjIwMTktMTEtMDYifSx7ImNvZGUiOiJSU1UiLCJwYWlkVXBUbyI6IjIwMTktMTEtMDYifV0sImhhc2giOiIxMDgyODE0Ni8wIiwiZ3JhY2VQZXJpb2REYXlzIjowLCJhdXRvUHJvbG9uZ2F0ZWQiOmZhbHNlLCJpc0F1dG9Qcm9sb25nYXRlZCI6ZmFsc2V9-aKyalfjUfiV5UXfhaMGgOqrMzTYy2rnsmobL47k8tTpR/jvG6HeL3FxxleetI+W+Anw3ZSe8QAMsSxqVS4podwlQgIe7f+3w7zyAT1j8HMVlfl2h96KzygdGpDSbwTbwOkJ6/5TQOPgAP86mkaSiM97KgvkZV/2nXQHRz1yhm+MT+OsioTwxDhd/22sSGq6KuIztZ03UvSciEmyrPdl2ueJw1WuT9YmFjdtTm9G7LuXvCM6eav+BgCRm+wwtUeDfoQqigbp0t6FQgkdQrcjoWvLSB0IUgp/f4qGf254fA7lXskT2VCFdDvi0jgxLyMVct1cKnPdM6fkHnbdSXKYDWw==-MIIElTCCAn2gAwIBAgIBCTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE4MTEwMTEyMjk0NloXDTIwMTEwMjEyMjk0NlowaDELMAkGA1UEBhMCQ1oxDjAMBgNVBAgMBU51c2xlMQ8wDQYDVQQHDAZQcmFndWUxGTAXBgNVBAoMEEpldEJyYWlucyBzLnIuby4xHTAbBgNVBAMMFHByb2QzeS1mcm9tLTIwMTgxMTAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQAF8uc+YJOHHwOFcPzmbjcxNDuGoOUIP+2h1R75Lecswb7ru2LWWSUMtXVKQzChLNPn/72W0k+oI056tgiwuG7M49LXp4zQVlQnFmWU1wwGvVhq5R63Rpjx1zjGUhcXgayu7+9zMUW596Lbomsg8qVve6euqsrFicYkIIuUu4zYPndJwfe0YkS5nY72SHnNdbPhEnN8wcB2Kz+OIG0lih3yz5EqFhld03bGp222ZQCIghCTVL6QBNadGsiN/lWLl4JdR3lJkZzlpFdiHijoVRdWeSWqM4y0t23c92HXKrgppoSV18XMxrWVdoSM3nuMHwxGhFyde05OdDtLpCv+jlWf5REAHHA201pAU6bJSZINyHDUTB+Beo28rRXSwSh3OUIvYwKNVeoBY+KwOJ7WnuTCUq1meE6GkKc4D/cXmgpOyW/1SmBz3XjVIi/zprZ0zf3qH5mkphtg6ksjKgKjmx1cXfZAAX6wcDBNaCL+Ortep1Dh8xDUbqbBVNBL4jbiL3i3xsfNiyJgaZ5sX7i8tmStEpLbPwvHcByuf59qJhV/bZOl8KqJBETCDJcY6O2aqhTUy+9x93ThKs1GKrRPePrWPluud7ttlgtRveit/pcBrnQcXOl1rHq7ByB8CFAxNotRUYL9IF5n3wJOgkPojMy6jetQA5Ogc8Sm7RG6vg1yow==</code></pre></td></tr></table>
-</div>
-</div>
     </div>
 
     
@@ -457,7 +516,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2019-06-06</span>
+    <span class="item-content">2019-06-10</span>
   </p>
   
   <p class="copyright-item">
@@ -471,22 +530,18 @@
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="https://me.lucoder.com/tags/%E7%94%9F%E6%B4%BB/">生活</a>
-          <a href="https://me.lucoder.com/tags/%E5%90%90%E6%A7%BD/">吐槽</a>
+          <a href="https://me.lucoder.com/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/">机器视觉</a>
+          <a href="https://me.lucoder.com/tags/opencv/">Opencv</a>
+          <a href="https://me.lucoder.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">图像处理</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/2019/06/10/opencv-type/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">OpenCV的type和int之间的对应关系</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
         
-          <a class="next" href="/post/2019/06/08/linux-kms-build/">
-            <span class="next-text nav-default">搭建Linux版KMS服务器</span>
+          <a class="next" href="/post/2019/06/08/jun-disturbance/">
+            <span class="next-text nav-default">6月风波</span>
             <span class="prev-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

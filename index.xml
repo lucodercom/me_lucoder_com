@@ -79,6 +79,17 @@
     </item>
     
     <item>
+      <title>OpenCV的type和int之间的对应关系</title>
+      <link>https://me.lucoder.com/post/2019/06/10/opencv-type/</link>
+      <pubDate>Mon, 10 Jun 2019 18:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/06/10/opencv-type/</guid>
+      
+        <description>mat.type()表示了矩阵中元素的类型以及矩阵的通道个数，它是一系列的预定义的常量，其命名规则为CV_(位数）+（数据类型）+（通道数）</description>
+      
+    </item>
+    
+    <item>
       <title>6月风波</title>
       <link>https://me.lucoder.com/post/2019/06/08/jun-disturbance/</link>
       <pubDate>Thu, 06 Jun 2019 22:39:46 +0800</pubDate>
@@ -557,17 +568,6 @@
 
 &lt;p&gt;MPI是一个跨语言的通讯协议，用于编写并行计算机。支持点对点和广播。MPI是一个信息传递应用程序接口，包括协议和和语义说明，他们指明其如何在各种实现中发挥其特性。MPI的目标是高性能，大规模性，和可移植性。MPI在今天仍为高性能计算的主要模型。
 &lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>ionic 融入百度地图</title>
-      <link>https://me.lucoder.com/post/2018/04/24/ionic-bdmap/</link>
-      <pubDate>Tue, 24 Apr 2018 14:21:50 +0800</pubDate>
-      
-      <guid>https://me.lucoder.com/post/2018/04/24/ionic-bdmap/</guid>
-      
-        <description>ionic 融入百度地图 百度地图是一个非常成熟的一个地图组件，在很多项目中都会用到百度地图组件，本节就介绍如何在ionic项目中使用百度地图。 在ind</description>
       
     </item>
     

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>牧轩居士</copyright>
-    <lastBuildDate>Sun, 06 Jan 2019 22:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jun 2019 18:01:23 +0800</lastBuildDate>
     
 	<atom:link href="https://me.lucoder.com/tags/opencv/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>OpenCV的type和int之间的对应关系</title>
+      <link>https://me.lucoder.com/post/2019/06/10/opencv-type/</link>
+      <pubDate>Mon, 10 Jun 2019 18:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/06/10/opencv-type/</guid>
+      <description>mat.type()表示了矩阵中元素的类型以及矩阵的通道个数，它是一系列的预定义的常量，其命名规则为CV_(位数）+（数据类型）+（通道数）</description>
+    </item>
     
     <item>
       <title>Jetson Xavier 安装中文输入法</title>
