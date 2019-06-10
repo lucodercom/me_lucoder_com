@@ -11,7 +11,7 @@ toc: false
 
 # KMS服务
 
-自己搭建吧，地址:[搭建步骤](/post/2019/06/08/linux_kms_build/)
+自己搭建吧，地址:[搭建步骤](/post/2019/06/08/linux-kms-build/)
 
 ```shell
 kms.lucoder.com #可能随时凉掉

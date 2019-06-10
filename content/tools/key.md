@@ -12,4 +12,4 @@ menu:
     weight: 1
 ---
 
-[全系列激活码](https://me.lucoder.com/post/2019/01/09/key/)
+[全系列激活码](https://me.lucoder.com/post/2019/01/09/keys/)
