@@ -22,7 +22,7 @@ toc: false
 任意的一个矩阵获取type得到一个整数都和CV的类型都是唯一对应的，比如：
 
 ```cpp
-auto img = imread('/home/pi/Desktop/lena.jpg');
+auto img = imread("/home/pi/Desktop/lena.jpg");
 cout<<"type = " << img.type() <<endl;
 ```
 
