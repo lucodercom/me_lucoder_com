@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>牧轩居士</copyright>
-    <lastBuildDate>Mon, 10 Jun 2019 18:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Jun 2019 18:01:23 +0800</lastBuildDate>
     
 	<atom:link href="https://me.lucoder.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用C#的Parallel类进行并行计算</title>
+      <link>https://me.lucoder.com/post/2019/06/11/csharp-parallel/</link>
+      <pubDate>Tue, 11 Jun 2019 18:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/06/11/csharp-parallel/</guid>
+      <description>并行计算是一门艺术，是不是有点艺术化了，但是事实却是如此，使用C++做并行程序设计天生有OpenMP支持，另外使用三方的有MPI，但是对于C</description>
+    </item>
     
     <item>
       <title>OpenCV的type和int之间的对应关系</title>
@@ -153,7 +162,7 @@
       <pubDate>Wed, 09 Jan 2019 21:31:23 +0800</pubDate>
       
       <guid>https://me.lucoder.com/post/2019/01/09/keys/</guid>
-      <description>说明 支持正版，KEY 仅供学习交流使用，请在测试后 24 小时之内删除。 KEY Visual Studio Version Key 2017 Professional : KBJFW-NXHK6-W4WJM-CRMQB-G3CDHEnterprise : NJVYC-BMHX2-G77MM-4XJMR-6Q8QF 2015 Professional : HMGNV-WCYXV-X7G9W-YCX63-B98R2Enterprise : HM6NR-QXX7C-DFW2Y-8B82K-WTYJV 2013 Professional : XDM3T-W3T3V-MGJWK-8BFVD-GVPKYUltimate : BWG7X-J98B3-W34RT-33B3R-JVYW9Premium : FBJVC-3CMTX-D8DVP-RTQCT-92494 Vmware Version KEY 15 YG5H2-ANZ0H-M8ERY-TXZZZ-YKRV8 UG5J2-0ME12-M89WY-NPWXX-WQH88 UA5DR-2ZD4H-089FY-6YQ5T-YPRX6GA590-86Y05-4806Y-X4PEE-ZV8E0 ZF582-0NW5N-H8D2P-0XZEE-Z22VAYA18K-0WY8P-H85DY-L4NZG-X7RAD</description>
+      <description>说明 支持正版，KEY 仅供学习交流使用，请在测试后 24 小时之内删除。 KEY Visual Studio Version Key 2017 Professional : KBJFW-NXHK6-W4WJM-CRMQB-G3CDHEnterprise : NJVYC-BMHX2-G77MM-4XJMR-6Q8QF 2015 Professional : HMGNV-WCYXV-X7G9W-YCX63-B98R2Enterprise : HM6NR-QXX7C-DFW2Y-8B82K-WTYJV 2013 Professional : XDM3T-W3T3V-MGJWK-8BFVD-GVPKYUltimate : BWG7X-J98B3-W34RT-33B3R-JVYW9Premium : FBJVC-3CMTX-D8DVP-RTQCT-92494 Vmware Version KEY 15 YG5H2-ANZ0H-M8ERY-TXZZZ-YKRV8 UG5J2-0ME12-M89WY-NPWXX-WQH88 UA5DR-2ZD4H-089FY-6YQ5T-YPRX6GA590-86Y05-4806Y-X4PEE-ZV8E0 ZF582-0NW5N-H8D2P-0XZEE-Z22VAYA18K-0WY8P-H85DY-L4NZG-X7RAD Bug 系列 KE</description>
     </item>
     
     <item>
@@ -485,15 +494,6 @@
       
       <guid>https://me.lucoder.com/post/2018/03/13/raspberry-node/</guid>
       <description>树莓派安装node环境 下载node包 https://npm.taobao.org/mirrors/node/ 我选择的是node-v9.5.0-linux-armv7l.tar.gz，当然可以选择其他版本，但是注</description>
-    </item>
-    
-    <item>
-      <title>动态网站模块错误</title>
-      <link>https://me.lucoder.com/post/2018/02/27/dynamic-web-module-3-0-require-1-6-or-newer/</link>
-      <pubDate>Tue, 27 Feb 2018 14:21:50 +0800</pubDate>
-      
-      <guid>https://me.lucoder.com/post/2018/02/27/dynamic-web-module-3-0-require-1-6-or-newer/</guid>
-      <description>动态网站模块错误 1 Dynamic Web Module 3.0 Require 1.6 Or Newer。 修改pom.xml 1 2 3 4 5 6 7 8 9 10 11 12 13 &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;source&amp;gt;1.8&amp;lt;/source&amp;gt; &amp;lt;target&amp;gt;1.8&amp;lt;/target&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt;</description>
     </item>
     
   </channel>

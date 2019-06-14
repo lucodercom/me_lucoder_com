@@ -79,6 +79,17 @@
     </item>
     
     <item>
+      <title>使用C#的Parallel类进行并行计算</title>
+      <link>https://me.lucoder.com/post/2019/06/11/csharp-parallel/</link>
+      <pubDate>Tue, 11 Jun 2019 18:01:23 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/06/11/csharp-parallel/</guid>
+      
+        <description>并行计算是一门艺术，是不是有点艺术化了，但是事实却是如此，使用C++做并行程序设计天生有OpenMP支持，另外使用三方的有MPI，但是对于C</description>
+      
+    </item>
+    
+    <item>
       <title>OpenCV的type和int之间的对应关系</title>
       <link>https://me.lucoder.com/post/2019/06/10/opencv-type/</link>
       <pubDate>Mon, 10 Jun 2019 18:01:23 +0800</pubDate>
@@ -250,7 +261,7 @@
       
       <guid>https://me.lucoder.com/post/2019/01/09/keys/</guid>
       
-        <description>说明 支持正版，KEY 仅供学习交流使用，请在测试后 24 小时之内删除。 KEY Visual Studio Version Key 2017 Professional : KBJFW-NXHK6-W4WJM-CRMQB-G3CDHEnterprise : NJVYC-BMHX2-G77MM-4XJMR-6Q8QF 2015 Professional : HMGNV-WCYXV-X7G9W-YCX63-B98R2Enterprise : HM6NR-QXX7C-DFW2Y-8B82K-WTYJV 2013 Professional : XDM3T-W3T3V-MGJWK-8BFVD-GVPKYUltimate : BWG7X-J98B3-W34RT-33B3R-JVYW9Premium : FBJVC-3CMTX-D8DVP-RTQCT-92494 Vmware Version KEY 15 YG5H2-ANZ0H-M8ERY-TXZZZ-YKRV8 UG5J2-0ME12-M89WY-NPWXX-WQH88 UA5DR-2ZD4H-089FY-6YQ5T-YPRX6GA590-86Y05-4806Y-X4PEE-ZV8E0 ZF582-0NW5N-H8D2P-0XZEE-Z22VAYA18K-0WY8P-H85DY-L4NZG-X7RAD</description>
+        <description>说明 支持正版，KEY 仅供学习交流使用，请在测试后 24 小时之内删除。 KEY Visual Studio Version Key 2017 Professional : KBJFW-NXHK6-W4WJM-CRMQB-G3CDHEnterprise : NJVYC-BMHX2-G77MM-4XJMR-6Q8QF 2015 Professional : HMGNV-WCYXV-X7G9W-YCX63-B98R2Enterprise : HM6NR-QXX7C-DFW2Y-8B82K-WTYJV 2013 Professional : XDM3T-W3T3V-MGJWK-8BFVD-GVPKYUltimate : BWG7X-J98B3-W34RT-33B3R-JVYW9Premium : FBJVC-3CMTX-D8DVP-RTQCT-92494 Vmware Version KEY 15 YG5H2-ANZ0H-M8ERY-TXZZZ-YKRV8 UG5J2-0ME12-M89WY-NPWXX-WQH88 UA5DR-2ZD4H-089FY-6YQ5T-YPRX6GA590-86Y05-4806Y-X4PEE-ZV8E0 ZF582-0NW5N-H8D2P-0XZEE-Z22VAYA18K-0WY8P-H85DY-L4NZG-X7RAD Bug 系列 KE</description>
       
     </item>
     
@@ -554,20 +565,6 @@
       <guid>https://me.lucoder.com/post/2018/07/02/ionic-errors/</guid>
       
         <description>IONIC是一个非常强大的开源混合开发框架，但是部署项目总会遇到或多或少的错误，对于新手就会非常棘手。 安装错误 开发错误 缺少IONIC脚本 ionic serve</description>
-      
-    </item>
-    
-    <item>
-      <title>mpi并行计算环境搭建</title>
-      <link>https://me.lucoder.com/post/2018/04/25/mpi-env/</link>
-      <pubDate>Wed, 25 Apr 2018 14:21:50 +0800</pubDate>
-      
-      <guid>https://me.lucoder.com/post/2018/04/25/mpi-env/</guid>
-      
-        <description>&lt;h1 id=&#34;什么是mpi&#34;&gt;什么是MPI&lt;/h1&gt;
-
-&lt;p&gt;MPI是一个跨语言的通讯协议，用于编写并行计算机。支持点对点和广播。MPI是一个信息传递应用程序接口，包括协议和和语义说明，他们指明其如何在各种实现中发挥其特性。MPI的目标是高性能，大规模性，和可移植性。MPI在今天仍为高性能计算的主要模型。
-&lt;/p&gt;</description>
       
     </item>
     

@@ -69,7 +69,7 @@
 
 <meta itemprop="datePublished" content="2019-03-02T22:00:23&#43;08:00" />
 <meta itemprop="dateModified" content="2019-03-02T22:00:23&#43;08:00" />
-<meta itemprop="wordCount" content="3499">
+<meta itemprop="wordCount" content="3495">
 
 
 
@@ -444,23 +444,13 @@
 * False negatives: 假的负样本，即正样本被错误识别为负样本，飞机的图片没有被识别出来，系统错误地认为它们是大雁。</p>
 
 <p>Precision其实就是在识别出来的图片中，True positives所占的比率。也就是本假设中，所有被识别出来的飞机中，真正的飞机所占的比例。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-math" data-lang="math"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-math" data-lang="math">precision=\frac{t_p}{t_p+f_p}=\frac{t_p}{n}</code></pre></td></tr></table>
-</div>
-</div>
+
+<p>$$precision=\frac{t_p}{t_p+f_p}=\frac{t_p}{n}$$</p>
+
 <p>Recall 是测试集中所有正样本样例中，被正确识别为正样本的比例。也就是本假设中，被正确识别出来的飞机个数与测试集中所有真实飞机的个数的比值。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-math" data-lang="math"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-math" data-lang="math">recall=\frac{t_p}{t_p+f_n}</code></pre></td></tr></table>
-</div>
-</div>
+
+<p>$$recall=\frac{t_p}{t_p+f_n}$$</p>
+
 <p><code>Precision-recall曲线</code>：改变识别阈值，使得系统依次能够识别前K张图片，阈值的变化同时会导致Precision与Recall值发生变化，从而得到曲线。</p>
 
 <p>如果一个分类器的性能比较好，那么它应该有如下的表现：在Recall值增长的同时，Precision的值保持在一个很高的水平。而性能比较差的分类器可能会损失很多Precision值才能换来Recall值的提高。通常情况下，文章中都会使用Precision-recall曲线，来显示出分类器在Precision与Recall之间的权衡。</p>
@@ -484,14 +474,9 @@
 <p>计算方法即检测结果Detection Result与 Ground Truth 的交集比上它们的并集，即为检测的准确率。</p>
 
 <p>IOU正是表达这种bounding box和groundtruth的差异的指标：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-math" data-lang="math"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-math" data-lang="math">IOU=\frac{DetectionResult \bigcap GroundTruth}{DetectionResult \bigcup GroundTruth}</code></pre></td></tr></table>
-</div>
-</div>
+
+<p>$$IOU=\frac{DetectionResult \bigcap GroundTruth}{DetectionResult \bigcup GroundTruth}$$</p>
+
 <h2 id="roc-receiver-operating-characteristic-曲线与auc-area-under-curve">ROC（Receiver Operating Characteristic）曲线与AUC（Area Under Curve）</h2>
 
 <p><img src="https://img.lucoder.com/2019/03/3852396166.png" alt="https://img.lucoder.com/2019/03/3852396166.png" /></p>
@@ -520,14 +505,9 @@
 <p><code>物理意义</code>：首先AUC值是一个概率值，当你随机挑选一个正样本以及一个负样本，当前的分类算法根据计算得到的Score值将这个正样本排在负样本前面的概率就是AUC值。当然，AUC值越大，当前的分类算法越有可能将正样本排在负样本前面，即能够更好的分类。</p>
 
 <p>计算公式：就是求曲线下矩形面积。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-math" data-lang="math"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-math" data-lang="math">AUC=\sum_{m}^{i=2}{\frac{\left( x_i - x_{i-1} \right) * \left( y_i + y_{i-1} \right)}{2}}</code></pre></td></tr></table>
-</div>
-</div>
+
+<p>$$AUC=\sum_{m}^{i=2}{\frac{\left( x<em>i - x</em>{i-1} \right) * \left( y<em>i + y</em>{i-1} \right)}{2}}$$</p>
+
 <h2 id="pr曲线和roc曲线比较">PR曲线和ROC曲线比较</h2>
 
 <h3 id="roc曲线特点">ROC曲线特点：</h3>
