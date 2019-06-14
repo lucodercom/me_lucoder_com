@@ -26,3 +26,10 @@ toc: false
 | Version | KEY                                                                                                                                                                                                                  |
 | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 15      | YG5H2-ANZ0H-M8ERY-TXZZZ-YKRV8 <hr /> UG5J2-0ME12-M89WY-NPWXX-WQH88 <hr /> UA5DR-2ZD4H-089FY-6YQ5T-YPRX6<hr /> GA590-86Y05-4806Y-X4PEE-ZV8E0 <hr /> ZF582-0NW5N-H8D2P-0XZEE-Z22VA<hr /> YA18K-0WY8P-H85DY-L4NZG-X7RAD |
+
+
+## Bug 系列
+
+KEY地址：[https://docs.microsoft.com/zh-cn/windows-server/get-started/kmsclientkeys](https://docs.microsoft.com/zh-cn/windows-server/get-started/kmsclientkeys)
+
+服务器：03k.org

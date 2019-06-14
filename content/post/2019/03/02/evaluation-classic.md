@@ -30,13 +30,13 @@ toc: false
 * False negatives: 假的负样本，即正样本被错误识别为负样本，飞机的图片没有被识别出来，系统错误地认为它们是大雁。
 
 Precision其实就是在识别出来的图片中，True positives所占的比率。也就是本假设中，所有被识别出来的飞机中，真正的飞机所占的比例。
-```math
-precision=\frac{t_p}{t_p+f_p}=\frac{t_p}{n}
-```
+
+$$precision=\frac{t_p}{t_p+f_p}=\frac{t_p}{n}$$
+
 Recall 是测试集中所有正样本样例中，被正确识别为正样本的比例。也就是本假设中，被正确识别出来的飞机个数与测试集中所有真实飞机的个数的比值。
-```math
-recall=\frac{t_p}{t_p+f_n}
-```
+
+$$recall=\frac{t_p}{t_p+f_n}$$
+
 `Precision-recall曲线`：改变识别阈值，使得系统依次能够识别前K张图片，阈值的变化同时会导致Precision与Recall值发生变化，从而得到曲线。
 
 如果一个分类器的性能比较好，那么它应该有如下的表现：在Recall值增长的同时，Precision的值保持在一个很高的水平。而性能比较差的分类器可能会损失很多Precision值才能换来Recall值的提高。通常情况下，文章中都会使用Precision-recall曲线，来显示出分类器在Precision与Recall之间的权衡。
@@ -58,9 +58,8 @@ IoU这一值，可以理解为系统预测出来的框与原来图片中标记�
 计算方法即检测结果Detection Result与 Ground Truth 的交集比上它们的并集，即为检测的准确率。
 
 IOU正是表达这种bounding box和groundtruth的差异的指标：
-```math
-IOU=\frac{DetectionResult \bigcap GroundTruth}{DetectionResult \bigcup GroundTruth}
-```
+
+$$IOU=\frac{DetectionResult \bigcap GroundTruth}{DetectionResult \bigcup GroundTruth}$$
 
 ## ROC（Receiver Operating Characteristic）曲线与AUC（Area Under Curve）
 
@@ -85,9 +84,7 @@ AUC（Area Under Curve）即为ROC曲线下的面积。AUC越接近于1，分类
 
 计算公式：就是求曲线下矩形面积。
 
-```math
-AUC=\sum_{m}^{i=2}{\frac{\left( x_i - x_{i-1} \right) * \left( y_i + y_{i-1} \right)}{2}}
-```
+$$AUC=\sum_{m}^{i=2}{\frac{\left( x_i - x_{i-1} \right) * \left( y_i + y_{i-1} \right)}{2}}$$
 
 ## PR曲线和ROC曲线比较
 
