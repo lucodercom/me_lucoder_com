@@ -9,6 +9,8 @@ toc: false
 
 6月是一个特殊的月份，华为被禁、贸易战....，就在6月，不可抗拒的原因导致我的服务器凉了，丢了很多数据，不打算等着恢复了，所以再次回到了Github，当然激活服务器也随着凉了:
 
+> 服务迁移：[https://help.lucoder.com](https://help.lucoder.com)
+
 # KMS服务
 
 自己搭建吧，地址:[搭建步骤](/post/2019/06/08/linux-kms-build/)
