@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on 牧轩日志 - 记录开发中的点点滴滴</title>
+    <link>https://me.lucoder.com/categories/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on 牧轩日志 - 记录开发中的点点滴滴</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>牧轩居士</copyright>
+    <lastBuildDate>Thu, 11 Jul 2019 10:25:43 +0800</lastBuildDate>
+    
+	<atom:link href="https://me.lucoder.com/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C&#43;&#43; N叉树的实现</title>
+      <link>https://me.lucoder.com/post/2019/07/11/mtree/</link>
+      <pubDate>Thu, 11 Jul 2019 10:25:43 +0800</pubDate>
+      
+      <guid>https://me.lucoder.com/post/2019/07/11/mtree/</guid>
+      <description>引言 最近一个项目需要使用多叉树结构来存储数据，但是基于平时学习的都是二叉树的结构，以及网上都是二叉树为基础来进行学习，所以今天实现一个多叉树</description>
+    </item>
+    
+  </channel>
+</rss>
