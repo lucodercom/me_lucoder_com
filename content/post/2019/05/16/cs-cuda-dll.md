@@ -176,7 +176,7 @@ run.Run();
 Console.Read();
 ```
 
-Code:[]()
+Code:[CSDN](https://download.csdn.net/download/qq_20535961/11248980)，[博客园](https://files.cnblogs.com/files/muxuan/BandSplitorByGDAL.zip)
 
 # 结果
 
